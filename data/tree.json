@@ -1,0 +1,209 @@
+{
+    "topic": "Tree",
+    "easy": [
+      {
+        "qid": "tree-e-001",
+        "question": "What is a tree data structure and what are its basic components?",
+        "golden_answer": "A tree is a hierarchical data structure consisting of nodes connected by edges. It has a root node at the top, internal nodes with children, and leaf nodes with no children. Each node except root has exactly one parent, forming a connected acyclic graph."
+      },
+      {
+        "qid": "tree-e-002",
+        "question": "What is the difference between a tree and a binary tree?",
+        "golden_answer": "A tree can have any number of children per node, while a binary tree restricts each node to at most two children (left and right). Binary trees have specific properties like ordered traversals and are commonly used in search operations."
+      },
+      {
+        "qid": "tree-e-003",
+        "question": "Define the terms: root, leaf, parent, child, sibling, and height in a tree.",
+        "golden_answer": "Root is the topmost node. Leaf nodes have no children. Parent-child relationship connects nodes. Siblings share the same parent. Height is the maximum distance from root to any leaf node (or longest path from node to leaf for subtree height)."
+      },
+      {
+        "qid": "tree-e-004",
+        "question": "What are the three main ways to traverse a binary tree?",
+        "golden_answer": "The three traversals are: Inorder (left, root, right), Preorder (root, left, right), and Postorder (left, right, root). Each visits all nodes exactly once but in different orders, useful for different applications like expression evaluation or tree copying."
+      },
+      {
+        "qid": "tree-e-005",
+        "question": "How do you calculate the height of a binary tree?",
+        "golden_answer": "Use recursion: height = 1 + max(height of left subtree, height of right subtree). Base case: empty tree has height 0, single node has height 1. This gives O(n) time complexity visiting each node once."
+      },
+      {
+        "qid": "tree-e-006",
+        "question": "What is a Binary Search Tree (BST) and what property does it maintain?",
+        "golden_answer": "A BST is a binary tree where for each node, all values in left subtree are smaller and all values in right subtree are larger than the node's value. This ordering property enables efficient search, insertion, and deletion operations."
+      },
+      {
+        "qid": "tree-e-007",
+        "question": "How do you search for an element in a Binary Search Tree?",
+        "golden_answer": "Start from root, compare target with current node. If equal, found. If target is smaller, go left; if larger, go right. Repeat until found or reach null. Time complexity is O(h) where h is tree height."
+      },
+      {
+        "qid": "tree-e-008",
+        "question": "What is the difference between complete and full binary trees?",
+        "golden_answer": "A full binary tree has every node with either 0 or 2 children (no nodes with exactly 1 child). A complete binary tree has all levels filled except possibly the last, which is filled from left to right."
+      },
+      {
+        "qid": "tree-e-009",
+        "question": "How do you count the number of nodes in a binary tree?",
+        "golden_answer": "Use recursion: count = 1 + count of left subtree + count of right subtree. Base case: empty tree has 0 nodes. This traverses each node once giving O(n) time complexity."
+      },
+      {
+        "qid": "tree-e-010",
+        "question": "What is level-order traversal and how do you implement it?",
+        "golden_answer": "Level-order traversal visits nodes level by level from left to right. Use a queue: start with root, dequeue node, process it, enqueue its children. Continue until queue is empty. This is also called breadth-first traversal."
+      },
+      {
+        "qid": "tree-e-011",
+        "question": "How do you insert an element in a Binary Search Tree?",
+        "golden_answer": "Start from root, compare new value with current node. If smaller, go left; if larger, go right. When reaching null position, insert new node there. Maintain BST property throughout insertion. Time complexity is O(h)."
+      },
+      {
+        "qid": "tree-e-012",
+        "question": "What is a leaf node and how do you count leaf nodes in a binary tree?",
+        "golden_answer": "A leaf node has no children (both left and right pointers are null). Count using recursion: if node is leaf, return 1; otherwise return sum of leaf counts from left and right subtrees. Base case: empty tree has 0 leaves."
+      },
+      {
+        "qid": "tree-e-013",
+        "question": "How do you find the maximum element in a Binary Search Tree?",
+        "golden_answer": "In a BST, maximum element is always the rightmost node. Start from root and keep going right until reaching a node with no right child. That node contains the maximum value. Time complexity is O(h)."
+      },
+      {
+        "qid": "tree-e-014",
+        "question": "What is the difference between depth and height of a node?",
+        "golden_answer": "Depth of a node is the number of edges from root to that node. Height of a node is the number of edges from that node to the deepest leaf in its subtree. Root has depth 0, leaves have height 0."
+      },
+      {
+        "qid": "tree-e-015",
+        "question": "How do you check if two binary trees are identical?",
+        "golden_answer": "Use recursion: trees are identical if both are empty, or both have same data and their left and right subtrees are respectively identical. Compare node values and recursively check subtrees. Time complexity is O(n)."
+      },
+      {
+        "qid": "tree-e-016",
+        "question": "What is a binary heap and what property does it satisfy?",
+        "golden_answer": "A binary heap is a complete binary tree satisfying heap property: in max heap, parent is greater than children; in min heap, parent is smaller than children. Used to implement priority queues with efficient insert and extract operations."
+      },
+      {
+        "qid": "tree-e-017",
+        "question": "How do you find the minimum element in a Binary Search Tree?",
+        "golden_answer": "In a BST, minimum element is always the leftmost node. Start from root and keep going left until reaching a node with no left child. That node contains the minimum value. Time complexity is O(h)."
+      },
+      {
+        "qid": "tree-e-018",
+        "question": "What is inorder traversal and what special property does it have for BSTs?",
+        "golden_answer": "Inorder traversal visits left subtree, current node, then right subtree. For Binary Search Trees, inorder traversal produces nodes in ascending sorted order, making it useful for retrieving elements in sorted sequence."
+      },
+      {
+        "qid": "tree-e-019",
+        "question": "How do you check if a binary tree is empty?",
+        "golden_answer": "Check if the root pointer/reference is null or None. An empty tree has no nodes, so root is null. This is a constant time O(1) operation and is often used as base case in recursive tree algorithms."
+      },
+      {
+        "qid": "tree-e-020",
+        "question": "What is the relationship between number of nodes and height in a complete binary tree?",
+        "golden_answer": "For a complete binary tree with n nodes, height h satisfies floor(log₂(n)) ≤ h ≤ n-1. Minimum height occurs when tree is perfectly balanced (all levels full), maximum when tree is linear (each node has at most one child)."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "tree-m-001",
+        "question": "How do you validate if a binary tree is a valid Binary Search Tree?",
+        "golden_answer": "Use recursion with min-max bounds. For each node, ensure its value is within bounds, then recursively validate subtrees with updated bounds. Left subtree gets upper bound as current value, right subtree gets lower bound as current value. Time complexity O(n)."
+      },
+      {
+        "qid": "tree-m-002",
+        "question": "Find the Lowest Common Ancestor (LCA) of two nodes in a binary tree.",
+        "golden_answer": "Use recursion: if current node is null or matches either target, return current node. Get LCA from left and right subtrees. If both return non-null, current node is LCA. If only one returns non-null, that's the LCA."
+      },
+      {
+        "qid": "tree-m-003",
+        "question": "How do you serialize and deserialize a binary tree?",
+        "golden_answer": "Serialize using preorder traversal, representing null nodes with special marker (like '#'). Deserialize by reconstructing tree from preorder sequence, using index to track current position. This preserves tree structure completely."
+      },
+      {
+        "qid": "tree-m-004",
+        "question": "Delete a node from a Binary Search Tree while maintaining BST property.",
+        "golden_answer": "Three cases: 1) Leaf node - simply remove. 2) One child - replace with child. 3) Two children - replace with inorder successor (or predecessor), then delete successor. Find successor by going right once, then leftmost node."
+      },
+      {
+        "qid": "tree-m-005",
+        "question": "Find the diameter of a binary tree (longest path between any two nodes).",
+        "golden_answer": "Use recursion returning both height and diameter. For each node, diameter is maximum of: left diameter, right diameter, or path through current node (left height + right height + 1). Track global maximum diameter."
+      },
+      {
+        "qid": "tree-m-006",
+        "question": "Convert a sorted array into a height-balanced Binary Search Tree.",
+        "golden_answer": "Use divide and conquer: make middle element root, recursively build left subtree from left half and right subtree from right half. This ensures balanced tree with minimum height O(log n) for all operations."
+      },
+      {
+        "qid": "tree-m-007",
+        "question": "Print all paths from root to leaf in a binary tree.",
+        "golden_answer": "Use backtracking with path array. Add current node to path, if leaf reached print path, else recursively explore children. Remove current node when backtracking. This explores all root-to-leaf paths exactly once."
+      },
+      {
+        "qid": "tree-m-008",
+        "question": "Check if a binary tree is height-balanced (difference in heights of subtrees ≤ 1).",
+        "golden_answer": "Use post-order traversal returning height and balance status. For each node, check if both subtrees are balanced and height difference ≤ 1. If unbalanced subtree found, propagate false upward. Time complexity O(n)."
+      },
+      {
+        "qid": "tree-m-009",
+        "question": "Find the maximum sum path between any two nodes in a binary tree.",
+        "golden_answer": "Use recursion returning maximum path sum ending at current node. For each node, calculate maximum path through it (left max + node + right max) and update global maximum. Return maximum single path for parent calculations."
+      },
+      {
+        "qid": "tree-m-010",
+        "question": "Construct binary tree from inorder and preorder traversal arrays.",
+        "golden_answer": "Use first element of preorder as root. Find root in inorder to split into left and right subtrees. Recursively build subtrees using corresponding portions of both arrays. Use hashmap for O(1) inorder lookups to optimize."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "tree-h-001",
+        "question": "Implement a self-balancing AVL tree with rotations for insertion and deletion.",
+        "golden_answer": "Maintain height and balance factor for each node. After insertion/deletion, check balance factors along path to root. Perform single (LL, RR) or double rotations (LR, RL) to restore balance when |balance factor| > 1. Update heights after rotations."
+      },
+      {
+        "qid": "tree-h-002",
+        "question": "Design a persistent binary search tree supporting multiple versions efficiently.",
+        "golden_answer": "Use path copying: when modifying, create new nodes only along path from root to modified node, sharing unchanged subtrees. Each version has its own root but shares structure. Provides O(log n) space per operation with full version history."
+      },
+      {
+        "qid": "tree-h-003",
+        "question": "Implement a B-tree with efficient insertion, deletion, and search operations.",
+        "golden_answer": "Maintain sorted keys in nodes with degree constraints. Split nodes when full during insertion, merge when underflow during deletion. Handle internal node operations by borrowing from siblings or merging. Maintain balanced height for O(log n) operations."
+      },
+      {
+        "qid": "tree-h-004",
+        "question": "Find all nodes at distance k from a given target node in a binary tree.",
+        "golden_answer": "Two-phase approach: first find target node and build parent pointers. Then perform multi-directional BFS from target, avoiding already visited nodes. Handle three directions: left child, right child, and parent. Distance k requires exactly k BFS levels."
+      },
+      {
+        "qid": "tree-h-005",
+        "question": "Implement Morris traversal for inorder traversal without recursion or stack.",
+        "golden_answer": "Use threaded binary tree concept. Create temporary links from inorder predecessor to current node. When reaching node via thread, remove thread and process node. This modifies tree temporarily but restores original structure, achieving O(1) space."
+      },
+      {
+        "qid": "tree-h-006",
+        "question": "Design a segment tree supporting range queries and updates in O(log n) time.",
+        "golden_answer": "Build complete binary tree where leaves represent array elements and internal nodes represent ranges. Each node stores aggregate (sum/min/max) of its range. Support point updates and range queries by traversing relevant paths in O(log n) time."
+      },
+      {
+        "qid": "tree-h-007",
+        "question": "Implement a Red-Black tree with insertion maintaining color properties.",
+        "golden_answer": "Maintain red-black properties: root is black, red nodes have black children, all paths from node to leaves have same black height. After insertion, fix violations using rotations and recoloring, propagating fixes up to root."
+      },
+      {
+        "qid": "tree-h-008",
+        "question": "Find the maximum width of a binary tree (maximum nodes at any level).",
+        "golden_answer": "Use level-order traversal with position indexing to handle null gaps. Assign positions: left child gets 2*pos, right child gets 2*pos+1. For each level, track minimum and maximum positions to calculate width including gaps between nodes."
+      },
+      {
+        "qid": "tree-h-009",
+        "question": "Implement a trie (prefix tree) with efficient insertion, search, and prefix matching.",
+        "golden_answer": "Use nodes with character arrays/hashmaps and boolean end markers. Insert by following/creating character paths. Search checks path existence and end marker. Support prefix operations by traversing to prefix node then collecting all words in subtree."
+      },
+      {
+        "qid": "tree-h-010",
+        "question": "Design a fenwick tree (Binary Indexed Tree) for efficient range sum queries and updates.",
+        "golden_answer": "Use 1-indexed array where each position stores cumulative sum for a specific range. Update propagates changes to relevant positions using bit manipulation. Query combines multiple positions to compute range sums in O(log n) time."
+      }
+    ]
+  }

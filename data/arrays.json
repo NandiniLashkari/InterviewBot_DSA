@@ -1,0 +1,209 @@
+{
+    "topic": "Arrays",
+    "easy": [
+      {
+        "qid": "Arrays-e-001",
+        "question": "What is an array and what are its key characteristics?",
+        "golden_answer": "An array is a collection of elements of the same data type stored in contiguous memory locations. Key characteristics include: fixed size (in most languages), elements accessed via index starting from 0, constant time O(1) random access, and homogeneous data storage."
+      },
+      {
+        "qid": "Arrays-e-002",
+        "question": "What is the time complexity for accessing an element in an array by index?",
+        "golden_answer": "The time complexity for accessing an element by index in an array is O(1) - constant time. This is because arrays store elements in contiguous memory locations, allowing direct calculation of memory address using the base address and index."
+      },
+      {
+        "qid": "Arrays-e-003",
+        "question": "What is the difference between static and dynamic arrays?",
+        "golden_answer": "Static arrays have a fixed size determined at compile time and cannot be resized during runtime. Dynamic arrays can grow or shrink during runtime, with size determined at runtime. Examples: C arrays (static) vs. Python lists or C++ vectors (dynamic)."
+      },
+      {
+        "qid": "Arrays-e-004",
+        "question": "How do you calculate the memory address of an element in a 1D array?",
+        "golden_answer": "Memory address = Base address + (index × size of data type). For example, if base address is 1000, index is 3, and each integer is 4 bytes, then address = 1000 + (3 × 4) = 1012."
+      },
+      {
+        "qid": "Arrays-e-005",
+        "question": "What are the advantages of using arrays?",
+        "golden_answer": "Arrays provide O(1) random access to elements, cache-friendly memory layout due to contiguous storage, simple indexing mechanism, and efficient memory utilization. They are ideal for mathematical operations and when you need frequent element access."
+      },
+      {
+        "qid": "Arrays-e-006",
+        "question": "What are the disadvantages of arrays?",
+        "golden_answer": "Arrays have fixed size (in static arrays), expensive insertion/deletion operations O(n), memory waste if not fully utilized, and require contiguous memory allocation which may fail for large arrays."
+      },
+      {
+        "qid": "Arrays-e-007",
+        "question": "What is array indexing and how does it work?",
+        "golden_answer": "Array indexing is the method of accessing array elements using their position number (index). Most programming languages use 0-based indexing where the first element is at index 0, second at index 1, and so on."
+      },
+      {
+        "qid": "Arrays-e-008",
+        "question": "What happens when you access an array element beyond its bounds?",
+        "golden_answer": "Accessing beyond array bounds results in undefined behavior in languages like C/C++, potentially reading garbage values or causing segmentation faults. Languages like Java throw ArrayIndexOutOfBoundsException, while Python raises IndexError."
+      },
+      {
+        "qid": "Arrays-e-009",
+        "question": "What is a multidimensional array?",
+        "golden_answer": "A multidimensional array is an array of arrays, creating a structure with multiple dimensions like 2D (matrix), 3D, etc. Elements are accessed using multiple indices, e.g., arr[i][j] for 2D arrays."
+      },
+      {
+        "qid": "Arrays-e-010",
+        "question": "How is a 2D array stored in memory?",
+        "golden_answer": "2D arrays are stored in contiguous memory in either row-major order (C/C++) where elements of each row are stored consecutively, or column-major order (Fortran) where elements of each column are stored consecutively."
+      },
+      {
+        "qid": "Arrays-e-011",
+        "question": "What is the time complexity for inserting an element at the beginning of an array?",
+        "golden_answer": "The time complexity for inserting at the beginning is O(n) because all existing elements need to be shifted one position to the right to make space for the new element."
+      },
+      {
+        "qid": "Arrays-e-012",
+        "question": "What is the time complexity for deleting an element from the middle of an array?",
+        "golden_answer": "The time complexity for deleting from the middle is O(n) because all elements after the deleted position need to be shifted left to fill the gap and maintain contiguous storage."
+      },
+      {
+        "qid": "Arrays-e-013",
+        "question": "What is array traversal and its time complexity?",
+        "golden_answer": "Array traversal means visiting each element of the array exactly once, typically using a loop. The time complexity is O(n) where n is the number of elements, as each element must be accessed once."
+      },
+      {
+        "qid": "Arrays-e-014",
+        "question": "What is the difference between array and linked list in terms of memory allocation?",
+        "golden_answer": "Arrays store elements in contiguous memory locations, allowing cache-friendly access and O(1) indexing. Linked lists store elements in arbitrary memory locations connected via pointers, requiring O(n) traversal but dynamic memory allocation."
+      },
+      {
+        "qid": "Arrays-e-015",
+        "question": "What is a jagged array?",
+        "golden_answer": "A jagged array is a multidimensional array where each row can have different lengths. Unlike regular 2D arrays with fixed columns per row, jagged arrays allow variable-length rows, providing memory efficiency for sparse data."
+      },
+      {
+        "qid": "Arrays-e-016",
+        "question": "What is array initialization and mention different ways to do it?",
+        "golden_answer": "Array initialization means assigning initial values to array elements. Methods include: declaring with values {1,2,3}, using loops to assign values, using built-in functions like fill(), or initializing to default values (zeros)."
+      },
+      {
+        "qid": "Arrays-e-017",
+        "question": "What is the space complexity of an array?",
+        "golden_answer": "The space complexity of an array is O(n) where n is the number of elements. Each element requires a fixed amount of memory based on its data type, resulting in linear space usage."
+      },
+      {
+        "qid": "Arrays-e-018",
+        "question": "Can array size be changed during runtime in all programming languages?",
+        "golden_answer": "No, traditional arrays in languages like C/C++ have fixed size. However, dynamic arrays like Python lists, JavaScript arrays, or C++ vectors can resize during runtime using reallocation and copying mechanisms."
+      },
+      {
+        "qid": "Arrays-e-019",
+        "question": "What is the difference between array length and array capacity?",
+        "golden_answer": "Array length refers to the actual number of elements currently stored in the array. Array capacity refers to the maximum number of elements the array can hold without reallocation, which is typically larger than length in dynamic arrays."
+      },
+      {
+        "qid": "Arrays-e-020",
+        "question": "What is array slicing?",
+        "golden_answer": "Array slicing is extracting a portion of an array by specifying start and end indices, creating a new array or view. For example, arr[1:4] extracts elements from index 1 to 3, commonly supported in languages like Python."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Arrays-m-001",
+        "question": "Explain the concept of dynamic array resizing and its amortized time complexity.",
+        "golden_answer": "Dynamic arrays resize by allocating a new array (typically double the size) and copying existing elements when capacity is exceeded. Although individual resize operations cost O(n), the amortized time complexity for insertions is O(1) because resizing happens infrequently."
+      },
+      {
+        "qid": "Arrays-m-002",
+        "question": "What are the trade-offs between arrays and hash tables for data storage?",
+        "golden_answer": "Arrays provide O(1) indexed access and better cache locality but require knowing the index. Hash tables offer O(1) key-based access and dynamic sizing but have memory overhead, potential collisions, and less predictable performance due to hash function computation."
+      },
+      {
+        "qid": "Arrays-m-003",
+        "question": "How would you implement a circular array and what are its advantages?",
+        "golden_answer": "A circular array uses modulo arithmetic to wrap indices around when reaching array bounds, treating the array as circular. Advantages include efficient implementation of circular buffers, queues, and avoiding array shifting operations. Access: arr[(start + i) % size]."
+      },
+      {
+        "qid": "Arrays-m-004",
+        "question": "Explain memory locality and how arrays benefit from it compared to other data structures.",
+        "golden_answer": "Memory locality refers to accessing data elements close in memory location. Arrays benefit from spatial locality as adjacent elements are stored contiguously, leading to efficient cache usage and fewer cache misses compared to pointer-based structures like linked lists."
+      },
+      {
+        "qid": "Arrays-m-005",
+        "question": "What is the difference between shallow copy and deep copy in the context of arrays?",
+        "golden_answer": "Shallow copy creates a new array but copies only references to objects (for object arrays), so both arrays share the same object instances. Deep copy creates a new array with completely independent copies of all elements, including nested objects."
+      },
+      {
+        "qid": "Arrays-m-006",
+        "question": "How do you calculate the address of an element in a 2D array using row-major order?",
+        "golden_answer": "For row-major order: Address = Base + ((row_index × number_of_columns) + column_index) × size_of_element. This formula accounts for skipping complete rows and then accessing the specific column within the target row."
+      },
+      {
+        "qid": "Arrays-m-007",
+        "question": "What is array rotation and explain different approaches to implement it?",
+        "golden_answer": "Array rotation shifts elements by k positions. Approaches include: 1) Using extra space O(n), 2) Reversing subarrays (reverse first k, reverse remaining, reverse entire), 3) Cyclic replacements using GCD. Each has different space-time trade-offs."
+      },
+      {
+        "qid": "Arrays-m-008",
+        "question": "Explain the concept of prefix sum arrays and their applications.",
+        "golden_answer": "Prefix sum arrays store cumulative sums where prefix[i] = sum of elements from index 0 to i. They enable O(1) range sum queries: sum(l,r) = prefix[r] - prefix[l-1]. Applications include range queries, subarray problems, and 2D matrix range sums."
+      },
+      {
+        "qid": "Arrays-m-009",
+        "question": "What are sparse arrays and how are they efficiently represented?",
+        "golden_answer": "Sparse arrays contain mostly zero or empty values. Efficient representations include: coordinate list (storing only non-zero values with their indices), compressed sparse row/column formats, or hash tables. These save space and computation time by ignoring zero elements."
+      },
+      {
+        "qid": "Arrays-m-010",
+        "question": "Explain the sliding window technique and its time complexity advantages.",
+        "golden_answer": "Sliding window maintains a subset of array elements in a 'window' that slides through the array. Instead of recalculating for each position O(n²), it adds new elements and removes old ones, achieving O(n) complexity for problems like maximum sum subarray of fixed size."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Arrays-h-001",
+        "question": "Analyze the cache performance implications of different array traversal patterns and their impact on modern CPU architectures.",
+        "golden_answer": "Sequential access (row-wise in 2D arrays) maximizes cache hits due to prefetching and spatial locality. Random access patterns cause cache misses and memory stalls. Column-wise traversal in row-major arrays has poor cache performance. Modern CPUs with multi-level caches favor predictable access patterns for optimal performance."
+      },
+      {
+        "qid": "Arrays-h-002",
+        "question": "Explain the mathematical relationship between array dimensions and memory addressing in n-dimensional arrays.",
+        "golden_answer": "For n-dimensional array with dimensions d1×d2×...×dn, element at indices (i1,i2,...,in) has address: Base + (((i1×d2+i2)×d3+i3)×...×dn+in)×element_size. This uses Horner's method for efficient computation and generalizes the row-major ordering formula."
+      },
+      {
+        "qid": "Arrays-h-003",
+        "question": "Compare the algorithmic complexity and practical performance of different array sorting stability preservation techniques.",
+        "golden_answer": "Stable sorting preserves relative order of equal elements. Merge sort is naturally stable O(n log n) with O(n) space. Making quicksort stable requires O(n) extra space or complex modifications. Counting sort is stable O(n+k) but limited to specific data ranges. Choice depends on stability requirements vs. space constraints."
+      },
+      {
+        "qid": "Arrays-h-004",
+        "question": "Discuss the algorithmic approaches for efficiently merging k sorted arrays and their complexity analysis.",
+        "golden_answer": "Approaches include: 1) Min-heap method O(n log k) using k-element heap, 2) Divide-and-conquer merging pairs O(n log k), 3) Priority queue with array pointers. The heap approach is optimal with O(k) space complexity, where n is total elements and k is number of arrays."
+      },
+      {
+        "qid": "Arrays-h-005",
+        "question": "Explain the implementation challenges and solutions for thread-safe dynamic array operations.",
+        "golden_answer": "Challenges include race conditions during resize operations, concurrent read/write access, and maintaining consistency. Solutions involve: reader-writer locks for separating read/write access, copy-on-write for safe concurrent reads, lock-free algorithms using atomic operations, or immutable data structures to avoid locking overhead."
+      },
+      {
+        "qid": "Arrays-h-006",
+        "question": "Analyze the space-time trade-offs in implementing efficient range query data structures over arrays.",
+        "golden_answer": "Segment trees provide O(log n) query/update with O(n) space. Sparse tables offer O(1) range minimum queries with O(n log n) preprocessing and space. Square root decomposition gives O(√n) operations with O(n) space. Choice depends on query frequency, update requirements, and space constraints."
+      },
+      {
+        "qid": "Arrays-h-007",
+        "question": "Explain the algorithmic complexity of finding all possible subarrays with specific properties and optimization strategies.",
+        "golden_answer": "Brute force generates O(n²) subarrays with O(n³) total examination time. Optimizations include: sliding window for sum-based properties O(n), two pointers for sorted arrays, prefix sums for range queries, and hash tables for frequency-based problems, reducing complexity to O(n) or O(n log n)."
+      },
+      {
+        "qid": "Arrays-h-008",
+        "question": "Discuss the implementation of cache-oblivious algorithms for array operations and their theoretical advantages.",
+        "golden_answer": "Cache-oblivious algorithms perform optimally across all cache levels without knowing cache parameters. Matrix multiplication using recursive divide-and-conquer achieves optimal O(n³/B√M) cache misses. These algorithms automatically adapt to memory hierarchy, providing consistent performance across different architectures without tuning."
+      },
+      {
+        "qid": "Arrays-h-009",
+        "question": "Analyze the memory management challenges in implementing very large arrays and propose solutions for handling memory constraints.",
+        "golden_answer": "Challenges include virtual memory limitations, fragmentation, and allocation failures. Solutions involve: memory mapping for file-backed arrays, segmented arrays to avoid large contiguous allocation, lazy loading for sparse access patterns, compression for repetitive data, and external sorting algorithms for datasets exceeding RAM."
+      },
+      {
+        "qid": "Arrays-h-010",
+        "question": "Explain the theoretical limits and practical considerations for parallel array processing algorithms.",
+        "golden_answer": "Theoretical limits are bounded by Amdahl's Law and communication overhead. Parallel efficiency depends on problem parallelizability, data dependencies, and synchronization costs. Practical considerations include load balancing, memory bandwidth limitations, false sharing in cache lines, and the overhead of thread creation versus computational work granularity."
+      }
+    ]
+  }

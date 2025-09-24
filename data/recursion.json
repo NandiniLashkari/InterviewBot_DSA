@@ -1,0 +1,209 @@
+{
+    "topic": "recursion",
+    "easy": [
+      {
+        "qid": "recursion-e-001",
+        "question": "What is recursion in computer science?",
+        "golden_answer": "Recursion is a programming technique where a function calls itself to solve smaller subproblems of the same type. It consists of a base case (stopping condition) and a recursive case that breaks the problem into smaller instances."
+      },
+      {
+        "qid": "recursion-e-002",
+        "question": "What are the two essential components of any recursive function?",
+        "golden_answer": "The two essential components are: 1) Base case - a condition that stops the recursion, and 2) Recursive case - where the function calls itself with modified parameters to work toward the base case."
+      },
+      {
+        "qid": "recursion-e-003",
+        "question": "Write a recursive function to calculate the factorial of a positive integer n.",
+        "golden_answer": "def factorial(n): if n <= 1: return 1; return n * factorial(n-1). The base case is when n <= 1, returning 1, and the recursive case multiplies n by the factorial of (n-1)."
+      },
+      {
+        "qid": "recursion-e-004",
+        "question": "What happens if a recursive function doesn't have a proper base case?",
+        "golden_answer": "Without a proper base case, the function will call itself indefinitely, leading to infinite recursion. This eventually causes a stack overflow error when the call stack memory is exhausted."
+      },
+      {
+        "qid": "recursion-e-005",
+        "question": "Write a recursive function to calculate the nth Fibonacci number.",
+        "golden_answer": "def fibonacci(n): if n <= 1: return n; return fibonacci(n-1) + fibonacci(n-2). The base cases are fibonacci(0) = 0 and fibonacci(1) = 1, with each subsequent number being the sum of the two preceding ones."
+      },
+      {
+        "qid": "recursion-e-006",
+        "question": "What is the call stack and how does it relate to recursion?",
+        "golden_answer": "The call stack is a data structure that stores information about active function calls. In recursion, each recursive call is pushed onto the stack, and when a function returns, it's popped off. The stack keeps track of the sequence of calls and local variables."
+      },
+      {
+        "qid": "recursion-e-007",
+        "question": "Write a recursive function to find the sum of all elements in an array.",
+        "golden_answer": "def array_sum(arr, index=0): if index >= len(arr): return 0; return arr[index] + array_sum(arr, index+1). The base case returns 0 when the index exceeds array bounds, and the recursive case adds the current element to the sum of remaining elements."
+      },
+      {
+        "qid": "recursion-e-008",
+        "question": "What is the difference between direct and indirect recursion?",
+        "golden_answer": "Direct recursion occurs when a function calls itself directly. Indirect recursion occurs when a function calls another function, which eventually calls the original function, creating a cycle of function calls."
+      },
+      {
+        "qid": "recursion-e-009",
+        "question": "Write a recursive function to reverse a string.",
+        "golden_answer": "def reverse_string(s): if len(s) <= 1: return s; return s[-1] + reverse_string(s[:-1]). The base case returns the string if it has 1 or 0 characters, and the recursive case concatenates the last character with the reverse of the remaining substring."
+      },
+      {
+        "qid": "recursion-e-010",
+        "question": "What is tail recursion?",
+        "golden_answer": "Tail recursion occurs when the recursive call is the last operation in the function, with no computation after the recursive call returns. Some compilers can optimize tail recursion into iteration to save stack space."
+      },
+      {
+        "qid": "recursion-e-011",
+        "question": "Write a recursive function to calculate the power of a number (x^n).",
+        "golden_answer": "def power(x, n): if n == 0: return 1; if n < 0: return 1/power(x, -n); return x * power(x, n-1). The base case is x^0 = 1, handles negative exponents, and the recursive case multiplies x by x^(n-1)."
+      },
+      {
+        "qid": "recursion-e-012",
+        "question": "What are the advantages and disadvantages of recursion?",
+        "golden_answer": "Advantages: cleaner, more intuitive code for problems with recursive structure, easier to understand for mathematical problems. Disadvantages: higher memory usage due to call stack, potentially slower execution, risk of stack overflow for deep recursion."
+      },
+      {
+        "qid": "recursion-e-013",
+        "question": "Write a recursive function to count the number of digits in a positive integer.",
+        "golden_answer": "def count_digits(n): if n < 10: return 1; return 1 + count_digits(n // 10). The base case returns 1 for single-digit numbers, and the recursive case adds 1 and calls the function with n divided by 10."
+      },
+      {
+        "qid": "recursion-e-014",
+        "question": "How does recursion relate to mathematical induction?",
+        "golden_answer": "Recursion and mathematical induction both follow similar patterns: establish a base case, then prove/implement that if the statement holds for k, it also holds for k+1. Both break complex problems into simpler subproblems."
+      },
+      {
+        "qid": "recursion-e-015",
+        "question": "Write a recursive function to find the maximum element in an array.",
+        "golden_answer": "def find_max(arr, index=0): if index == len(arr)-1: return arr[index]; return max(arr[index], find_max(arr, index+1)). The base case returns the last element, and the recursive case compares the current element with the maximum of the remaining array."
+      },
+      {
+        "qid": "recursion-e-016",
+        "question": "What is the base case in the recursive factorial function?",
+        "golden_answer": "The base case in factorial is when n equals 0 or 1, where the function returns 1 without making another recursive call. This prevents infinite recursion and provides the foundation for computing larger factorials."
+      },
+      {
+        "qid": "recursion-e-017",
+        "question": "Write a recursive function to check if a string is a palindrome.",
+        "golden_answer": "def is_palindrome(s, start=0, end=None): if end is None: end = len(s)-1; if start >= end: return True; return s[start] == s[end] and is_palindrome(s, start+1, end-1). Base case is when pointers meet, recursive case checks character equality and recurses inward."
+      },
+      {
+        "qid": "recursion-e-018",
+        "question": "What is the space complexity of a typical recursive function?",
+        "golden_answer": "The space complexity is O(d) where d is the maximum depth of recursion, due to the call stack storing function calls. Each recursive call uses stack space for parameters, local variables, and return addresses."
+      },
+      {
+        "qid": "recursion-e-019",
+        "question": "Write a recursive function to calculate the GCD of two numbers using Euclidean algorithm.",
+        "golden_answer": "def gcd(a, b): if b == 0: return a; return gcd(b, a % b). The base case returns a when b becomes 0, and the recursive case applies the Euclidean algorithm by calling gcd with b and the remainder of a divided by b."
+      },
+      {
+        "qid": "recursion-e-020",
+        "question": "How can you convert a recursive solution to an iterative one?",
+        "golden_answer": "Use an explicit stack or queue data structure to simulate the call stack, replace recursive calls with loop iterations, and manually manage the state that was previously handled by function parameters and local variables."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "recursion-m-001",
+        "question": "Implement a recursive binary search algorithm and analyze its time complexity.",
+        "golden_answer": "def binary_search(arr, target, left=0, right=None): if right is None: right = len(arr)-1; if left > right: return -1; mid = (left + right) // 2; if arr[mid] == target: return mid; elif arr[mid] > target: return binary_search(arr, target, left, mid-1); else: return binary_search(arr, target, mid+1, right). Time complexity is O(log n) as we eliminate half the search space in each recursive call."
+      },
+      {
+        "qid": "recursion-m-002",
+        "question": "What is memoization and how does it optimize recursive algorithms? Provide an example.",
+        "golden_answer": "Memoization stores results of expensive function calls and returns cached results for repeated inputs. For Fibonacci: memo = {}; def fib(n): if n in memo: return memo[n]; if n <= 1: return n; memo[n] = fib(n-1) + fib(n-2); return memo[n]. This reduces time complexity from O(2^n) to O(n)."
+      },
+      {
+        "qid": "recursion-m-003",
+        "question": "Implement the Tower of Hanoi problem recursively and explain the approach.",
+        "golden_answer": "def hanoi(n, source, destination, auxiliary): if n == 1: print(f'Move disk from {source} to {destination}'); else: hanoi(n-1, source, auxiliary, destination); hanoi(1, source, destination, auxiliary); hanoi(n-1, auxiliary, destination, source). Move n-1 disks to auxiliary, move largest to destination, then move n-1 from auxiliary to destination."
+      },
+      {
+        "qid": "recursion-m-004",
+        "question": "Write a recursive function to generate all permutations of a string.",
+        "golden_answer": "def permutations(s): if len(s) <= 1: return [s]; result = []; for i in range(len(s)): char = s[i]; remaining = s[:i] + s[i+1:]; for perm in permutations(remaining): result.append(char + perm); return result. Base case returns single character, recursive case fixes each character and permutes the rest."
+      },
+      {
+        "qid": "recursion-m-005",
+        "question": "Implement a recursive solution for the N-Queens problem.",
+        "golden_answer": "def solve_n_queens(n): def is_safe(board, row, col): for i in range(row): if board[i] == col or abs(board[i]-col) == abs(i-row): return False; return True; def backtrack(board, row): if row == n: return [board[:]]; for col in range(n): if is_safe(board, row, col): board[row] = col; if backtrack(board, row+1): return True; return False. Uses backtracking to place queens safely."
+      },
+      {
+        "qid": "recursion-m-006",
+        "question": "What is the difference between top-down and bottom-up dynamic programming approaches?",
+        "golden_answer": "Top-down (memoization) starts with the original problem and breaks it into subproblems recursively, caching results. Bottom-up (tabulation) starts with smallest subproblems and builds up to the original problem iteratively. Top-down is more intuitive but uses recursion stack; bottom-up uses less space but requires careful ordering."
+      },
+      {
+        "qid": "recursion-m-007",
+        "question": "Implement a recursive merge sort algorithm and analyze its complexity.",
+        "golden_answer": "def merge_sort(arr): if len(arr) <= 1: return arr; mid = len(arr)//2; left = merge_sort(arr[:mid]); right = merge_sort(arr[mid:]); return merge(left, right). Time complexity is O(n log n) due to log n levels of recursion, each doing O(n) work to merge. Space complexity is O(n) for temporary arrays."
+      },
+      {
+        "qid": "recursion-m-008",
+        "question": "Write a recursive function to find all subsets of a given set.",
+        "golden_answer": "def subsets(arr, index=0): if index == len(arr): return [[]]; subsets_without_current = subsets(arr, index+1); subsets_with_current = [[arr[index]] + subset for subset in subsets_without_current]; return subsets_without_current + subsets_with_current. For each element, we either include it or exclude it in our subsets."
+      },
+      {
+        "qid": "recursion-m-009",
+        "question": "Implement a recursive solution to find the diameter of a binary tree.",
+        "golden_answer": "def diameter(root): def helper(node): if not node: return 0, 0; left_height, left_diameter = helper(node.left); right_height, right_diameter = helper(node.right); current_diameter = left_height + right_height; max_diameter = max(left_diameter, right_diameter, current_diameter); return max(left_height, right_height) + 1, max_diameter. Returns both height and diameter for each subtree."
+      },
+      {
+        "qid": "recursion-m-010",
+        "question": "What are the key considerations when choosing between recursive and iterative solutions?",
+        "golden_answer": "Consider: problem structure (recursive problems naturally fit recursion), performance requirements (iteration is often faster), memory constraints (recursion uses more stack space), code readability (recursion can be cleaner), and maximum input size (deep recursion may cause stack overflow). Choose recursion for tree traversals, mathematical problems, and divide-and-conquer algorithms."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "recursion-h-001",
+        "question": "Implement a recursive solution for the edit distance problem (Levenshtein distance) with memoization.",
+        "golden_answer": "def edit_distance(s1, s2, memo={}): if (s1, s2) in memo: return memo[(s1, s2)]; if not s1: return len(s2); if not s2: return len(s1); if s1[0] == s2[0]: result = edit_distance(s1[1:], s2[1:], memo); else: result = 1 + min(edit_distance(s1[1:], s2, memo), edit_distance(s1, s2[1:], memo), edit_distance(s1[1:], s2[1:], memo)); memo[(s1, s2)] = result; return result. Time complexity O(mn) with memoization, space O(mn)."
+      },
+      {
+        "qid": "recursion-h-002",
+        "question": "Design a recursive algorithm to solve the coin change problem and optimize it using dynamic programming.",
+        "golden_answer": "def coin_change(coins, amount, memo={}): if amount in memo: return memo[amount]; if amount == 0: return 0; if amount < 0: return float('inf'); result = float('inf'); for coin in coins: result = min(result, 1 + coin_change(coins, amount - coin, memo)); memo[amount] = result; return result if result != float('inf') else -1. Without memoization: O(amount^coins), with memoization: O(amount * coins)."
+      },
+      {
+        "qid": "recursion-h-003",
+        "question": "Implement a recursive solution for finding the longest common subsequence (LCS) of two strings.",
+        "golden_answer": "def lcs(s1, s2, i=0, j=0, memo={}): if (i, j) in memo: return memo[(i, j)]; if i >= len(s1) or j >= len(s2): return 0; if s1[i] == s2[j]: result = 1 + lcs(s1, s2, i+1, j+1, memo); else: result = max(lcs(s1, s2, i+1, j, memo), lcs(s1, s2, i, j+1, memo)); memo[(i, j)] = result; return result. Time complexity O(mn) with memoization, exponential without it."
+      },
+      {
+        "qid": "recursion-h-004",
+        "question": "Write a recursive function to solve the word break problem: determine if a string can be segmented into dictionary words.",
+        "golden_answer": "def word_break(s, word_dict, start=0, memo={}): if start in memo: return memo[start]; if start == len(s): return True; for end in range(start + 1, len(s) + 1): if s[start:end] in word_dict and word_break(s, word_dict, end, memo): memo[start] = True; return True; memo[start] = False; return False. Uses memoization to avoid recomputing subproblems, time complexity O(n^2 * m) where m is average word length."
+      },
+      {
+        "qid": "recursion-h-005",
+        "question": "Implement a recursive solution for the maximum path sum in a binary tree (path can start and end at any nodes).",
+        "golden_answer": "def max_path_sum(root): def helper(node): nonlocal max_sum; if not node: return 0; left_gain = max(helper(node.left), 0); right_gain = max(helper(node.right), 0); current_max = node.val + left_gain + right_gain; max_sum = max(max_sum, current_max); return node.val + max(left_gain, right_gain); max_sum = float('-inf'); helper(root); return max_sum. Time O(n), space O(h) where h is tree height."
+      },
+      {
+        "qid": "recursion-h-006",
+        "question": "Design a recursive algorithm for the traveling salesman problem (TSP) with memoization.",
+        "golden_answer": "def tsp(graph, mask, pos, memo={}): if (mask, pos) in memo: return memo[(mask, pos)]; if mask == (1 << len(graph)) - 1: return graph[pos][0]; result = float('inf'); for city in range(len(graph)): if mask & (1 << city) == 0: new_mask = mask | (1 << city); result = min(result, graph[pos][city] + tsp(graph, new_mask, city, memo)); memo[(mask, pos)] = result; return result. Uses bitmask DP, time complexity O(n^2 * 2^n)."
+      },
+      {
+        "qid": "recursion-h-007",
+        "question": "Implement a recursive solution for the palindrome partitioning problem with optimization.",
+        "golden_answer": "def palindrome_partition(s): def is_palindrome(string): return string == string[::-1]; def backtrack(start, path): if start == len(s): result.append(path[:]); return; for end in range(start + 1, len(s) + 1): substring = s[start:end]; if is_palindrome(substring): path.append(substring); backtrack(end, path); path.pop(); result = []; backtrack(0, []); return result. Can be optimized by precomputing palindrome checks using DP in O(n^2) preprocessing."
+      },
+      {
+        "qid": "recursion-h-008",
+        "question": "Write a recursive function to solve the subset sum problem with given target and optimize space complexity.",
+        "golden_answer": "def subset_sum(arr, target, index=0): if target == 0: return True; if index >= len(arr) or target < 0: return False; return subset_sum(arr, target - arr[index], index + 1) or subset_sum(arr, target, index + 1); # Optimized with memoization: memo = {}; def subset_sum_memo(arr, target, index, memo): key = (target, index); if key in memo: return memo[key]; # same logic as above; memo[key] = result; return result. Time O(n*target) with memo."
+      },
+      {
+        "qid": "recursion-h-009",
+        "question": "Implement a recursive solution for the expression evaluation problem with nested parentheses and operators.",
+        "golden_answer": "def evaluate_expression(expr, index=0): def parse_number(expr, i): num = 0; while i < len(expr) and expr[i].isdigit(): num = num * 10 + int(expr[i]); i += 1; return num, i; def helper(expr, i): if expr[i] == '(': # recursive evaluation; elif expr[i].isdigit(): return parse_number(expr, i); # handle operators recursively. Uses recursive descent parsing, time complexity depends on expression structure and nesting depth."
+      },
+      {
+        "qid": "recursion-h-010",
+        "question": "Design a recursive algorithm to find all solutions to the Sudoku puzzle with backtracking optimization.",
+        "golden_answer": "def solve_sudoku(board): def is_valid(board, row, col, num): for i in range(9): if board[row][i] == num or board[i][col] == num: return False; start_row, start_col = 3 * (row // 3), 3 * (col // 3); for i in range(start_row, start_row + 3): for j in range(start_col, start_col + 3): if board[i][j] == num: return False; return True; def backtrack(): for i in range(9): for j in range(9): if board[i][j] == 0: for num in range(1, 10): if is_valid(board, i, j, num): board[i][j] = num; if backtrack(): return True; board[i][j] = 0; return False; return True; return backtrack(). Time complexity O(9^(n*n)) in worst case."
+      }
+    ]
+  }

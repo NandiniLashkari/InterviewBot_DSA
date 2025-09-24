@@ -1,0 +1,209 @@
+{
+    "topic": "Dynamic Programming",
+    "easy": [
+      {
+        "qid": "Dynamic_Programming-e-001",
+        "question": "What is dynamic programming and what problems is it best suited for?",
+        "golden_answer": "Dynamic programming is an optimization technique that solves complex problems by breaking them into simpler subproblems and storing results to avoid redundant calculations. It's best suited for problems with optimal substructure and overlapping subproblems, such as shortest path, sequence alignment, and optimization problems."
+      },
+      {
+        "qid": "Dynamic_Programming-e-002",
+        "question": "What are the two key properties required for a problem to be solved using dynamic programming?",
+        "golden_answer": "The two key properties are: 1) Optimal Substructure - optimal solution can be constructed from optimal solutions of subproblems, and 2) Overlapping Subproblems - the same subproblems are solved multiple times in a naive recursive approach, making memoization beneficial."
+      },
+      {
+        "qid": "Dynamic_Programming-e-003",
+        "question": "What is the difference between top-down and bottom-up approaches in dynamic programming?",
+        "golden_answer": "Top-down (memoization) starts with the original problem and recursively breaks it down, storing results in a table. Bottom-up (tabulation) starts with smallest subproblems and builds up to the solution iteratively. Both have similar time complexity but differ in space usage and implementation style."
+      },
+      {
+        "qid": "Dynamic_Programming-e-004",
+        "question": "What is memoization in the context of dynamic programming?",
+        "golden_answer": "Memoization is a technique that stores the results of expensive function calls and returns cached results when the same inputs occur again. It's the top-down approach to DP, typically implemented using recursion with a lookup table (array or hash map) to avoid recomputing subproblems."
+      },
+      {
+        "qid": "Dynamic_Programming-e-005",
+        "question": "What is tabulation in dynamic programming?",
+        "golden_answer": "Tabulation is the bottom-up approach to DP where solutions are built iteratively from smallest subproblems to larger ones, filling a table systematically. It typically uses loops instead of recursion and often has better space complexity than memoization as it avoids recursion stack overhead."
+      },
+      {
+        "qid": "Dynamic_Programming-e-006",
+        "question": "What is the classic Fibonacci sequence problem and how does DP improve its solution?",
+        "golden_answer": "Fibonacci sequence: F(n) = F(n-1) + F(n-2). Naive recursion has O(2^n) time complexity due to repeated calculations. DP reduces this to O(n) time and O(n) space with memoization, or O(n) time and O(1) space with optimized tabulation storing only last two values."
+      },
+      {
+        "qid": "Dynamic_Programming-e-007",
+        "question": "What is optimal substructure in dynamic programming?",
+        "golden_answer": "Optimal substructure means that an optimal solution to a problem contains optimal solutions to its subproblems. If you can solve a problem optimally by combining optimal solutions to smaller versions of the same problem, then it exhibits optimal substructure and can be solved using DP."
+      },
+      {
+        "qid": "Dynamic_Programming-e-008",
+        "question": "What are overlapping subproblems in dynamic programming?",
+        "golden_answer": "Overlapping subproblems occur when a recursive algorithm repeatedly solves the same smaller problems. This redundancy makes naive recursion inefficient. DP exploits this overlap by solving each subproblem once and storing its solution for future use, dramatically improving time complexity."
+      },
+      {
+        "qid": "Dynamic_Programming-e-009",
+        "question": "How does dynamic programming differ from divide and conquer?",
+        "golden_answer": "Both break problems into subproblems, but divide and conquer solves independent subproblems that don't overlap, while DP solves overlapping subproblems. Divide and conquer combines solutions directly, while DP stores subproblem solutions for reuse. Examples: merge sort (D&C) vs. longest common subsequence (DP)."
+      },
+      {
+        "qid": "Dynamic_Programming-e-010",
+        "question": "What is the time and space complexity improvement that DP typically provides?",
+        "golden_answer": "DP typically reduces exponential time complexity O(2^n) of naive recursion to polynomial time O(n²) or O(n³). Space complexity is usually O(n) or O(n²) for storing subproblem results. The exact improvement depends on the problem structure and number of overlapping subproblems."
+      },
+      {
+        "qid": "Dynamic_Programming-e-011",
+        "question": "What is a recurrence relation in dynamic programming?",
+        "golden_answer": "A recurrence relation defines how to compute a solution based on solutions to smaller subproblems. It's the mathematical foundation of DP algorithms, expressing the relationship between a problem and its subproblems. For example, dp[i] = dp[i-1] + dp[i-2] for Fibonacci."
+      },
+      {
+        "qid": "Dynamic_Programming-e-012",
+        "question": "What is the base case in dynamic programming?",
+        "golden_answer": "The base case is the simplest subproblem that can be solved directly without further recursion. It serves as the foundation for building up solutions to larger problems. Base cases prevent infinite recursion and provide starting values for the DP table."
+      },
+      {
+        "qid": "Dynamic_Programming-e-013",
+        "question": "Give an example of a simple DP problem other than Fibonacci.",
+        "golden_answer": "The climbing stairs problem: find number of ways to climb n stairs when you can take 1 or 2 steps at a time. Recurrence: ways[i] = ways[i-1] + ways[i-2]. Base cases: ways[1] = 1, ways[2] = 2. Time complexity O(n), space complexity O(1) with optimization."
+      },
+      {
+        "qid": "Dynamic_Programming-e-014",
+        "question": "What is state in dynamic programming?",
+        "golden_answer": "State represents the current situation or configuration in a DP problem, defined by parameters that uniquely identify a subproblem. States determine what information needs to be stored in the DP table. For example, in knapsack problem, state might be (item_index, remaining_capacity)."
+      },
+      {
+        "qid": "Dynamic_Programming-e-015",
+        "question": "What is transition in dynamic programming?",
+        "golden_answer": "Transition defines how to move from one state to another and how current state's value depends on previous states' values. It's the core logic that implements the recurrence relation, determining how subproblem solutions combine to solve larger problems."
+      },
+      {
+        "qid": "Dynamic_Programming-e-016",
+        "question": "When should you choose memoization over tabulation?",
+        "golden_answer": "Choose memoization when: the problem has a natural recursive structure, you don't need to solve all subproblems (sparse subproblem space), or when implementing top-down is more intuitive. Memoization is also better when the order of solving subproblems is complex to determine."
+      },
+      {
+        "qid": "Dynamic_Programming-e-017",
+        "question": "When should you choose tabulation over memoization?",
+        "golden_answer": "Choose tabulation when: you need optimal space complexity, want to avoid recursion overhead, all subproblems must be solved anyway, or when the solving order is straightforward. Tabulation is also preferable for very large inputs where recursion depth might cause stack overflow."
+      },
+      {
+        "qid": "Dynamic_Programming-e-018",
+        "question": "What is space optimization in dynamic programming?",
+        "golden_answer": "Space optimization reduces memory usage by recognizing that you often don't need to store all previously computed values, only a subset. For example, if dp[i] only depends on dp[i-1] and dp[i-2], you can use two variables instead of an entire array, reducing space from O(n) to O(1)."
+      },
+      {
+        "qid": "Dynamic_Programming-e-019",
+        "question": "What are the typical steps to solve a DP problem?",
+        "golden_answer": "Typical steps: 1) Identify if problem has optimal substructure and overlapping subproblems, 2) Define state and parameters, 3) Write recurrence relation, 4) Identify base cases, 5) Decide on top-down or bottom-up approach, 6) Implement and optimize space if possible."
+      },
+      {
+        "qid": "Dynamic_Programming-e-020",
+        "question": "What is the difference between DP and greedy algorithms?",
+        "golden_answer": "DP considers all possible solutions and chooses optimal by examining subproblem solutions, suitable when local optimal choices don't guarantee global optimum. Greedy makes locally optimal choices at each step, suitable when local optimum leads to global optimum. DP is more general but often less efficient than greedy when greedy works."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Dynamic_Programming-m-001",
+        "question": "Explain the 0/1 Knapsack problem and derive its DP solution with complexity analysis.",
+        "golden_answer": "0/1 Knapsack: maximize value of items in knapsack with weight capacity W, each item used at most once. State: dp[i][w] = maximum value using first i items with capacity w. Recurrence: dp[i][w] = max(dp[i-1][w], dp[i-1][w-weight[i]] + value[i]). Time O(nW), space O(nW), optimizable to O(W)."
+      },
+      {
+        "qid": "Dynamic_Programming-m-002",
+        "question": "Describe the Longest Common Subsequence (LCS) problem and its DP solution approach.",
+        "golden_answer": "LCS finds longest subsequence common to two sequences. State: dp[i][j] = length of LCS of first i characters of string1 and first j characters of string2. Recurrence: if chars match, dp[i][j] = dp[i-1][j-1] + 1, else dp[i][j] = max(dp[i-1][j], dp[i][j-1]). Time O(mn), space O(mn)."
+      },
+      {
+        "qid": "Dynamic_Programming-m-003",
+        "question": "Explain the concept of state compression in DP and provide an example of its application.",
+        "golden_answer": "State compression reduces memory by recognizing that current state only depends on a subset of previous states. Example: in 0/1 knapsack, since dp[i] only depends on dp[i-1], use 1D array instead of 2D, updating from right to left to avoid overwriting needed values. This reduces space from O(nW) to O(W)."
+      },
+      {
+        "qid": "Dynamic_Programming-m-004",
+        "question": "Analyze the Edit Distance problem and its DP formulation with complexity considerations.",
+        "golden_answer": "Edit Distance (Levenshtein): minimum operations (insert, delete, substitute) to transform string1 to string2. State: dp[i][j] = edit distance between first i chars of s1 and first j chars of s2. Recurrence considers three operations. Time O(mn), space O(mn), reducible to O(min(m,n))."
+      },
+      {
+        "qid": "Dynamic_Programming-m-005",
+        "question": "Discuss the Longest Increasing Subsequence (LIS) problem and compare different DP approaches.",
+        "golden_answer": "LIS finds longest subsequence where elements are in increasing order. Basic DP: O(n²) time, dp[i] = length of LIS ending at i. Optimized: O(n log n) using binary search with patience sorting concept, maintaining smallest ending element for each length. Space is O(n) for both approaches."
+      },
+      {
+        "qid": "Dynamic_Programming-m-006",
+        "question": "Explain how to reconstruct the actual solution from DP tables, not just the optimal value.",
+        "golden_answer": "Solution reconstruction requires tracking decisions made during DP computation. Methods include: 1) Store parent pointers/decisions in DP table, 2) Backtrack through table using same logic as forward pass, 3) Use auxiliary data structures to record choices. This typically doesn't affect time complexity but may increase space."
+      },
+      {
+        "qid": "Dynamic_Programming-m-007",
+        "question": "Describe the Matrix Chain Multiplication problem and its optimal substructure property.",
+        "golden_answer": "Matrix Chain Multiplication finds optimal parenthesization to minimize scalar multiplications. State: dp[i][j] = minimum multiplications for matrices i to j. Recurrence: dp[i][j] = min over k of (dp[i][k] + dp[k+1][j] + cost of multiplying results). Time O(n³), demonstrates interval DP pattern."
+      },
+      {
+        "qid": "Dynamic_Programming-m-008",
+        "question": "Analyze the trade-offs between recursive memoization and iterative tabulation in terms of performance and implementation.",
+        "golden_answer": "Memoization: easier to implement, natural recursion, but has function call overhead and may hit stack limits. Only computes needed subproblems. Tabulation: better constant factors, no recursion overhead, easier space optimization, but must solve all subproblems. Choice depends on problem characteristics and constraints."
+      },
+      {
+        "qid": "Dynamic_Programming-m-009",
+        "question": "Explain the concept of DP on trees and provide an example problem with its solution approach.",
+        "golden_answer": "DP on trees computes solutions for subtrees and combines them at parent nodes. Example: Maximum sum path in tree. State: for each node, track max sum including/excluding current node. Recurrence combines optimal solutions from children. Process in post-order traversal. Time O(n), space O(height)."
+      },
+      {
+        "qid": "Dynamic_Programming-m-010",
+        "question": "Discuss the Coin Change problem variants and their different DP formulations.",
+        "golden_answer": "Coin Change variants: 1) Minimum coins needed (classic): dp[amount] = min coins for amount, 2) Number of ways: dp[amount] = ways to make amount, 3) All possible combinations. Different recurrences and base cases for each variant. Time typically O(amount × coins), space O(amount)."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Dynamic_Programming-h-001",
+        "question": "Analyze the theoretical complexity bounds of DP algorithms and their relationship to optimal solution spaces.",
+        "golden_answer": "DP complexity depends on state space size and transition cost. For problems with polynomial state spaces, DP achieves polynomial time complexity. However, some DP problems remain NP-hard due to exponential state spaces. Pseudo-polynomial algorithms like knapsack have complexity dependent on numerical values, not just input size."
+      },
+      {
+        "qid": "Dynamic_Programming-h-002",
+        "question": "Explain advanced DP techniques like digit DP and provide analysis of its applications in combinatorial problems.",
+        "golden_answer": "Digit DP solves problems involving constraints on digit sequences by processing digits left-to-right. State includes current position, tight constraint (whether we're bounded by input number), and problem-specific parameters. Applications include counting numbers with specific digit properties, sum constraints, or pattern restrictions. Time complexity typically O(digits × states)."
+      },
+      {
+        "qid": "Dynamic_Programming-h-003",
+        "question": "Discuss the SOS (Sum Over Subsets) DP technique and its applications in competitive programming.",
+        "golden_answer": "SOS DP efficiently computes sums over all subsets of given sets using bit manipulation. Instead of O(3^n) naive approach, it achieves O(n × 2^n) by processing each bit position systematically. Applications include subset sum problems, bitwise operations over all submasks, and inclusion-exclusion principle optimizations."
+      },
+      {
+        "qid": "Dynamic_Programming-h-004",
+        "question": "Analyze the Convex Hull Trick optimization for DP problems with specific recurrence structures.",
+        "golden_answer": "Convex Hull Trick optimizes DP recurrences of form dp[i] = min over j of (dp[j] + cost(j,i)) where cost function has specific properties. It maintains convex hull of lines/functions, reducing complexity from O(n²) to O(n log n) or O(n). Requires cost function to satisfy quadrangle inequality or similar structural properties."
+      },
+      {
+        "qid": "Dynamic_Programming-h-005",
+        "question": "Explain the Divide and Conquer optimization for DP and its theoretical foundations.",
+        "golden_answer": "Divide and Conquer optimization applies when optimal transition points satisfy monotonicity property. It reduces O(kn²) DP to O(kn log n) by recursively finding optimal splits. Requires that if opt[i] is optimal transition for state i, then opt[i] ≤ opt[i+1]. Used in problems like optimal binary search trees."
+      },
+      {
+        "qid": "Dynamic_Programming-h-006",
+        "question": "Discuss the implementation and complexity of DP algorithms on DAGs (Directed Acyclic Graphs).",
+        "golden_answer": "DP on DAGs processes nodes in topological order, ensuring dependencies are resolved before computation. Applications include longest/shortest paths, counting paths, and optimization problems on DAGs. Time complexity is O(V + E) for basic problems, space is O(V). Critical path method and scheduling problems are common applications."
+      },
+      {
+        "qid": "Dynamic_Programming-h-007",
+        "question": "Analyze the memory access patterns and cache performance considerations in large-scale DP implementations.",
+        "golden_answer": "Large DP tables can cause cache misses due to non-local memory access patterns. Optimizations include: loop tiling for better locality, row-major vs column-major access patterns, blocking techniques for matrix-style DPs, and memory-conscious state ordering. Space-time trade-offs may favor recomputation over storage for better cache performance."
+      },
+      {
+        "qid": "Dynamic_Programming-h-008",
+        "question": "Explain the theoretical connections between DP and linear programming, including dual formulations.",
+        "golden_answer": "Many DP problems can be formulated as linear programs with exponentially many variables/constraints. The LP dual often corresponds to a flow or matching problem. Primal-dual methods can solve some DP problems efficiently. This connection provides theoretical insights and alternative algorithms for certain DP problems."
+      },
+      {
+        "qid": "Dynamic_Programming-h-009",
+        "question": "Discuss parallel and distributed algorithms for DP problems and their scalability limitations.",
+        "golden_answer": "Parallel DP faces challenges from data dependencies between states. Techniques include: wavefront methods for problems with diagonal dependencies, parallel prefix computations, and domain decomposition with communication. Scalability is limited by dependency structure - some problems are inherently sequential while others allow significant parallelization."
+      },
+      {
+        "qid": "Dynamic_Programming-h-010",
+        "question": "Analyze the approximation algorithms for DP problems when exact solutions are computationally infeasible.",
+        "golden_answer": "When exact DP is too expensive, approximation techniques include: state space reduction, approximate value functions, sampling-based methods (Monte Carlo), and machine learning approaches for value function approximation. Trade-offs involve solution quality vs computational efficiency, with theoretical approximation bounds when available."
+      }
+    ]
+  }

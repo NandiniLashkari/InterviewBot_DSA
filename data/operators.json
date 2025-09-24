@@ -1,0 +1,209 @@
+{
+    "topic": "Operators",
+    "easy": [
+      {
+        "qid": "Operators-e-001",
+        "question": "What are operators and how do they differ from operands in programming?",
+        "golden_answer": "Operators are symbols that perform operations on operands (variables, constants, expressions). Operators define the action (+, -, *, /), while operands are the data being operated upon. For example, in '5 + 3', '+' is the operator and '5', '3' are operands."
+      },
+      {
+        "qid": "Operators-e-002",
+        "question": "What are arithmetic operators and list the basic ones?",
+        "golden_answer": "Arithmetic operators perform mathematical calculations on numeric operands. Basic ones include: addition (+), subtraction (-), multiplication (*), division (/), modulus (%), and sometimes exponentiation (**). They follow mathematical precedence rules and can work with integers and floating-point numbers."
+      },
+      {
+        "qid": "Operators-e-003",
+        "question": "What is operator precedence and why is it important?",
+        "golden_answer": "Operator precedence determines the order in which operators are evaluated in expressions with multiple operators. Higher precedence operators are evaluated first. It's important to avoid ambiguity and ensure consistent expression evaluation. For example, multiplication has higher precedence than addition."
+      },
+      {
+        "qid": "Operators-e-004",
+        "question": "What are comparison operators and their typical return type?",
+        "golden_answer": "Comparison operators compare two operands and return boolean values (true/false). Common ones include: equal (==), not equal (!=), greater than (>), less than (<), greater than or equal (>=), less than or equal (<=). They're essential for conditional statements and loops."
+      },
+      {
+        "qid": "Operators-e-005",
+        "question": "What are logical operators and how do they work?",
+        "golden_answer": "Logical operators perform boolean logic operations on boolean operands. Primary ones are: AND (&&), OR (||), and NOT (!). AND returns true if both operands are true, OR returns true if at least one is true, NOT inverts the boolean value."
+      },
+      {
+        "qid": "Operators-e-006",
+        "question": "What is the assignment operator and its variants?",
+        "golden_answer": "The assignment operator (=) assigns a value to a variable. Compound assignment operators combine arithmetic with assignment: +=, -=, *=, /=, %=. For example, 'x += 5' is equivalent to 'x = x + 5', providing shorter syntax and potentially better performance."
+      },
+      {
+        "qid": "Operators-e-007",
+        "question": "What are increment and decrement operators?",
+        "golden_answer": "Increment (++) adds 1 to a variable, decrement (--) subtracts 1. They have prefix (++x, --x) and postfix (x++, x--) forms. Prefix returns the new value, postfix returns the original value before modification. They're commonly used in loops and counters."
+      },
+      {
+        "qid": "Operators-e-008",
+        "question": "What is operator associativity?",
+        "golden_answer": "Operator associativity determines evaluation order when operators have the same precedence. Left-associative operators are evaluated left-to-right (most arithmetic operators), right-associative are evaluated right-to-left (assignment, exponentiation). For example, 'a - b - c' is evaluated as '(a - b) - c'."
+      },
+      {
+        "qid": "Operators-e-009",
+        "question": "What are unary operators and provide examples?",
+        "golden_answer": "Unary operators work on single operands. Examples include: unary plus (+), unary minus (-), logical NOT (!), increment (++), decrement (--), and address-of (&). They typically have higher precedence than binary operators and are right-associative."
+      },
+      {
+        "qid": "Operators-e-010",
+        "question": "What are binary operators and provide examples?",
+        "golden_answer": "Binary operators work on two operands. Examples include arithmetic operators (+, -, *, /), comparison operators (==, !=, <, >), logical operators (&&, ||), and bitwise operators (&, |, ^). They form the majority of operators in most programming languages."
+      },
+      {
+        "qid": "Operators-e-011",
+        "question": "What is the difference between '==' and '=' operators?",
+        "golden_answer": "The '=' operator is assignment, which stores a value in a variable and returns that value. The '==' operator is equality comparison, which compares two values and returns a boolean result. Confusing these is a common programming error that can lead to bugs."
+      },
+      {
+        "qid": "Operators-e-012",
+        "question": "What is the modulus operator and its common use cases?",
+        "golden_answer": "The modulus operator (%) returns the remainder after integer division. Common use cases include: checking if a number is even/odd (n % 2), implementing circular arrays (index % size), hash table indexing, and periodic operations. It's undefined when the divisor is zero."
+      },
+      {
+        "qid": "Operators-e-013",
+        "question": "What are bitwise operators and list the basic ones?",
+        "golden_answer": "Bitwise operators perform operations on individual bits of integers. Basic ones include: AND (&), OR (|), XOR (^), NOT (~), left shift (<<), and right shift (>>). They're used for low-level programming, optimization, and bit manipulation algorithms."
+      },
+      {
+        "qid": "Operators-e-014",
+        "question": "What is the ternary operator and its syntax?",
+        "golden_answer": "The ternary operator (? :) is a conditional operator that takes three operands. Syntax: condition ? value_if_true : value_if_false. It provides a concise way to write simple if-else statements and returns one of two values based on a boolean condition."
+      },
+      {
+        "qid": "Operators-e-015",
+        "question": "What is operator overloading?",
+        "golden_answer": "Operator overloading allows defining custom behavior for operators when used with user-defined types (classes/objects). For example, defining '+' operator for a Vector class to add vectors component-wise. It enables more intuitive and readable code but should be used judiciously to maintain clarity."
+      },
+      {
+        "qid": "Operators-e-016",
+        "question": "What are member access operators?",
+        "golden_answer": "Member access operators access members of objects or structures. The dot operator (.) accesses members of objects, arrow operator (->) accesses members through pointers (in C/C++), and bracket operator ([]) accesses array elements or overloaded subscript operations."
+      },
+      {
+        "qid": "Operators-e-017",
+        "question": "What is short-circuit evaluation in logical operators?",
+        "golden_answer": "Short-circuit evaluation stops evaluating logical expressions as soon as the result is determined. In AND (&&), if first operand is false, the second isn't evaluated. In OR (||), if first operand is true, the second isn't evaluated. This improves performance and prevents errors."
+      },
+      {
+        "qid": "Operators-e-018",
+        "question": "What are type conversion operators?",
+        "golden_answer": "Type conversion operators convert values from one data type to another. Examples include cast operators in C++ (static_cast, dynamic_cast), implicit conversions (automatic), and explicit conversions. They handle situations where operations require compatible types or when precision changes are needed."
+      },
+      {
+        "qid": "Operators-e-019",
+        "question": "What is the difference between prefix and postfix increment operators?",
+        "golden_answer": "Prefix increment (++x) increments the variable first, then returns the new value. Postfix increment (x++) returns the current value first, then increments the variable. The difference matters in expressions: int y = ++x vs int y = x++ will assign different values to y."
+      },
+      {
+        "qid": "Operators-e-020",
+        "question": "What are the common operator categories in programming languages?",
+        "golden_answer": "Common categories include: arithmetic operators (+, -, *, /), comparison operators (==, !=, <, >), logical operators (&&, ||, !), bitwise operators (&, |, ^), assignment operators (=, +=, -=), and unary operators (++, --, !). Each category serves specific computational needs."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Operators-m-001",
+        "question": "Explain the performance implications of different division operators and their behavior with different numeric types.",
+        "golden_answer": "Integer division (/) truncates towards zero and is faster than floating-point division. Floating-point division handles precision and special values (NaN, infinity). Modulus operator performance varies with implementation - hardware division often computes both quotient and remainder simultaneously, making combined operations more efficient."
+      },
+      {
+        "qid": "Operators-m-002",
+        "question": "Analyze the bit manipulation applications of bitwise operators in algorithm optimization.",
+        "golden_answer": "Bitwise operators enable efficient algorithms: XOR for swapping without temp variables, AND with powers of 2 for modulus operations, OR for setting bits, bit shifting for fast multiplication/division by powers of 2. They're crucial in bloom filters, bit sets, and embedded systems programming."
+      },
+      {
+        "qid": "Operators-m-003",
+        "question": "Explain operator precedence tables and how they resolve complex expression evaluation.",
+        "golden_answer": "Operator precedence tables define evaluation order with higher precedence operators evaluated first. Same precedence uses associativity rules. Complex expressions are parsed using operator precedence parsing or shunting-yard algorithm, converting infix to postfix notation for unambiguous evaluation. Parentheses override precedence."
+      },
+      {
+        "qid": "Operators-m-004",
+        "question": "Discuss the implementation challenges and solutions for operator overloading in object-oriented languages.",
+        "golden_answer": "Challenges include maintaining semantic consistency, handling different parameter types, preserving commutativity where expected, and avoiding performance overhead. Solutions involve careful design of operator signatures, const-correctness, return type optimization, and following established conventions for intuitive behavior."
+      },
+      {
+        "qid": "Operators-m-005",
+        "question": "Explain the concept of operator chaining and its applications in modern programming languages.",
+        "golden_answer": "Operator chaining allows consecutive operations by returning objects that support further operations. Examples include method chaining (builder pattern), stream operations, and fluent interfaces. Implementation requires careful return type design and often uses references or builder objects to enable seamless chaining."
+      },
+      {
+        "qid": "Operators-m-006",
+        "question": "Analyze the trade-offs between using compound assignment operators versus explicit assignment operations.",
+        "golden_answer": "Compound assignment operators (+=, -=) offer conciseness and potential optimization opportunities as they avoid evaluating the left-hand side twice. However, explicit operations provide clarity and easier debugging. Compilers often optimize both forms similarly, making readability the primary consideration."
+      },
+      {
+        "qid": "Operators-m-007",
+        "question": "Explain how bitwise shift operators handle signed and unsigned integers differently.",
+        "golden_answer": "Left shift fills with zeros for both signed and unsigned. Right shift on unsigned integers fills with zeros (logical shift). Right shift on signed integers may use arithmetic shift (sign extension) or logical shift depending on implementation. Undefined behavior occurs when shifting by negative amounts or amounts >= bit width."
+      },
+      {
+        "qid": "Operators-m-008",
+        "question": "Discuss the role of operators in implementing custom data structures and their efficiency considerations.",
+        "golden_answer": "Custom operators enable intuitive data structure usage: [] for indexing, + for concatenation, == for comparison. Efficiency considerations include avoiding unnecessary copies, using references appropriately, implementing move semantics, and ensuring O(1) operations where expected by users."
+      },
+      {
+        "qid": "Operators-m-009",
+        "question": "Explain the concept of operator lifting and its applications in functional programming contexts.",
+        "golden_answer": "Operator lifting applies operators to wrapped values (like Maybe, Optional types) without unwrapping. It enables compositional programming by automatically handling null checks or error conditions. Implementation often uses functors or monadic patterns to preserve the wrapper type while applying operations."
+      },
+      {
+        "qid": "Operators-m-010",
+        "question": "Analyze the memory access patterns and cache performance implications of different operators.",
+        "golden_answer": "Arithmetic operators typically have good cache locality. Array indexing operators can cause cache misses with non-sequential access. Pointer dereference operators depend on memory layout. Bitwise operators are cache-friendly but may stress ALU. Understanding these patterns helps optimize hot code paths."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Operators-h-001",
+        "question": "Analyze the theoretical foundations of operator precedence parsing and its implementation in compiler design.",
+        "golden_answer": "Operator precedence parsing uses precedence relations between operators to build parse tables without full grammar analysis. Implementation involves precedence functions, shift-reduce decisions, and handling associativity. It's more efficient than general parsing but limited to operator grammars. Modern compilers often use recursive descent with precedence climbing for expression parsing."
+      },
+      {
+        "qid": "Operators-h-002",
+        "question": "Explain the advanced bit manipulation techniques using bitwise operators for algorithmic optimization in competitive programming.",
+        "golden_answer": "Advanced techniques include: subset enumeration using bit masks O(3^n), fast GCD using bit operations, population count optimizations, bit reversal algorithms, and Gray code generation. These techniques leverage processor-specific instructions (popcount, CLZ) and mathematical properties of binary representations for significant performance gains."
+      },
+      {
+        "qid": "Operators-h-003",
+        "question": "Discuss the implementation challenges of arbitrary precision arithmetic operators and their algorithmic complexity.",
+        "golden_answer": "Challenges include efficient representation (radix choice), carrying propagation in addition/subtraction, multiplication algorithms (Karatsuba O(n^1.585), FFT-based O(n log n)), and division complexity. Memory management, cache efficiency, and vectorization become critical for large numbers. Implementation must handle varying precisions dynamically."
+      },
+      {
+        "qid": "Operators-h-004",
+        "question": "Analyze the performance implications of operator overloading in template-heavy C++ code and optimization strategies.",
+        "golden_answer": "Template instantiation can create multiple operator copies, increasing binary size. Optimization strategies include: SFINAE for conditional overloading, perfect forwarding to avoid copies, expression templates for lazy evaluation, and CRTP for static polymorphism. Compiler optimizations like inlining and dead code elimination are crucial for performance."
+      },
+      {
+        "qid": "Operators-h-005",
+        "question": "Explain the mathematical foundations and implementation of floating-point operators considering IEEE 754 standards.",
+        "golden_answer": "IEEE 754 defines representation, rounding modes, and special values (NaN, infinity). Floating-point operations must handle normalization, denormal numbers, and exception conditions. Implementation challenges include maintaining precision, handling overflow/underflow, and ensuring cross-platform consistency. Hardware FPUs implement these in silicon for performance."
+      },
+      {
+        "qid": "Operators-h-006",
+        "question": "Discuss the design principles and performance considerations for implementing domain-specific operators in embedded domain-specific languages (DSLs).",
+        "golden_answer": "DSL operators must balance expressiveness with performance. Design principles include semantic consistency, composability, and intuitive precedence. Performance considerations involve compile-time evaluation, operator fusion, and efficient runtime representation. Implementation may use parsing combinators, AST transformation, or code generation techniques."
+      },
+      {
+        "qid": "Operators-h-007",
+        "question": "Analyze the complexity and implementation strategies for matrix operators in high-performance computing applications.",
+        "golden_answer": "Matrix operators require optimized algorithms: Strassen for multiplication O(n^2.807), block decomposition for cache efficiency, vectorization using SIMD instructions, and parallel implementation. Memory layout (row/column major), numerical stability, and precision considerations are critical. Libraries like BLAS provide optimized implementations."
+      },
+      {
+        "qid": "Operators-h-008",
+        "question": "Explain the theoretical limits and practical implementations of parallel operator evaluation in vector processing architectures.",
+        "golden_answer": "Theoretical limits are bounded by data dependencies, memory bandwidth, and synchronization overhead. SIMD architectures enable parallel element-wise operations. Implementation strategies include vectorization, data parallelism, and instruction-level parallelism. Challenges involve load balancing, memory alignment, and handling irregular data patterns efficiently."
+      },
+      {
+        "qid": "Operators-h-009",
+        "question": "Discuss the implementation of lazy evaluation and short-circuiting in functional programming language operators.",
+        "golden_answer": "Lazy evaluation delays computation until results are needed, implemented using thunks or suspension objects. Short-circuiting in logical operators requires careful sequencing. Implementation challenges include memory management of unevaluated expressions, avoiding space leaks, and maintaining referential transparency while optimizing performance."
+      },
+      {
+        "qid": "Operators-h-010",
+        "question": "Analyze the formal semantics and type system implications of operator overloading in strongly-typed functional languages.",
+        "golden_answer": "Formal semantics must preserve type safety and mathematical properties. Type systems use concepts like type classes (Haskell) or traits (Rust) to constrain overloading. Challenges include ensuring coherence, handling numeric coercions, and maintaining decidable type inference. Category theory provides mathematical foundations for operator laws and equivalences."
+      }
+    ]
+  }

@@ -1,0 +1,209 @@
+{
+    "topic": "Greedy Algorithm",
+    "easy": [
+      {
+        "qid": "greedy_algorithm-e-001",
+        "question": "What is a greedy algorithm and what is its main principle?",
+        "golden_answer": "A greedy algorithm makes locally optimal choices at each step, hoping to find a global optimum. It never reconsiders previous choices and builds up a solution piece by piece, always choosing the next piece that offers the most immediate benefit."
+      },
+      {
+        "qid": "greedy_algorithm-e-002",
+        "question": "What are the two key properties that a problem must have to be solved optimally by a greedy algorithm?",
+        "golden_answer": "The two properties are: 1) Greedy Choice Property - a globally optimal solution can be arrived at by making locally optimal choices, and 2) Optimal Substructure - an optimal solution contains optimal solutions to subproblems."
+      },
+      {
+        "qid": "greedy_algorithm-e-003",
+        "question": "Explain the coin change problem and how greedy approach works for standard denominations.",
+        "golden_answer": "Given coin denominations, make change for amount using minimum coins. Greedy approach: repeatedly pick largest denomination ≤ remaining amount. Works optimally for standard systems (1, 5, 10, 25) but may fail for arbitrary denominations like (1, 3, 4)."
+      },
+      {
+        "qid": "greedy_algorithm-e-004",
+        "question": "What is the Activity Selection Problem and how does greedy solve it?",
+        "golden_answer": "Select maximum number of non-overlapping activities given start and end times. Greedy approach: sort by end times, select first activity, then repeatedly select next activity that starts after current ends. This gives optimal solution."
+      },
+      {
+        "qid": "greedy_algorithm-e-005",
+        "question": "How does the greedy approach work for the Fractional Knapsack problem?",
+        "golden_answer": "Sort items by value-to-weight ratio in descending order. Greedily pick items with highest ratio first. If item doesn't fit completely, take fractional part. This gives optimal solution unlike 0/1 knapsack where greedy fails."
+      },
+      {
+        "qid": "greedy_algorithm-e-006",
+        "question": "What is Huffman coding and why is it considered a greedy algorithm?",
+        "golden_answer": "Huffman coding creates optimal prefix-free binary codes for characters based on frequencies. It's greedy because it repeatedly merges two least frequent nodes to build optimal tree. Always makes locally optimal choice of minimum frequency nodes."
+      },
+      {
+        "qid": "greedy_algorithm-e-007",
+        "question": "Explain the Job Scheduling problem and its greedy solution.",
+        "golden_answer": "Schedule jobs to maximize profit, each with deadline and profit. Greedy approach: sort jobs by profit (descending), assign each job to latest possible slot before deadline. Use boolean array to track occupied time slots."
+      },
+      {
+        "qid": "greedy_algorithm-e-008",
+        "question": "What is the difference between greedy and dynamic programming approaches?",
+        "golden_answer": "Greedy makes irrevocable local choices without considering future consequences, while DP explores all possibilities and chooses optimal. Greedy is faster O(n log n) typically, DP is more thorough but slower. Greedy works only when optimal substructure holds."
+      },
+      {
+        "qid": "greedy_algorithm-e-009",
+        "question": "How do you prove that a greedy algorithm produces optimal solution?",
+        "golden_answer": "Use exchange argument or cut-and-paste proof. Show that if optimal solution differs from greedy choice, you can exchange elements to get equally good solution matching greedy choice. Prove greedy choice is safe and remaining problem has optimal substructure."
+      },
+      {
+        "qid": "greedy_algorithm-e-010",
+        "question": "What is the Minimum Spanning Tree problem and which greedy algorithms solve it?",
+        "golden_answer": "Find minimum weight tree connecting all vertices in weighted graph. Two greedy algorithms: Kruskal's (sort edges, add minimum weight edge not creating cycle) and Prim's (grow tree from vertex, add minimum weight edge to tree)."
+      },
+      {
+        "qid": "greedy_algorithm-e-011",
+        "question": "Explain the Gas Station problem and its greedy solution.",
+        "golden_answer": "Determine if you can complete circular route visiting all gas stations with given gas and cost arrays. Greedy approach: track running balance, if goes negative, start from next station. Check if total gas ≥ total cost for feasibility."
+      },
+      {
+        "qid": "greedy_algorithm-e-012",
+        "question": "What is the Jump Game problem and how does greedy solve it?",
+        "golden_answer": "Given array where each element represents maximum jump length, determine if you can reach last index. Greedy tracks farthest reachable position. For each position within reach, update farthest possible. Return true if farthest reaches or exceeds last index."
+      },
+      {
+        "qid": "greedy_algorithm-e-013",
+        "question": "How does Dijkstra's algorithm use greedy approach for shortest paths?",
+        "golden_answer": "Dijkstra's greedily selects unvisited vertex with minimum distance from source, then updates distances to its neighbors. The greedy choice is always picking the closest unvisited vertex, which is proven to be safe for shortest path problems."
+      },
+      {
+        "qid": "greedy_algorithm-e-014",
+        "question": "What is the advantage and disadvantage of greedy algorithms?",
+        "golden_answer": "Advantages: simple to implement, efficient time complexity, low space requirements. Disadvantages: doesn't always give optimal solution, hard to prove correctness, may get stuck in local optima. Works only for problems with specific structural properties."
+      },
+      {
+        "qid": "greedy_algorithm-e-015",
+        "question": "Explain the Load Balancing problem and a greedy approach to solve it.",
+        "golden_answer": "Distribute jobs among machines to minimize maximum load. Greedy approach: sort jobs in descending order, assign each job to machine with currently minimum load. This gives 2-approximation to optimal solution."
+      },
+      {
+        "qid": "greedy_algorithm-e-016",
+        "question": "What is the Interval Scheduling Maximization problem?",
+        "golden_answer": "Select maximum number of non-overlapping intervals from given set. Greedy solution: sort intervals by end time, select first interval, then repeatedly select next interval that starts after current selected interval ends."
+      },
+      {
+        "qid": "greedy_algorithm-e-017",
+        "question": "How do you solve the Minimum Number of Platforms problem using greedy approach?",
+        "golden_answer": "Given train arrival and departure times, find minimum platforms needed. Sort arrivals and departures separately. Use two pointers: when arrival ≤ departure, increment platforms needed; when departure < arrival, decrement platforms. Track maximum."
+      },
+      {
+        "qid": "greedy_algorithm-e-018",
+        "question": "What is the Page Replacement problem and how does greedy solve it?",
+        "golden_answer": "Replace pages in memory when cache is full. Greedy approaches include: FIFO (replace oldest), LRU (replace least recently used), and optimal (replace page used farthest in future). Optimal is theoretical benchmark for comparison."
+      },
+      {
+        "qid": "greedy_algorithm-e-019",
+        "question": "Explain the Meeting Rooms problem and its greedy solution.",
+        "golden_answer": "Determine minimum meeting rooms needed for given intervals. Sort intervals by start time. Use min-heap to track room end times. For each meeting, if starts after earliest ending meeting, reuse room; otherwise allocate new room."
+      },
+      {
+        "qid": "greedy_algorithm-e-020",
+        "question": "What is the Candy Distribution problem and how does greedy solve it?",
+        "golden_answer": "Give candies to children based on ratings, ensuring higher-rated children get more than neighbors. Two-pass greedy: left-to-right ensures right neighbor condition, right-to-left ensures left neighbor condition. Take maximum from both passes for each position."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "greedy_algorithm-m-001",
+        "question": "Solve the Task Scheduler problem where tasks have cooldown periods between same task types.",
+        "golden_answer": "Use greedy with max-heap for task frequencies. Schedule highest frequency task, then others in cooldown period. If no tasks available, insert idle time. Continue until all tasks scheduled. Time complexity depends on cooldown period and task distribution."
+      },
+      {
+        "qid": "greedy_algorithm-m-002",
+        "question": "Implement Kruskal's algorithm for Minimum Spanning Tree with Union-Find optimization.",
+        "golden_answer": "Sort edges by weight. Use Union-Find to detect cycles efficiently. For each edge in sorted order, if endpoints in different components, add edge to MST and union components. Continue until MST has V-1 edges. Time complexity O(E log E)."
+      },
+      {
+        "qid": "greedy_algorithm-m-003",
+        "question": "Solve the Jump Game II problem to find minimum jumps to reach the end.",
+        "golden_answer": "Use greedy with two pointers: current reach and farthest reach. When current position exceeds current reach, increment jumps and update current reach to farthest reach. Track farthest reachable position while iterating."
+      },
+      {
+        "qid": "greedy_algorithm-m-004",
+        "question": "Design a greedy algorithm for the Interval Partitioning problem.",
+        "golden_answer": "Partition intervals into minimum number of groups such that no two intervals in same group overlap. Sort by start time. For each interval, assign to first available group (earliest end time ≤ current start). Create new group if none available."
+      },
+      {
+        "qid": "greedy_algorithm-m-005",
+        "question": "Solve the Stock Buy Sell problem for maximum profit with multiple transactions.",
+        "golden_answer": "Greedy approach: buy at every local minimum and sell at every local maximum. Equivalently, add profit for every day where price increases from previous day. This captures all profitable segments without missing opportunities."
+      },
+      {
+        "qid": "greedy_algorithm-m-006",
+        "question": "Implement Prim's algorithm for MST using priority queue optimization.",
+        "golden_answer": "Start with arbitrary vertex. Use min-heap to store edges from current MST to remaining vertices. Repeatedly extract minimum weight edge, add new vertex to MST, and update heap with new edges. Continue until all vertices included."
+      },
+      {
+        "qid": "greedy_algorithm-m-007",
+        "question": "Solve the Container With Most Water problem using greedy two-pointer approach.",
+        "golden_answer": "Use two pointers at ends of array. Calculate area with current pointers. Move pointer with smaller height inward (greedy choice). Continue until pointers meet. This ensures we don't miss optimal solution by always trying to increase the limiting factor."
+      },
+      {
+        "qid": "greedy_algorithm-m-008",
+        "question": "Design a greedy algorithm for the Minimum Cost to Connect Sticks problem.",
+        "golden_answer": "Use min-heap to store stick lengths. Repeatedly extract two minimum sticks, connect them (cost = sum), add result back to heap. Continue until one stick remains. Total cost is sum of all connection costs. Greedy choice minimizes each step's cost."
+      },
+      {
+        "qid": "greedy_algorithm-m-009",
+        "question": "Solve the Non-overlapping Intervals problem to find minimum removals.",
+        "golden_answer": "Sort intervals by end time. Track last selected interval's end. For each interval, if it starts before last end, increment removal count; otherwise, update last end. Greedy choice keeps interval with earliest end time."
+      },
+      {
+        "qid": "greedy_algorithm-m-010",
+        "question": "Implement a greedy solution for the Assign Cookies problem with size constraints.",
+        "golden_answer": "Sort both children's greed factors and cookie sizes. Use two pointers: try to satisfy each child with smallest sufficient cookie. If current cookie satisfies child, move both pointers; otherwise, move only cookie pointer to find larger cookie."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "greedy_algorithm-h-001",
+        "question": "Design a greedy algorithm for the Weighted Job Scheduling problem with maximum profit.",
+        "golden_answer": "Sort jobs by end time. Use binary search to find latest non-overlapping job for each job. Apply greedy choice: for each job, compare profit of including it (plus optimal solution of non-overlapping jobs) vs excluding it. Use DP table for memoization."
+      },
+      {
+        "qid": "greedy_algorithm-h-002",
+        "question": "Solve the Minimum Window Substring problem using greedy sliding window technique.",
+        "golden_answer": "Use sliding window with character frequency maps. Expand right until window contains all required characters. Then greedily shrink left while maintaining validity, updating minimum window. Continue until right pointer reaches end."
+      },
+      {
+        "qid": "greedy_algorithm-h-003",
+        "question": "Implement a greedy approximation algorithm for the Traveling Salesman Problem.",
+        "golden_answer": "Use nearest neighbor heuristic: start from arbitrary city, always go to nearest unvisited city. This gives 2-approximation for metric TSP. Alternatively, use MST-based approach: find MST, do DFS traversal, shortcut repeated vertices for better approximation."
+      },
+      {
+        "qid": "greedy_algorithm-h-004",
+        "question": "Design a greedy algorithm for the Scheduling with Deadlines and Penalties problem.",
+        "golden_answer": "Sort jobs by penalty-to-processing-time ratio (weighted shortest processing time first). This minimizes total weighted completion time. For unit-time jobs with deadlines, use different greedy: sort by penalty, assign to latest possible slots."
+      },
+      {
+        "qid": "greedy_algorithm-h-005",
+        "question": "Solve the Optimal Merge Pattern problem for minimum cost file merging.",
+        "golden_answer": "Use min-heap to store file sizes. Repeatedly merge two smallest files, adding merge cost to total. Insert merged file back to heap. Continue until one file remains. This is identical to optimal Huffman coding tree construction."
+      },
+      {
+        "qid": "greedy_algorithm-h-006",
+        "question": "Implement a greedy solution for the Minimum Number of Arrows to Burst Balloons problem.",
+        "golden_answer": "Sort balloons by end coordinate. Shoot arrow at end of first balloon. Count balloons this arrow bursts, then find next balloon not burst and repeat. Greedy choice: always shoot at rightmost position of current group."
+      },
+      {
+        "qid": "greedy_algorithm-h-007",
+        "question": "Design a greedy algorithm for the Video Stitching problem with minimum clips.",
+        "golden_answer": "Sort clips by start time. Use greedy: for current time position, select clip with maximum end time among all clips starting at or before current position. Continue until reaching target time or determining impossibility."
+      },
+      {
+        "qid": "greedy_algorithm-h-008",
+        "question": "Solve the Partition Labels problem to create maximum number of parts with unique characters.",
+        "golden_answer": "Find last occurrence of each character. For each character, extend current partition to include all characters seen so far until their last occurrences. When reaching end of current partition, create new partition. Greedy extends minimally."
+      },
+      {
+        "qid": "greedy_algorithm-h-009",
+        "question": "Implement a greedy algorithm for the Reconstruct Itinerary problem with lexicographical order.",
+        "golden_answer": "Build adjacency list with destinations sorted. Use Hierholzer's algorithm with greedy choice: always take lexicographically smallest available edge. Use DFS with backtracking, adding to result when no more edges available from current vertex."
+      },
+      {
+        "qid": "greedy_algorithm-h-010",
+        "question": "Design a greedy solution for the Minimum Cost to Make Array Increasing problem.",
+        "golden_answer": "For each position, greedily choose minimum value that makes array increasing. If current element is already ≥ previous minimum required value, keep it; otherwise, change to minimum required value. Track minimum required value and accumulate cost difference."
+      }
+    ]
+  }

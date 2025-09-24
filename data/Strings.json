@@ -1,0 +1,209 @@
+{
+    "topic": "Strings",
+    "easy": [
+      {
+        "qid": "Strings-e-001",
+        "question": "What is a string and how is it typically represented in memory?",
+        "golden_answer": "A string is a sequence of characters stored in contiguous memory locations. It can be represented as an array of characters with a null terminator (C-style) or as objects with length metadata (Java, Python). Strings are typically immutable in many modern languages."
+      },
+      {
+        "qid": "Strings-e-002",
+        "question": "What is the time complexity for accessing a character at a specific index in a string?",
+        "golden_answer": "The time complexity for accessing a character by index is O(1) - constant time. This is because strings are stored as arrays of characters in contiguous memory, allowing direct address calculation using base address and index."
+      },
+      {
+        "qid": "Strings-e-003",
+        "question": "What is the difference between mutable and immutable strings?",
+        "golden_answer": "Immutable strings cannot be modified after creation; any operation creates a new string object (Java String, Python str). Mutable strings can be modified in-place without creating new objects (C++ string, Java StringBuilder). Immutability provides thread safety but may cause performance overhead."
+      },
+      {
+        "qid": "Strings-e-004",
+        "question": "What is string concatenation and its time complexity?",
+        "golden_answer": "String concatenation joins two or more strings together. For immutable strings, it's O(n+m) where n and m are string lengths, creating a new string. For mutable strings with sufficient capacity, it can be O(m) where m is the appended string length."
+      },
+      {
+        "qid": "Strings-e-005",
+        "question": "What is the null terminator in C-style strings?",
+        "golden_answer": "The null terminator is a special character '\\0' (ASCII value 0) that marks the end of a string in C-style strings. It allows functions to determine string length by scanning until they find this terminator, making string length calculation O(n)."
+      },
+      {
+        "qid": "Strings-e-006",
+        "question": "What is string length and how is it calculated?",
+        "golden_answer": "String length is the number of characters in a string (excluding null terminator). In languages storing length metadata, it's O(1) operation. In C-style strings, it requires scanning until null terminator, making it O(n) operation."
+      },
+      {
+        "qid": "Strings-e-007",
+        "question": "What is character encoding and why is it important for strings?",
+        "golden_answer": "Character encoding defines how characters are represented as bytes in memory. Common encodings include ASCII (1 byte per character), UTF-8 (1-4 bytes), UTF-16 (2-4 bytes). It's crucial for handling international characters and determining memory requirements."
+      },
+      {
+        "qid": "Strings-e-008",
+        "question": "What is string comparison and its typical time complexity?",
+        "golden_answer": "String comparison checks if two strings are equal or determines their lexicographical order. Time complexity is O(min(n,m)) where n and m are string lengths, as comparison stops at first differing character or when shorter string ends."
+      },
+      {
+        "qid": "Strings-e-009",
+        "question": "What is a substring and how do you extract it?",
+        "golden_answer": "A substring is a contiguous sequence of characters within a string. It's extracted by specifying start and end indices. Time complexity is typically O(k) where k is substring length, as characters need to be copied to create the new substring."
+      },
+      {
+        "qid": "Strings-e-010",
+        "question": "What is string searching and name a basic algorithm?",
+        "golden_answer": "String searching finds occurrences of a pattern string within a text string. The naive algorithm compares pattern at each position in text, having O(nm) time complexity where n is text length and m is pattern length."
+      },
+      {
+        "qid": "Strings-e-011",
+        "question": "What is string reversal and its time complexity?",
+        "golden_answer": "String reversal creates a string with characters in opposite order. For mutable strings, it uses two-pointer technique swapping characters, taking O(n) time and O(1) space. For immutable strings, it creates new string, taking O(n) time and space."
+      },
+      {
+        "qid": "Strings-e-012",
+        "question": "What is case conversion in strings?",
+        "golden_answer": "Case conversion changes string characters between uppercase and lowercase. It typically involves iterating through characters and applying ASCII offset (+32 for upper to lower, -32 for lower to upper) or using built-in functions. Time complexity is O(n)."
+      },
+      {
+        "qid": "Strings-e-013",
+        "question": "What is string splitting and its use cases?",
+        "golden_answer": "String splitting divides a string into multiple parts based on delimiter characters or patterns. Common use cases include parsing CSV data, tokenizing sentences, and processing formatted input. Result is typically an array of substring tokens."
+      },
+      {
+        "qid": "Strings-e-014",
+        "question": "What is string trimming?",
+        "golden_answer": "String trimming removes whitespace characters (spaces, tabs, newlines) from the beginning and/or end of a string. It's commonly used for cleaning user input and data preprocessing. Time complexity is O(n) in worst case when entire string is whitespace."
+      },
+      {
+        "qid": "Strings-e-015",
+        "question": "What is string interpolation?",
+        "golden_answer": "String interpolation embeds expressions or variables directly within string literals, automatically converting them to string representation. Examples include Python f-strings, JavaScript template literals, and C# string interpolation. It provides readable alternative to concatenation."
+      },
+      {
+        "qid": "Strings-e-016",
+        "question": "What is the difference between string and character array?",
+        "golden_answer": "Strings are typically higher-level abstractions with built-in methods and often immutability. Character arrays are lower-level, always mutable, and lack string-specific operations. Strings may have metadata like length, while character arrays rely on null terminators or separate length tracking."
+      },
+      {
+        "qid": "Strings-e-017",
+        "question": "What is string hashing and its basic concept?",
+        "golden_answer": "String hashing converts a string into a fixed-size hash value using mathematical functions. It enables fast string comparison O(1) after O(n) preprocessing and is used in hash tables, string matching, and duplicate detection. Hash collisions are possible."
+      },
+      {
+        "qid": "Strings-e-018",
+        "question": "What is a palindrome in the context of strings?",
+        "golden_answer": "A palindrome is a string that reads the same forwards and backwards, like 'racecar' or 'level'. Checking if a string is a palindrome involves comparing characters from both ends moving inward, with O(n) time complexity."
+      },
+      {
+        "qid": "Strings-e-019",
+        "question": "What is string parsing?",
+        "golden_answer": "String parsing analyzes and converts string data into structured format or extracts meaningful information. Examples include parsing JSON, XML, mathematical expressions, or command-line arguments. It often involves tokenization, syntax analysis, and data type conversion."
+      },
+      {
+        "qid": "Strings-e-020",
+        "question": "What is string validation?",
+        "golden_answer": "String validation checks if a string meets specific criteria or format requirements. Common validations include email format, phone numbers, dates, or custom patterns using regular expressions. It ensures data integrity and prevents invalid input processing."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Strings-m-001",
+        "question": "Explain the KMP (Knuth-Morris-Pratt) algorithm and its time complexity advantage over naive string matching.",
+        "golden_answer": "KMP algorithm uses a failure function (LPS array) to avoid redundant character comparisons when a mismatch occurs. Instead of starting over, it jumps to the next possible match position. Time complexity is O(n+m) compared to naive O(nm), achieved by preprocessing pattern in O(m) time."
+      },
+      {
+        "qid": "Strings-m-002",
+        "question": "What is the Rolling Hash technique and how is it used in string matching?",
+        "golden_answer": "Rolling Hash efficiently computes hash values for all substrings of fixed length by updating the hash incrementally. It removes the leftmost character and adds the rightmost character using mathematical operations. This enables O(n) average time complexity for pattern matching in Rabin-Karp algorithm."
+      },
+      {
+        "qid": "Strings-m-003",
+        "question": "Explain string interning and its memory optimization benefits.",
+        "golden_answer": "String interning stores only one copy of each distinct string value in a pool, with multiple references pointing to the same memory location. It reduces memory usage for frequently used strings and enables O(1) string comparison by reference. Trade-off includes lookup overhead and pool management."
+      },
+      {
+        "qid": "Strings-m-004",
+        "question": "What are the trade-offs between StringBuilder and regular string concatenation?",
+        "golden_answer": "StringBuilder uses a resizable buffer to avoid creating multiple intermediate string objects during concatenation. Regular string concatenation in immutable languages creates O(n) new objects with O(n²) total time complexity. StringBuilder achieves O(n) amortized time with dynamic resizing."
+      },
+      {
+        "qid": "Strings-m-005",
+        "question": "Explain the concept of suffix arrays and their applications in string processing.",
+        "golden_answer": "A suffix array contains starting positions of all suffixes of a string sorted in lexicographical order. It enables efficient pattern matching O(m log n), longest common prefix queries, and finding repeated substrings. Space complexity is O(n), more memory-efficient than suffix trees."
+      },
+      {
+        "qid": "Strings-m-006",
+        "question": "What is the difference between regular expressions and finite automata in string matching?",
+        "golden_answer": "Regular expressions provide high-level pattern specification language with operators like *, +, ?. Finite automata are lower-level state machines that process strings character by character. Regular expressions are compiled into finite automata for execution, providing the abstraction-performance bridge."
+      },
+      {
+        "qid": "Strings-m-007",
+        "question": "Explain the Boyer-Moore algorithm and its skip character optimization.",
+        "golden_answer": "Boyer-Moore algorithm matches pattern from right to left and uses bad character and good suffix rules to skip characters. Bad character rule skips positions based on rightmost occurrence of mismatched character in pattern. Average case is O(n/m), better than linear time."
+      },
+      {
+        "qid": "Strings-m-008",
+        "question": "What is edit distance and explain the dynamic programming approach to calculate it?",
+        "golden_answer": "Edit distance (Levenshtein distance) measures minimum operations (insert, delete, substitute) to transform one string into another. DP approach uses 2D table where dp[i][j] represents distance between first i characters of string1 and first j characters of string2. Time complexity O(nm)."
+      },
+      {
+        "qid": "Strings-m-009",
+        "question": "Explain string compression techniques and their effectiveness trade-offs.",
+        "golden_answer": "String compression reduces storage by exploiting redundancy. Run-length encoding works well for repeated characters. LZ77/LZ78 use dictionary-based compression. Huffman coding assigns variable-length codes based on frequency. Trade-offs include compression ratio vs. speed and memory usage vs. decompression time."
+      },
+      {
+        "qid": "Strings-m-010",
+        "question": "What are trie data structures and how do they optimize string operations?",
+        "golden_answer": "Tries (prefix trees) store strings by sharing common prefixes in tree structure. Each path from root represents a string, with characters on edges. They provide O(m) search time regardless of stored strings count, efficient for autocomplete, spell checkers, and IP routing tables."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Strings-h-001",
+        "question": "Analyze the space-time complexity trade-offs between suffix trees and suffix arrays for large-scale string processing applications.",
+        "golden_answer": "Suffix trees provide O(m) pattern matching but require O(n) space with high constants (20-50 bytes per character). Suffix arrays use O(n) integers with O(m log n) search time. Enhanced suffix arrays with LCP arrays bridge the gap, providing most suffix tree functionality with suffix array space efficiency."
+      },
+      {
+        "qid": "Strings-h-002",
+        "question": "Explain the theoretical foundations and practical implementation challenges of approximate string matching algorithms.",
+        "golden_answer": "Approximate matching allows k mismatches/edits using techniques like Myers' bit-parallel algorithm O(nm/w), suffix filtering, or q-gram indexing. Challenges include handling different error models (Hamming vs. edit distance), optimizing for specific k values, and balancing preprocessing costs with query performance in large datasets."
+      },
+      {
+        "qid": "Strings-h-003",
+        "question": "Discuss the algorithmic complexity of finding all maximal palindromic substrings and compare different approaches.",
+        "golden_answer": "Manacher's algorithm finds all palindromes in O(n) time using symmetry properties and avoiding redundant checks. Naive approach is O(n³). Expand-around-centers is O(n²). Suffix array approaches are O(n log n). Manacher's is optimal but requires careful implementation of boundary conditions and odd/even length handling."
+      },
+      {
+        "qid": "Strings-h-004",
+        "question": "Explain the construction and applications of generalized suffix trees for multiple string processing.",
+        "golden_answer": "Generalized suffix trees combine suffixes from multiple strings with unique terminators, enabling simultaneous processing. Construction uses Ukkonen's online algorithm with path compression. Applications include longest common substring, string similarity, and phylogenetic analysis. Space overhead increases linearly with string count."
+      },
+      {
+        "qid": "Strings-h-005",
+        "question": "Analyze the performance implications of different Unicode normalization forms in string comparison and storage.",
+        "golden_answer": "Unicode normalization (NFD, NFC, NFKD, NFKC) affects string length, comparison semantics, and storage requirements. Composed forms (NFC) are shorter but may complicate processing. Decomposed forms (NFD) simplify algorithms but increase size. Choice impacts database indexing, text search, and cross-platform compatibility."
+      },
+      {
+        "qid": "Strings-h-006",
+        "question": "Explain the theoretical limits and practical considerations for parallel string matching algorithms.",
+        "golden_answer": "Parallel string matching faces challenges from sequential nature of text processing and pattern dependencies. Approaches include domain decomposition with overlap handling, parallel suffix array construction, and work-stealing for irregular workloads. Speedup is limited by Amdahl's law and communication overhead, especially for small patterns."
+      },
+      {
+        "qid": "Strings-h-007",
+        "question": "Discuss the algorithmic approaches for finding longest repeated substring and their optimization strategies.",
+        "golden_answer": "Approaches include suffix array with LCP array O(n log n), rolling hash with binary search O(n log n), or suffix tree traversal O(n). Optimizations involve space-efficient LCP computation, early termination strategies, and handling memory constraints for large strings through external algorithms or streaming approaches."
+      },
+      {
+        "qid": "Strings-h-008",
+        "question": "Explain the implementation challenges and solutions for thread-safe string operations in concurrent environments.",
+        "golden_answer": "Challenges include race conditions during mutable string operations, safe iterator invalidation, and maintaining consistency during resize operations. Solutions involve immutable string designs, copy-on-write mechanisms, fine-grained locking strategies, or lock-free algorithms using atomic operations and memory ordering constraints."
+      },
+      {
+        "qid": "Strings-h-009",
+        "question": "Analyze the memory management strategies for handling very large strings and streaming string processing.",
+        "golden_answer": "Strategies include memory-mapped files for disk-resident strings, segmented string representations to avoid large contiguous allocations, lazy loading for sparse access patterns, and streaming algorithms that process strings in chunks without loading entirely into memory. Trade-offs involve access patterns vs. memory pressure."
+      },
+      {
+        "qid": "Strings-h-010",
+        "question": "Explain the advanced pattern matching algorithms for handling wildcard and regular expression patterns efficiently.",
+        "golden_answer": "Advanced algorithms include Thompson's NFA construction for regex O(nm), compiled DFA approaches trading space for speed, and specialized algorithms like Aho-Corasick for multiple pattern matching O(n + m + z). Optimizations involve state minimization, character class handling, and backtracking elimination in complex patterns."
+      }
+    ]
+  }

@@ -1,0 +1,209 @@
+{
+    "topic": "Binary Search Tree",
+    "easy": [
+      {
+        "qid": "Binary_Search_Tree-e-001",
+        "question": "What is a Binary Search Tree and what property must it satisfy?",
+        "golden_answer": "A Binary Search Tree (BST) is a binary tree where for each node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater than the node's value. This property must hold recursively for all nodes in the tree."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-002",
+        "question": "What is the time complexity for searching an element in a balanced BST?",
+        "golden_answer": "The time complexity for searching in a balanced BST is O(log n) where n is the number of nodes. This is because the search operation eliminates half of the remaining nodes at each level, similar to binary search in a sorted array."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-003",
+        "question": "What is the worst-case time complexity for search operations in a BST?",
+        "golden_answer": "The worst-case time complexity is O(n) when the BST becomes skewed (essentially a linked list). This occurs when elements are inserted in sorted order, creating a degenerate tree with only left or right children."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-004",
+        "question": "What are the three main types of tree traversals for a BST?",
+        "golden_answer": "The three main traversals are: 1) Inorder (Left-Root-Right) which gives sorted order for BST, 2) Preorder (Root-Left-Right) useful for creating tree copies, and 3) Postorder (Left-Right-Root) useful for deletion operations. Each has O(n) time complexity."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-005",
+        "question": "How do you insert a new element into a BST?",
+        "golden_answer": "To insert a new element, start from root and compare the value with current node. Go left if smaller, right if larger, and continue until finding an empty spot (null). Create a new node there. Time complexity is O(h) where h is tree height."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-006",
+        "question": "What is the inorder traversal property of a BST?",
+        "golden_answer": "Inorder traversal of a BST visits nodes in ascending sorted order. This property is unique to BSTs and is often used to verify if a binary tree is a valid BST or to retrieve elements in sorted sequence."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-007",
+        "question": "What is the space complexity of a BST?",
+        "golden_answer": "The space complexity of a BST is O(n) where n is the number of nodes, as each node requires storage. Additional space for operations like recursion adds O(h) where h is the height, due to call stack usage."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-008",
+        "question": "How do you find the minimum element in a BST?",
+        "golden_answer": "To find the minimum element, start from root and keep going left until you reach a node with no left child. That node contains the minimum value. Time complexity is O(h) where h is the height of the tree."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-009",
+        "question": "How do you find the maximum element in a BST?",
+        "golden_answer": "To find the maximum element, start from root and keep going right until you reach a node with no right child. That node contains the maximum value. Time complexity is O(h) where h is the height of the tree."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-010",
+        "question": "What is the difference between a BST and a regular binary tree?",
+        "golden_answer": "A BST follows the ordering property where left subtree values are smaller and right subtree values are larger than the root. A regular binary tree has no such ordering constraint. This property makes BSTs efficient for search, insert, and delete operations."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-011",
+        "question": "What happens when you try to insert a duplicate value in a BST?",
+        "golden_answer": "Handling duplicates depends on implementation. Common approaches include: 1) Reject insertion, 2) Allow duplicates in left or right subtree consistently, or 3) Maintain count in nodes. The choice affects the BST property and operation complexities."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-012",
+        "question": "What is the height of a BST and how does it affect performance?",
+        "golden_answer": "Height is the longest path from root to leaf. In balanced BSTs, height is O(log n), giving optimal performance. In skewed BSTs, height can be O(n), degrading performance to linear time. Height directly impacts all major operation complexities."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-013",
+        "question": "How do you check if a binary tree is a valid BST?",
+        "golden_answer": "Check by ensuring each node's value is within valid range based on ancestors. Pass minimum and maximum bounds down during recursion, updating bounds based on left/right traversal. Alternatively, verify inorder traversal produces sorted sequence."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-014",
+        "question": "What is a leaf node in a BST?",
+        "golden_answer": "A leaf node is a node with no children (both left and right pointers are null). Leaf nodes are the endpoints of the tree structure and are important in deletion operations and tree balancing algorithms."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-015",
+        "question": "What is the successor of a node in a BST?",
+        "golden_answer": "The successor is the node with the smallest value greater than the current node's value. If the node has a right subtree, successor is the leftmost node in that subtree. Otherwise, it's the first ancestor where the node is in the left subtree."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-016",
+        "question": "What is the predecessor of a node in a BST?",
+        "golden_answer": "The predecessor is the node with the largest value smaller than the current node's value. If the node has a left subtree, predecessor is the rightmost node in that subtree. Otherwise, it's the first ancestor where the node is in the right subtree."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-017",
+        "question": "Can a BST contain duplicate values?",
+        "golden_answer": "It depends on the implementation. Some BSTs allow duplicates by consistently placing them in left or right subtrees, others reject duplicates, and some use counters in nodes. The approach chosen affects search and deletion logic."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-018",
+        "question": "What is the root node of a BST?",
+        "golden_answer": "The root node is the topmost node in the BST that has no parent. All other nodes are descendants of the root. The root serves as the entry point for all tree operations and its value determines the overall tree structure."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-019",
+        "question": "What advantage does a BST provide over unsorted arrays for search operations?",
+        "golden_answer": "BST provides O(log n) average search time compared to O(n) linear search in unsorted arrays. BST also maintains sorted order for range queries and supports efficient insertion/deletion while preserving searchability."
+      },
+      {
+        "qid": "Binary_Search_Tree-e-020",
+        "question": "What is the difference between iterative and recursive approaches for BST operations?",
+        "golden_answer": "Recursive approaches are more intuitive and cleaner but use O(h) extra space for call stack. Iterative approaches use O(1) extra space but require explicit stack management for some operations. Both have the same time complexity for basic operations."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Binary_Search_Tree-m-001",
+        "question": "Explain the deletion algorithm for a node with two children in a BST and its complexity analysis.",
+        "golden_answer": "For deleting a node with two children, replace the node's value with its successor (or predecessor), then delete the successor node. The successor is found by going right once then left until leaf. This maintains BST property. Time complexity is O(h) and space complexity is O(h) for recursion."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-002",
+        "question": "Compare the advantages and disadvantages of BSTs versus hash tables for data storage and retrieval.",
+        "golden_answer": "BSTs maintain sorted order and support range queries, predecessor/successor operations efficiently. Hash tables provide O(1) average access but no ordering. BSTs have O(log n) operations in balanced case, O(n) worst case. Hash tables have O(1) average, O(n) worst case with poor hash function."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-003",
+        "question": "Explain how to construct a BST from a sorted array and analyze its time complexity.",
+        "golden_answer": "To build balanced BST from sorted array, recursively select middle element as root and construct left/right subtrees from left/right halves. This ensures O(log n) height. Time complexity is O(n) as each element is processed once, space complexity is O(log n) for recursion."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-004",
+        "question": "Discuss the concept of BST balancing and why it's important for maintaining optimal performance.",
+        "golden_answer": "Balancing ensures height remains O(log n) by keeping left and right subtrees roughly equal in size. Without balancing, sequential insertions create skewed trees with O(n) height, degrading all operations to linear time. Self-balancing trees like AVL and Red-Black maintain balance automatically."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-005",
+        "question": "Explain how to find the kth smallest element in a BST and optimize the approach.",
+        "golden_answer": "Perform inorder traversal and count nodes until reaching k. Time complexity is O(k + log n). Optimization: augment nodes with subtree size, then navigate directly to kth element in O(log n) time by comparing k with left subtree size at each node."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-006",
+        "question": "Describe the algorithm for finding the Lowest Common Ancestor (LCA) in a BST.",
+        "golden_answer": "Start from root and compare both node values with current node. If both are smaller, go left; if both are larger, go right; otherwise current node is LCA. Time complexity is O(h), space complexity is O(1) iteratively or O(h) recursively."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-007",
+        "question": "Explain how to perform range queries in a BST and analyze the complexity.",
+        "golden_answer": "For range [low, high], traverse tree and include nodes within range. Prune subtrees where all values are outside range. Start inorder traversal from node ≥ low, stop when node > high. Time complexity is O(log n + k) where k is number of results."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-008",
+        "question": "Discuss the trade-offs between different BST deletion strategies for handling nodes with two children.",
+        "golden_answer": "Using successor keeps inorder sequence intact but may create right-heavy subtrees. Using predecessor has similar effects but creates left-heavy subtrees. Alternating between successor/predecessor helps maintain balance. The choice affects tree shape and subsequent operation performance."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-009",
+        "question": "Explain how to convert a BST to a doubly linked list in-place and analyze the algorithm.",
+        "golden_answer": "Use inorder traversal to visit nodes in sorted order. Modify left pointers to point to predecessor and right pointers to successor, creating a circular doubly linked list. Time complexity is O(n), space complexity is O(h) for recursion stack."
+      },
+      {
+        "qid": "Binary_Search_Tree-m-010",
+        "question": "Describe the algorithm for merging two BSTs and analyze different approaches.",
+        "golden_answer": "Approaches include: 1) Convert both to sorted arrays, merge arrays, build BST - O(m+n), 2) Insert all nodes from one BST into another - O(m log n), 3) Use stack-based inorder traversal to merge in O(m+n) time with O(h1+h2) space."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Binary_Search_Tree-h-001",
+        "question": "Analyze the amortized complexity of self-balancing BST operations and compare different balancing strategies.",
+        "golden_answer": "AVL trees guarantee O(log n) worst-case with strict balance factor ±1, requiring more rotations. Red-Black trees allow looser balance with O(log n) amortized complexity and fewer rotations, better for insertion-heavy workloads. Splay trees have O(log n) amortized complexity with locality advantages but no worst-case guarantees."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-002",
+        "question": "Explain the theoretical foundations and implementation of persistent BSTs with path copying.",
+        "golden_answer": "Persistent BSTs maintain all previous versions by creating new nodes along the path from root to modified node, sharing unchanged subtrees. Each operation creates O(log n) new nodes while preserving old versions. Space complexity is O(n + m log n) for m operations, enabling functional programming and version control applications."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-003",
+        "question": "Discuss the complexity analysis and implementation challenges of threaded binary search trees.",
+        "golden_answer": "Threaded BSTs use null pointers to store inorder predecessor/successor links, enabling O(1) traversal without stack. Implementation challenges include maintaining thread consistency during insertions/deletions, handling thread types (left/right), and preserving BST property. Space saving is minimal but traversal becomes more efficient."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-004",
+        "question": "Analyze the performance implications and implementation strategies for concurrent BST operations.",
+        "golden_answer": "Concurrent BSTs face challenges from read-write conflicts and structural modifications. Strategies include fine-grained locking (lock per node), lock-free algorithms using CAS operations, and copy-on-write approaches. Performance depends on contention patterns, with lock-free providing better scalability but implementation complexity."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-005",
+        "question": "Explain the algorithm and complexity analysis for finding the diameter of a BST efficiently.",
+        "golden_answer": "Diameter is the longest path between any two nodes. For each node, calculate max depth of left and right subtrees, then diameter is max of: left diameter, right diameter, or left_depth + right_depth + 1. Single traversal with O(n) time complexity, O(h) space for recursion."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-006",
+        "question": "Discuss the mathematical properties and algorithmic applications of BST random insertion sequences.",
+        "golden_answer": "Random insertion sequences produce expected height O(log n) due to probabilistic balance. The expected number of comparisons follows harmonic series properties. This analysis underlies randomized BST algorithms like treaps, which use random priorities to maintain probabilistic balance without explicit balancing operations."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-007",
+        "question": "Analyze the space-time trade-offs in augmented BST data structures for specialized queries.",
+        "golden_answer": "Augmented BSTs store additional information in nodes (subtree sizes, ranges, etc.) to support specialized queries efficiently. Trade-offs include increased space per node, maintenance overhead during updates, but improved query performance. Examples include order statistics trees, interval trees, and segment trees built on BST foundations."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-008",
+        "question": "Explain the theoretical limits and practical considerations for external memory BST implementations.",
+        "golden_answer": "External memory BSTs minimize disk I/O by using B-trees with higher branching factors, reducing tree height. Theoretical limits involve block size optimization, cache-oblivious algorithms, and I/O complexity analysis. Practical considerations include page replacement strategies, buffering, and handling variable-length keys efficiently."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-009",
+        "question": "Discuss the algorithmic complexity of BST isomorphism detection and structural comparison algorithms.",
+        "golden_answer": "BST isomorphism checks if two trees have identical structure and values. Algorithms include synchronized traversal O(n), canonical form comparison using serialization O(n), and hash-based structural fingerprinting. Tree edit distance algorithms provide similarity measures with O(n²) dynamic programming complexity."
+      },
+      {
+        "qid": "Binary_Search_Tree-h-010",
+        "question": "Analyze the performance characteristics and implementation strategies for dynamic BST rebalancing algorithms.",
+        "golden_answer": "Dynamic rebalancing strategies include global rebalancing (rebuild entire tree O(n)), local rebalancing (rotations O(log n)), and periodic rebalancing based on operation count or imbalance metrics. Trade-offs involve rebalancing frequency vs. operation overhead, with adaptive strategies adjusting based on access patterns and tree degradation metrics."
+      }
+    ]
+  }

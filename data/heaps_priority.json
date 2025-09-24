@@ -1,0 +1,209 @@
+{
+    "topic": "Heaps_Priority_Queue",
+    "easy": [
+      {
+        "qid": "Heaps_Priority_Queue-e-001",
+        "question": "What is a heap and what are the two main types of heaps?",
+        "golden_answer": "A heap is a complete binary tree that satisfies the heap property. The two main types are max heap (parent ≥ children) and min heap (parent ≤ children). Heaps are commonly used to implement priority queues."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-002",
+        "question": "What is the heap property and why is it important?",
+        "golden_answer": "The heap property ensures that in a max heap, every parent node is greater than or equal to its children, and in a min heap, every parent is less than or equal to its children. This property allows efficient extraction of the maximum/minimum element."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-003",
+        "question": "How is a heap typically represented in memory?",
+        "golden_answer": "Heaps are typically represented as arrays where for element at index i, the left child is at 2i+1, right child at 2i+2, and parent at (i-1)/2. This array representation is space-efficient and provides easy navigation."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-004",
+        "question": "What are the time complexities of basic heap operations?",
+        "golden_answer": "Insert (heapify-up): O(log n), Extract max/min: O(log n), Peek max/min: O(1), Build heap from array: O(n). The logarithmic operations are due to the tree height being log n."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-005",
+        "question": "What is a priority queue and how does it differ from a regular queue?",
+        "golden_answer": "A priority queue is an abstract data type where elements are served based on priority rather than insertion order. Unlike FIFO queues, priority queues serve the highest (or lowest) priority element first, commonly implemented using heaps."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-006",
+        "question": "Explain the heapify-up (bubble-up) operation.",
+        "golden_answer": "Heapify-up restores heap property after insertion by comparing the new element with its parent and swapping if necessary, then repeating up the tree. It continues until heap property is satisfied or root is reached."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-007",
+        "question": "Explain the heapify-down (bubble-down) operation.",
+        "golden_answer": "Heapify-down restores heap property after root removal by comparing the root with its children, swapping with the larger child (max heap) or smaller child (min heap), and repeating down the tree until heap property is restored."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-008",
+        "question": "What is a complete binary tree and why do heaps require this property?",
+        "golden_answer": "A complete binary tree has all levels filled except possibly the last, which is filled left to right. Heaps require this property to maintain balanced height (O(log n)) and enable efficient array representation without gaps."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-009",
+        "question": "How do you find the parent and children indices in an array-based heap?",
+        "golden_answer": "For 0-based indexing: parent of node i is at (i-1)/2, left child at 2i+1, right child at 2i+2. For 1-based indexing: parent at i/2, left child at 2i, right child at 2i+1."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-010",
+        "question": "What happens when you try to extract from an empty heap?",
+        "golden_answer": "Attempting to extract from an empty heap should throw an exception or return an error indicator, as there are no elements to return. Proper implementations include bounds checking to prevent this error condition."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-011",
+        "question": "What is the difference between a heap and a binary search tree?",
+        "golden_answer": "Heaps maintain heap property (parent-child ordering) and are complete trees, while BSTs maintain search property (left < parent < right) and may be unbalanced. Heaps optimize for min/max retrieval, BSTs for general searching and ordering."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-012",
+        "question": "Can you perform in-order traversal on a heap to get sorted elements?",
+        "golden_answer": "No, in-order traversal of a heap does not produce sorted elements because heaps don't maintain the BST property. To get sorted elements from a heap, you must repeatedly extract the root element (heap sort)."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-013",
+        "question": "What is heap sort and what is its time complexity?",
+        "golden_answer": "Heap sort builds a max heap from an array, then repeatedly extracts the maximum element and places it at the end. Time complexity is O(n log n) for all cases, with O(n) build phase and O(log n) for each of n extractions."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-014",
+        "question": "How many elements are in a complete binary tree of height h?",
+        "golden_answer": "A complete binary tree of height h has between 2^h and 2^(h+1)-1 elements. The minimum occurs when only the leftmost node exists at the last level, maximum when the last level is completely filled."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-015",
+        "question": "What is the height of a heap with n elements?",
+        "golden_answer": "The height of a heap with n elements is floor(log₂(n)). This is because heaps are complete binary trees, ensuring balanced structure and logarithmic height relative to the number of elements."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-016",
+        "question": "Can a heap contain duplicate elements?",
+        "golden_answer": "Yes, heaps can contain duplicate elements. The heap property only requires ordering relationships between parents and children, not uniqueness. Duplicates are handled naturally by the comparison operations."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-017",
+        "question": "What is the space complexity of a heap?",
+        "golden_answer": "The space complexity of a heap is O(n) where n is the number of elements, as it requires storage for each element in the underlying array representation."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-018",
+        "question": "How do you check if an array represents a valid heap?",
+        "golden_answer": "Check that for each element at index i, it satisfies the heap property with its children at indices 2i+1 and 2i+2 (if they exist). For max heap: arr[i] ≥ arr[2i+1] and arr[i] ≥ arr[2i+2]."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-019",
+        "question": "What is the maximum number of swaps needed in heapify-up operation?",
+        "golden_answer": "The maximum number of swaps in heapify-up is equal to the height of the heap, which is floor(log₂(n)). This occurs when an element needs to bubble up from a leaf to the root."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-e-020",
+        "question": "What are some common applications of heaps?",
+        "golden_answer": "Common applications include priority queues, heap sort, finding kth largest/smallest elements, median maintenance, Dijkstra's shortest path algorithm, and implementing schedulers in operating systems where tasks have priorities."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Heaps_Priority_Queue-m-001",
+        "question": "How would you merge k sorted arrays efficiently using heaps?",
+        "golden_answer": "Create a min heap with the first element from each array along with array and index information. Repeatedly extract minimum, add to result, and insert the next element from the same array. Time complexity: O(n log k) where n is total elements."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-002",
+        "question": "Design a data structure that supports insert, delete, and find median operations efficiently.",
+        "golden_answer": "Use two heaps: a max heap for the smaller half and min heap for the larger half. Keep sizes balanced (differ by at most 1). Median is the root of the larger heap or average of both roots. All operations are O(log n)."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-003",
+        "question": "How would you implement a priority queue that supports decreasing the priority of elements?",
+        "golden_answer": "Maintain a hash map from elements to their indices in the heap array. When decreasing priority, update the element and perform heapify-up. For max heap decreasing priority or min heap increasing priority, use heapify-down instead."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-004",
+        "question": "Explain how to build a heap from an unsorted array in O(n) time.",
+        "golden_answer": "Start from the last non-leaf node (index n/2 - 1) and perform heapify-down for each node moving backwards to index 0. This works because leaves already satisfy heap property, and we build heap bottom-up."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-005",
+        "question": "How would you find the kth largest element in an unsorted array using heaps?",
+        "golden_answer": "Use a min heap of size k. Iterate through array: if heap size < k, insert element; otherwise, if current element > heap minimum, remove minimum and insert current element. The root of final heap is kth largest."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-006",
+        "question": "Design a heap that supports both min and max operations efficiently.",
+        "golden_answer": "Implement a min-max heap where min levels (even depths) follow min heap property and max levels (odd depths) follow max heap property. Both findMin and findMax are O(1), while insert and delete are O(log n) with specialized heapify procedures."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-007",
+        "question": "How would you implement a heap with the ability to delete arbitrary elements?",
+        "golden_answer": "Maintain a hash map from elements to indices. To delete element at index i, replace it with the last element, remove last element, then perform both heapify-up and heapify-down from index i (only one will actually move the element)."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-008",
+        "question": "Explain the difference between a binary heap and a d-ary heap, and their trade-offs.",
+        "golden_answer": "D-ary heap has d children per node instead of 2. It has lower height (log_d(n)) making insert faster, but extract is slower due to more comparisons when heapifying down. Better for applications with more insertions than deletions."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-009",
+        "question": "How would you efficiently maintain the top k elements from a stream of data?",
+        "golden_answer": "Use a min heap of size k. For each new element: if heap size < k, insert directly; otherwise, if new element > minimum, remove minimum and insert new element. This maintains the k largest elements seen so far."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-m-010",
+        "question": "Design a priority queue that supports updating priorities efficiently.",
+        "golden_answer": "Combine heap with hash map storing element-to-index mappings. For priority updates, find element via hash map, update priority, then perform heapify-up or heapify-down as needed. Update hash map when elements move during heapification."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Heaps_Priority_Queue-h-001",
+        "question": "Prove that building a heap from n elements takes O(n) time, not O(n log n).",
+        "golden_answer": "In bottom-up heapification, nodes at height h require at most h swaps. There are at most ⌈n/2^(h+1)⌉ nodes at height h. Total work: Σ(h=0 to log n) h⌈n/2^(h+1)⌉ ≤ n Σ(h=0 to ∞) h/2^h = n·2 = O(n) by geometric series properties."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-002",
+        "question": "Design and analyze a persistent heap data structure that allows access to previous versions.",
+        "golden_answer": "Use path copying: when modifying, create new nodes along the path from root to affected node, sharing unmodified subtrees. Each version maintains its root pointer. Space is O(log n) per operation, time complexities remain the same, but with historical access capability."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-003",
+        "question": "Implement a heap that supports range minimum queries efficiently.",
+        "golden_answer": "Combine heap with a segment tree or sparse table for range queries. Alternatively, use a Cartesian tree which maintains heap property and supports range minimum queries in O(log n). The structure acts as both a heap and enables efficient range operations."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-004",
+        "question": "Analyze the amortized complexity of a sequence of heap operations including cascading deletions.",
+        "golden_answer": "Use potential function Φ = number of elements × log(capacity). Regular operations have O(log n) actual cost. When heap shrinks, potential decreases by O(n), paying for the O(n) resize cost. Amortized cost remains O(log n) per operation through potential method analysis."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-005",
+        "question": "Design a concurrent heap that supports safe multi-threaded access.",
+        "golden_answer": "Use fine-grained locking on heap levels or implement lock-free operations with atomic compare-and-swap. Alternatively, use a skip list-based priority queue or multiple heaps with work-stealing. Each approach has trade-offs between contention, complexity, and performance."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-006",
+        "question": "How would you implement a heap with O(1) decrease-key operation?",
+        "golden_answer": "Use a Fibonacci heap or pairing heap. Fibonacci heaps achieve O(1) amortized decrease-key by marking nodes and cascading cuts to maintain heap structure. Pairing heaps use a simpler structure with O(1) decrease-key but slightly worse theoretical bounds."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-007",
+        "question": "Design a space-efficient heap for very large datasets that don't fit in memory.",
+        "golden_answer": "Implement an external heap using B-heap structure where each node is a disk block containing multiple elements. Use disk-based merge operations and maintain heap property across blocks. Minimize disk I/O by buffering and batch operations, achieving O(log_B n) I/O complexity."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-008",
+        "question": "Analyze the cache performance of different heap implementations and suggest optimizations.",
+        "golden_answer": "Binary heaps have poor cache locality due to random access patterns during heapify. D-ary heaps with d = memory cache line size / element size improve locality. Cache-oblivious heaps and van Emde Boas layout optimize for memory hierarchy without knowing cache parameters."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-009",
+        "question": "How would you merge two heaps of different types (min and max) efficiently?",
+        "golden_answer": "Convert one heap to match the other's type by negating values or using custom comparator, then merge arrays and rebuild heap in O(n) time. Alternatively, use a more complex merge procedure that maintains both properties during merging, requiring careful element-by-element comparison and placement."
+      },
+      {
+        "qid": "Heaps_Priority_Queue-h-010",
+        "question": "Design a heap variant that supports efficient splitting at arbitrary elements.",
+        "golden_answer": "Use a treap (randomized binary search tree with heap property on priorities) or a binary heap with explicit tree structure. Splitting requires maintaining both heap and search properties, typically achieved through tree rotations and priority-based restructuring with O(log n) expected time."
+      }
+    ]
+  }

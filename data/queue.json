@@ -1,0 +1,209 @@
+{
+    "topic": "Queue",
+    "easy": [
+      {
+        "qid": "Queue-e-001",
+        "question": "What is a queue and what principle does it follow?",
+        "golden_answer": "A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle, where elements are added at the rear (enqueue) and removed from the front (dequeue). It's similar to a real-world queue or line."
+      },
+      {
+        "qid": "Queue-e-002",
+        "question": "What are the basic operations of a queue?",
+        "golden_answer": "The basic operations are: enqueue (insert element at rear), dequeue (remove element from front), front/peek (view front element without removing), isEmpty (check if queue is empty), and size (get number of elements)."
+      },
+      {
+        "qid": "Queue-e-003",
+        "question": "What are the time complexities of basic queue operations?",
+        "golden_answer": "For a properly implemented queue: enqueue is O(1), dequeue is O(1), front/peek is O(1), isEmpty is O(1), and size is O(1). All basic operations should be constant time."
+      },
+      {
+        "qid": "Queue-e-004",
+        "question": "How can you implement a queue using arrays?",
+        "golden_answer": "Use two pointers: front and rear. Enqueue adds elements at rear index and increments rear. Dequeue removes from front index and increments front. Handle wraparound using modular arithmetic for circular array implementation."
+      },
+      {
+        "qid": "Queue-e-005",
+        "question": "How can you implement a queue using linked lists?",
+        "golden_answer": "Maintain pointers to both front and rear nodes. Enqueue creates new node and links it after rear, updating rear pointer. Dequeue removes front node and updates front pointer. This provides dynamic size without fixed capacity."
+      },
+      {
+        "qid": "Queue-e-006",
+        "question": "What is a circular queue and what are its advantages?",
+        "golden_answer": "A circular queue treats the array as circular, where rear wraps around to the beginning after reaching the end. Advantages include efficient memory utilization, avoiding the need to shift elements, and maintaining O(1) operations."
+      },
+      {
+        "qid": "Queue-e-007",
+        "question": "What happens when you try to dequeue from an empty queue?",
+        "golden_answer": "Attempting to dequeue from an empty queue should throw an exception or return an error indicator (like null or a special value), as there are no elements to remove. This is called underflow condition."
+      },
+      {
+        "qid": "Queue-e-008",
+        "question": "What happens when you try to enqueue to a full queue (in array implementation)?",
+        "golden_answer": "In a fixed-size array implementation, attempting to enqueue to a full queue should throw an exception or return an error indicator. This is called overflow condition. Dynamic implementations should resize the array."
+      },
+      {
+        "qid": "Queue-e-009",
+        "question": "How do you check if a circular queue is full?",
+        "golden_answer": "A circular queue is full when (rear + 1) % capacity equals front. This leaves one slot empty to distinguish between full and empty conditions, since both would have rear == front otherwise."
+      },
+      {
+        "qid": "Queue-e-010",
+        "question": "How do you check if a queue is empty?",
+        "golden_answer": "For array implementation: front == rear (in circular queue). For linked list implementation: front pointer is null. Some implementations maintain a separate count variable for easier checking."
+      },
+      {
+        "qid": "Queue-e-011",
+        "question": "What is the difference between a queue and a stack?",
+        "golden_answer": "Queue follows FIFO (First-In-First-Out) where elements are added at rear and removed from front. Stack follows LIFO (Last-In-First-Out) where elements are added and removed from the same end (top)."
+      },
+      {
+        "qid": "Queue-e-012",
+        "question": "Can you implement a queue using two stacks?",
+        "golden_answer": "Yes, use two stacks: one for enqueue operations (input stack) and one for dequeue operations (output stack). When dequeuing, if output stack is empty, transfer all elements from input stack to output stack to reverse their order."
+      },
+      {
+        "qid": "Queue-e-013",
+        "question": "What are some real-world applications of queues?",
+        "golden_answer": "Applications include CPU scheduling, print job management, breadth-first search in graphs, handling requests in web servers, call center systems, and buffer for data streams between processes with different speeds."
+      },
+      {
+        "qid": "Queue-e-014",
+        "question": "What is the space complexity of a queue with n elements?",
+        "golden_answer": "The space complexity is O(n) where n is the number of elements in the queue. Array implementation may have some unused space, while linked list implementation has additional overhead for pointers."
+      },
+      {
+        "qid": "Queue-e-015",
+        "question": "What is a deque (double-ended queue)?",
+        "golden_answer": "A deque allows insertion and deletion at both ends (front and rear). It combines features of both stack and queue, supporting operations like addFront, addRear, removeFront, and removeRear, all in O(1) time."
+      },
+      {
+        "qid": "Queue-e-016",
+        "question": "How does a priority queue differ from a regular queue?",
+        "golden_answer": "A priority queue serves elements based on their priority rather than insertion order. Higher priority elements are dequeued first, regardless of when they were enqueued. Regular queues serve elements in FIFO order."
+      },
+      {
+        "qid": "Queue-e-017",
+        "question": "What is the front operation in a queue?",
+        "golden_answer": "The front (or peek) operation returns the value of the front element without removing it from the queue. It allows you to examine the next element to be dequeued without actually dequeuing it."
+      },
+      {
+        "qid": "Queue-e-018",
+        "question": "Can queues have a maximum size limit?",
+        "golden_answer": "Yes, bounded queues have a maximum capacity limit. When full, they cannot accept more elements until space is freed by dequeuing. Unbounded queues can grow dynamically, limited only by available memory."
+      },
+      {
+        "qid": "Queue-e-019",
+        "question": "What is the difference between blocking and non-blocking queues?",
+        "golden_answer": "Blocking queues make threads wait when trying to dequeue from empty queue or enqueue to full queue. Non-blocking queues immediately return error/null for invalid operations without waiting, allowing threads to continue execution."
+      },
+      {
+        "qid": "Queue-e-020",
+        "question": "How do you implement a queue using arrays without using extra space for tracking size?",
+        "golden_answer": "Use front and rear pointers with the convention that the queue is full when (rear + 1) % capacity == front, leaving one slot empty. This distinguishes between full and empty states without needing a separate size variable."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Queue-m-001",
+        "question": "Implement a queue using two stacks and analyze the amortized time complexity.",
+        "golden_answer": "Use input stack for enqueue (O(1)) and output stack for dequeue. If output is empty, transfer all from input to output. Each element is moved at most twice, giving O(1) amortized time for both operations despite O(n) worst-case for dequeue."
+      },
+      {
+        "qid": "Queue-m-002",
+        "question": "Design a circular queue with dynamic resizing capability.",
+        "golden_answer": "When queue becomes full, create new array with double capacity, copy elements maintaining order, and update pointers. When queue becomes quarter full, resize to half capacity. Use modular arithmetic for wraparound and maintain front/rear pointers correctly during resizing."
+      },
+      {
+        "qid": "Queue-m-003",
+        "question": "How would you implement a queue that supports finding the maximum element efficiently?",
+        "golden_answer": "Use auxiliary deque to store indices of elements in decreasing order. When enqueuing, remove indices from rear while their values are smaller than current. When dequeuing, remove front index if it matches dequeued element. Maximum is always at deque's front."
+      },
+      {
+        "qid": "Queue-m-004",
+        "question": "Design a multi-level feedback queue for CPU scheduling.",
+        "golden_answer": "Use multiple queues with different priorities and time slices. New processes enter highest priority queue. If process doesn't complete in time slice, move to lower priority queue with larger time slice. Implement aging to prevent starvation by promoting long-waiting processes."
+      },
+      {
+        "qid": "Queue-m-005",
+        "question": "Implement a bounded blocking queue for producer-consumer scenarios.",
+        "golden_answer": "Use array/linked list with mutex locks and condition variables. Producers wait when queue is full, consumers wait when empty. Use notFull and notEmpty conditions to signal when space/elements become available. Ensure thread-safe enqueue/dequeue operations."
+      },
+      {
+        "qid": "Queue-m-006",
+        "question": "How would you implement a queue with O(1) enqueue, dequeue, and getMin operations?",
+        "golden_answer": "Maintain main queue and auxiliary stack for minimums. When enqueuing, also push to min stack if element ≤ current minimum. When dequeuing, if element equals min stack top, pop from min stack too. GetMin returns min stack top."
+      },
+      {
+        "qid": "Queue-m-007",
+        "question": "Design a queue that supports undo operations for the last k enqueue/dequeue operations.",
+        "golden_answer": "Maintain operation history using circular buffer storing operation type, element, and timestamp. For undo, reverse the last operation: if last was enqueue, dequeue; if dequeue, enqueue at appropriate position. Handle edge cases and maintain consistency."
+      },
+      {
+        "qid": "Queue-m-008",
+        "question": "Implement a priority queue using multiple regular queues.",
+        "golden_answer": "Use separate queue for each priority level. Maintain mapping from priority to queue index. Enqueue to appropriate priority queue. Dequeue from highest priority non-empty queue. Use balanced binary search tree or array of queues based on priority range."
+      },
+      {
+        "qid": "Queue-m-009",
+        "question": "How would you implement a queue with batch operations (enqueue/dequeue multiple elements)?",
+        "golden_answer": "For batch enqueue: extend rear pointer by batch size if space available, then copy elements. For batch dequeue: check available elements, copy to output array, update front pointer. Handle wraparound in circular implementation and resize if needed."
+      },
+      {
+        "qid": "Queue-m-010",
+        "question": "Design a distributed queue system that works across multiple servers.",
+        "golden_answer": "Use consistent hashing to distribute queue segments across servers. Implement replication for fault tolerance. Use message brokers with partitioning based on hash of message key. Handle server failures through leader election and rebalancing of queue segments."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Queue-h-001",
+        "question": "Design a lock-free concurrent queue using compare-and-swap operations.",
+        "golden_answer": "Use Michael & Scott algorithm with head and tail pointers. Enqueue: atomically append node to tail using CAS, then update tail. Dequeue: atomically advance head using CAS. Handle ABA problem with hazard pointers or epochs to prevent premature memory reclamation."
+      },
+      {
+        "qid": "Queue-h-002",
+        "question": "Implement a persistent queue that maintains all historical versions efficiently.",
+        "golden_answer": "Use functional data structures with structural sharing. Each operation creates new version by copying modified path, sharing unchanged structure. Use banker's method for real-time guarantees, maintaining lazy evaluation for amortized O(1) operations across versions."
+      },
+      {
+        "qid": "Queue-h-003",
+        "question": "Design a queue with range update operations (increment/decrement all elements in range).",
+        "golden_answer": "Use segment tree with lazy propagation overlaid on queue structure. Maintain queue ordering while supporting range updates in O(log n). Use difference array technique for batch updates, applying pending operations during dequeue to maintain correctness."
+      },
+      {
+        "qid": "Queue-h-004",
+        "question": "Analyze and optimize cache performance for a high-throughput queue implementation.",
+        "golden_answer": "Use cache-aligned data structures, prefetching for sequential access patterns, and NUMA-aware allocation. Implement ring buffer with power-of-2 size for efficient modular arithmetic. Use memory barriers appropriately for cache coherence in multi-core scenarios."
+      },
+      {
+        "qid": "Queue-h-005",
+        "question": "Implement a queue that supports efficient random access to elements by position.",
+        "golden_answer": "Use deque with chunked storage (blocks of fixed size) or B+ tree structure. Maintain index mapping for O(log n) access while preserving O(1) amortized enqueue/dequeue. Balance chunk size for optimal cache performance and space utilization."
+      },
+      {
+        "qid": "Queue-h-006",
+        "question": "Design a fault-tolerant distributed queue with exactly-once delivery semantics.",
+        "golden_answer": "Implement two-phase commit protocol with persistent storage. Use sequence numbers and acknowledgments for deduplication. Maintain consumer offsets in distributed consensus system. Handle network partitions through quorum-based decisions and message replay mechanisms."
+      },
+      {
+        "qid": "Queue-h-007",
+        "question": "Implement a queue with time-based expiration of elements.",
+        "golden_answer": "Combine queue with heap/priority queue for expiration tracking. Use timer wheel or hierarchical timing wheels for efficient timeout management. Implement lazy cleanup during operations and background garbage collection for expired elements."
+      },
+      {
+        "qid": "Queue-h-008",
+        "question": "Design a queue system that automatically adapts to changing workload patterns.",
+        "golden_answer": "Implement adaptive algorithms monitoring enqueue/dequeue rates, queue length, and latency metrics. Use machine learning for workload prediction. Automatically scale capacity, adjust thread pools, and optimize data structures based on detected patterns and performance requirements."
+      },
+      {
+        "qid": "Queue-h-009",
+        "question": "Analyze the theoretical limits of queue performance in terms of memory bandwidth and CPU cache hierarchy.",
+        "golden_answer": "Memory bandwidth limits throughput to ~10-100GB/s depending on hardware. Cache hierarchy creates latency hierarchy: L1 (~1 cycle), L2 (~10 cycles), L3 (~100 cycles), RAM (~300 cycles). Optimal queue design must minimize cache misses and maximize spatial locality."
+      },
+      {
+        "qid": "Queue-h-010",
+        "question": "Implement a queue that supports efficient merging and splitting operations.",
+        "golden_answer": "Use finger trees or rope-like data structures with logarithmic merge/split operations. Maintain queue invariants through tree rotations and balancing. Support lazy evaluation for deferred operations and provide persistence through structural sharing of unchanged subtrees."
+      }
+    ]
+  }

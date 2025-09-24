@@ -1,0 +1,209 @@
+{
+    "topic": "Graphs",
+    "easy": [
+      {
+        "qid": "Graphs-e-001",
+        "question": "What is a graph and what are its basic components?",
+        "golden_answer": "A graph is a non-linear data structure consisting of vertices (nodes) connected by edges (links). Basic components include vertices (V) representing entities, edges (E) representing relationships between vertices, and optional weights on edges. Graphs are denoted as G(V, E)."
+      },
+      {
+        "qid": "Graphs-e-002",
+        "question": "What is the difference between directed and undirected graphs?",
+        "golden_answer": "In directed graphs (digraphs), edges have direction from source to destination vertex, representing one-way relationships. In undirected graphs, edges are bidirectional, representing symmetric relationships. Directed graphs use ordered pairs (u,v) for edges, while undirected use unordered pairs {u,v}."
+      },
+      {
+        "qid": "Graphs-e-003",
+        "question": "What are the two main ways to represent graphs in memory?",
+        "golden_answer": "The two main representations are: 1) Adjacency Matrix - 2D array where matrix[i][j] indicates edge between vertices i and j, and 2) Adjacency List - array of lists where each vertex has a list of its neighbors. Each has different space-time trade-offs."
+      },
+      {
+        "qid": "Graphs-e-004",
+        "question": "What is the time and space complexity of adjacency matrix representation?",
+        "golden_answer": "Adjacency matrix has O(V²) space complexity regardless of edge count. Time complexity for checking if edge exists is O(1), adding/removing edge is O(1), but finding all neighbors of a vertex is O(V). It's efficient for dense graphs."
+      },
+      {
+        "qid": "Graphs-e-005",
+        "question": "What is the time and space complexity of adjacency list representation?",
+        "golden_answer": "Adjacency list has O(V + E) space complexity. Time complexity for checking if edge exists is O(degree of vertex), adding edge is O(1), and finding all neighbors is O(degree of vertex). It's efficient for sparse graphs."
+      },
+      {
+        "qid": "Graphs-e-006",
+        "question": "What is a weighted graph?",
+        "golden_answer": "A weighted graph assigns numerical values (weights) to edges, representing costs, distances, capacities, or other metrics. Weights can be positive, negative, or zero. Common applications include shortest path problems, minimum spanning trees, and network flow algorithms."
+      },
+      {
+        "qid": "Graphs-e-007",
+        "question": "What is the difference between sparse and dense graphs?",
+        "golden_answer": "Sparse graphs have relatively few edges compared to maximum possible (E << V²), making adjacency lists more space-efficient. Dense graphs have many edges (E ≈ V²), making adjacency matrices more suitable. The choice of representation depends on edge density and required operations."
+      },
+      {
+        "qid": "Graphs-e-008",
+        "question": "What is a path in a graph?",
+        "golden_answer": "A path is a sequence of vertices where each adjacent pair is connected by an edge. Simple path has no repeated vertices except possibly first and last. Path length is the number of edges in the path. Paths are fundamental for connectivity and reachability analysis."
+      },
+      {
+        "qid": "Graphs-e-009",
+        "question": "What is a cycle in a graph?",
+        "golden_answer": "A cycle is a path that starts and ends at the same vertex with at least one edge, and no other repeated vertices. In undirected graphs, cycles require at least 3 vertices. In directed graphs, self-loops create cycles of length 1. Cycle detection is important for many algorithms."
+      },
+      {
+        "qid": "Graphs-e-010",
+        "question": "What is vertex degree in a graph?",
+        "golden_answer": "Vertex degree is the number of edges incident to a vertex. In undirected graphs, it's simply the count of neighbors. In directed graphs, there's in-degree (incoming edges) and out-degree (outgoing edges). Total degree of all vertices equals 2×E in undirected graphs."
+      },
+      {
+        "qid": "Graphs-e-011",
+        "question": "What is a connected graph?",
+        "golden_answer": "A connected graph is an undirected graph where there exists a path between every pair of vertices. If a graph is not connected, it consists of multiple connected components. Connectivity is a fundamental property affecting many graph algorithms and applications."
+      },
+      {
+        "qid": "Graphs-e-012",
+        "question": "What is a tree in graph theory?",
+        "golden_answer": "A tree is a connected acyclic undirected graph. It has exactly V-1 edges where V is the number of vertices. Trees have unique paths between any two vertices and removing any edge disconnects the graph. Trees are minimal connected graphs and maximal acyclic graphs."
+      },
+      {
+        "qid": "Graphs-e-013",
+        "question": "What is BFS (Breadth-First Search) and its time complexity?",
+        "golden_answer": "BFS explores graph level by level using a queue, visiting all neighbors of current vertex before moving to next level. It finds shortest path in unweighted graphs. Time complexity is O(V + E), space complexity is O(V) for queue and visited array."
+      },
+      {
+        "qid": "Graphs-e-014",
+        "question": "What is DFS (Depth-First Search) and its time complexity?",
+        "golden_answer": "DFS explores as far as possible along each branch before backtracking, using a stack (or recursion). It's useful for topological sorting, cycle detection, and connectivity analysis. Time complexity is O(V + E), space complexity is O(V) for recursion stack and visited array."
+      },
+      {
+        "qid": "Graphs-e-015",
+        "question": "What is the difference between BFS and DFS in terms of their exploration pattern?",
+        "golden_answer": "BFS explores breadth-wise (level by level), guaranteeing shortest path in unweighted graphs and using more memory. DFS explores depth-wise (as deep as possible first), using less memory but not guaranteeing shortest paths. Choice depends on specific problem requirements."
+      },
+      {
+        "qid": "Graphs-e-016",
+        "question": "What is a complete graph?",
+        "golden_answer": "A complete graph is one where every pair of distinct vertices is connected by an edge. A complete graph with n vertices has n(n-1)/2 edges in undirected case, or n(n-1) edges in directed case. It represents maximum possible connectivity."
+      },
+      {
+        "qid": "Graphs-e-017",
+        "question": "What is a bipartite graph?",
+        "golden_answer": "A bipartite graph is one whose vertices can be divided into two disjoint sets such that no two vertices within the same set are adjacent. All edges connect vertices from different sets. Examples include matching problems, assignment problems, and many real-world scenarios."
+      },
+      {
+        "qid": "Graphs-e-018",
+        "question": "What is topological sorting and when is it applicable?",
+        "golden_answer": "Topological sorting arranges vertices of a DAG (Directed Acyclic Graph) in linear order such that for every edge (u,v), vertex u comes before v. It's applicable only to DAGs and is useful for scheduling, dependency resolution, and compilation order problems."
+      },
+      {
+        "qid": "Graphs-e-019",
+        "question": "What is a strongly connected component in a directed graph?",
+        "golden_answer": "A strongly connected component (SCC) is a maximal set of vertices where there's a directed path from every vertex to every other vertex within the set. SCCs partition the vertices of a directed graph and are fundamental for analyzing graph structure."
+      },
+      {
+        "qid": "Graphs-e-020",
+        "question": "What is the difference between a graph and a tree?",
+        "golden_answer": "Trees are special cases of graphs that are connected and acyclic. Graphs can have cycles, multiple connected components, and various structures. Trees have exactly V-1 edges and unique paths between vertices, while graphs can have varying edge counts and multiple paths."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Graphs-m-001",
+        "question": "Explain Dijkstra's algorithm for shortest path and analyze its time complexity with different data structures.",
+        "golden_answer": "Dijkstra's algorithm finds shortest paths from source to all vertices in weighted graphs with non-negative weights. Using min-heap, time complexity is O((V + E) log V). With Fibonacci heap, it's O(E + V log V). With simple array, it's O(V²). Algorithm uses greedy approach with relaxation technique."
+      },
+      {
+        "qid": "Graphs-m-002",
+        "question": "Describe the Bellman-Ford algorithm and explain when it's preferred over Dijkstra's algorithm.",
+        "golden_answer": "Bellman-Ford finds shortest paths in graphs with negative edge weights and detects negative cycles. Time complexity is O(VE), space complexity is O(V). It's preferred when graphs have negative weights or when negative cycle detection is needed. Uses dynamic programming with edge relaxation."
+      },
+      {
+        "qid": "Graphs-m-003",
+        "question": "Explain cycle detection algorithms for both directed and undirected graphs.",
+        "golden_answer": "For undirected graphs: use DFS and check if we reach a visited vertex that's not parent (O(V+E)). For directed graphs: use DFS with three colors (white/gray/black) or detect back edges during DFS traversal. Gray vertices indicate nodes currently in recursion stack, forming cycles when revisited."
+      },
+      {
+        "qid": "Graphs-m-004",
+        "question": "Describe Kruskal's algorithm for Minimum Spanning Tree and its implementation details.",
+        "golden_answer": "Kruskal's algorithm finds MST by sorting edges by weight and adding edges that don't create cycles using Union-Find data structure. Time complexity is O(E log E) due to sorting. Uses greedy approach, processes edges in ascending weight order, and maintains forest of trees until single tree remains."
+      },
+      {
+        "qid": "Graphs-m-005",
+        "question": "Explain Prim's algorithm for Minimum Spanning Tree and compare it with Kruskal's algorithm.",
+        "golden_answer": "Prim's algorithm grows MST from arbitrary starting vertex by adding minimum weight edge connecting tree to non-tree vertex. Time complexity is O(E log V) with binary heap. Kruskal's works on edges globally, Prim's grows tree locally. Prim's is better for dense graphs, Kruskal's for sparse graphs."
+      },
+      {
+        "qid": "Graphs-m-006",
+        "question": "Discuss the Union-Find (Disjoint Set) data structure and its applications in graph algorithms.",
+        "golden_answer": "Union-Find maintains disjoint sets with operations: Find (which set element belongs to) and Union (merge two sets). With path compression and union by rank, operations are nearly O(1) amortized. Applications include Kruskal's MST, cycle detection, and connected components analysis."
+      },
+      {
+        "qid": "Graphs-m-007",
+        "question": "Explain the Ford-Fulkerson method for maximum flow and its time complexity analysis.",
+        "golden_answer": "Ford-Fulkerson finds maximum flow in flow networks by repeatedly finding augmenting paths from source to sink and updating residual graph. Time complexity is O(E × max_flow) with DFS, O(VE²) with BFS (Edmonds-Karp). Uses concept of residual capacity and augmenting paths."
+      },
+      {
+        "qid": "Graphs-m-008",
+        "question": "Describe Tarjan's algorithm for finding strongly connected components and its complexity.",
+        "golden_answer": "Tarjan's algorithm uses DFS with low-link values to find SCCs in single pass. Maintains stack of vertices in current SCC candidates. Time complexity is O(V + E), space complexity is O(V). Uses discovery time and low-link values to identify when SCC is complete."
+      },
+      {
+        "qid": "Graphs-m-009",
+        "question": "Explain the concept of graph coloring and its applications, including the chromatic number.",
+        "golden_answer": "Graph coloring assigns colors to vertices such that adjacent vertices have different colors. Chromatic number is minimum colors needed. Applications include scheduling, register allocation, frequency assignment. Greedy coloring achieves approximation, optimal coloring is NP-hard for general graphs."
+      },
+      {
+        "qid": "Graphs-m-010",
+        "question": "Discuss the traveling salesman problem (TSP) and different approaches to solve it.",
+        "golden_answer": "TSP finds shortest route visiting all cities exactly once and returning to start. Exact solutions: brute force O(n!), dynamic programming O(n²2^n). Approximation algorithms: nearest neighbor, Christofides algorithm. TSP is NP-hard, making approximation and heuristic approaches important for large instances."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Graphs-h-001",
+        "question": "Analyze the theoretical complexity bounds of graph isomorphism and its relationship to P vs NP.",
+        "golden_answer": "Graph isomorphism problem asks if two graphs are structurally identical. It's in NP but not known to be NP-complete or in P. Recent advances show it's in quasi-polynomial time. The problem sits between P and NP-complete, representing one of the few natural problems with unclear complexity classification."
+      },
+      {
+        "qid": "Graphs-h-002",
+        "question": "Explain advanced flow algorithms like push-relabel and their theoretical improvements over Ford-Fulkerson.",
+        "golden_answer": "Push-relabel algorithms maintain preflows and height functions, achieving O(V²E) time complexity. They work locally by pushing excess flow and relabeling vertices. Theoretical improvements include O(V³) with gap optimization and O(V²√E) with dynamic trees. They outperform Ford-Fulkerson on dense graphs."
+      },
+      {
+        "qid": "Graphs-h-003",
+        "question": "Discuss the complexity and algorithms for finding maximum matching in bipartite and general graphs.",
+        "golden_answer": "Bipartite matching: Hungarian algorithm O(V³), Hopcroft-Karp O(E√V). General matching: Blossom algorithm O(V³) handles odd cycles by contracting blossoms. Maximum weighted matching uses Hungarian algorithm. These algorithms solve assignment problems, stable marriage, and resource allocation efficiently."
+      },
+      {
+        "qid": "Graphs-h-004",
+        "question": "Analyze the Johnson's algorithm for all-pairs shortest paths and its advantages over repeated Dijkstra's.",
+        "golden_answer": "Johnson's algorithm handles negative weights by reweighting using Bellman-Ford potential function, then applying Dijkstra's from each vertex. Time complexity O(V² log V + VE) vs O(V³) for Floyd-Warshall. It's optimal for sparse graphs with negative weights, combining benefits of both Bellman-Ford and Dijkstra's."
+      },
+      {
+        "qid": "Graphs-h-005",
+        "question": "Explain the concept of planar graphs, their properties, and algorithms for planarity testing.",
+        "golden_answer": "Planar graphs can be drawn without edge crossings. Euler's formula: V - E + F = 2 for connected planar graphs. Maximum edges: 3V - 6. Kuratowski's theorem characterizes planarity by forbidden subgraphs (K₅, K₃,₃). Planarity testing algorithms run in O(V) time using sophisticated data structures."
+      },
+      {
+        "qid": "Graphs-h-006",
+        "question": "Discuss approximation algorithms for NP-hard graph problems and their performance guarantees.",
+        "golden_answer": "Many graph problems are NP-hard, requiring approximation algorithms. Examples: 2-approximation for vertex cover, 1.5-approximation for metric TSP (Christofides), log-approximation for set cover. Performance ratios provide theoretical guarantees on solution quality vs optimal. Some problems have no constant-factor approximation unless P=NP."
+      },
+      {
+        "qid": "Graphs-h-007",
+        "question": "Analyze the complexity of graph minor problems and their significance in algorithmic graph theory.",
+        "golden_answer": "Graph minor theory studies graphs obtainable by vertex/edge deletions and edge contractions. Robertson-Seymour theorem states that any minor-closed graph family has finite forbidden minor characterization. This leads to polynomial-time algorithms for many problems on restricted graph classes, despite general NP-hardness."
+      },
+      {
+        "qid": "Graphs-h-008",
+        "question": "Explain advanced data structures for dynamic graph problems and their complexity trade-offs.",
+        "golden_answer": "Dynamic graphs support edge insertions/deletions while maintaining graph properties. Examples: dynamic connectivity using link-cut trees O(log n), dynamic shortest paths, dynamic MST. Trade-offs involve update time vs query time. Fully dynamic problems are often harder than incremental (insert-only) or decremental (delete-only) versions."
+      },
+      {
+        "qid": "Graphs-h-009",
+        "question": "Discuss parallel algorithms for graph problems and their scalability challenges.",
+        "golden_answer": "Parallel graph algorithms face challenges from irregular structure and data dependencies. Examples: parallel BFS/DFS using work-efficient algorithms, parallel shortest paths, parallel connectivity. Scalability limited by graph structure, load balancing, and communication overhead. Some problems (like DFS) are inherently sequential."
+      },
+      {
+        "qid": "Graphs-h-010",
+        "question": "Analyze the theoretical foundations of spectral graph theory and its algorithmic applications.",
+        "golden_answer": "Spectral graph theory studies graphs through eigenvalues/eigenvectors of adjacency, Laplacian matrices. Applications include graph partitioning, clustering, random walks, expander graphs. Cheeger inequality connects spectral gap to conductance. Spectral algorithms provide approximations for cut problems and insight into graph structure through linear algebra."
+      }
+    ]
+  }

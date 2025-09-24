@@ -1,0 +1,209 @@
+{
+    "topic": "Hashing",
+    "easy": [
+      {
+        "qid": "Hashing-e-001",
+        "question": "What is a hash function and what are its key properties?",
+        "golden_answer": "A hash function is a mathematical function that maps data of arbitrary size to fixed-size values called hash codes. Key properties include determinism (same input always produces same output), uniform distribution, and efficiency in computation."
+      },
+      {
+        "qid": "Hashing-e-002",
+        "question": "Explain what a hash table (hash map) is and its basic operations.",
+        "golden_answer": "A hash table is a data structure that implements an associative array using a hash function to compute an index into an array of buckets. Basic operations are insert, delete, and lookup, all typically O(1) average time complexity."
+      },
+      {
+        "qid": "Hashing-e-003",
+        "question": "What is a hash collision and why does it occur?",
+        "golden_answer": "A hash collision occurs when two different keys produce the same hash value. It happens because hash functions map an infinite domain to a finite range, making collisions mathematically inevitable by the pigeonhole principle."
+      },
+      {
+        "qid": "Hashing-e-004",
+        "question": "Name and briefly describe two common collision resolution techniques.",
+        "golden_answer": "Chaining uses linked lists at each bucket to store multiple key-value pairs with the same hash. Open addressing finds the next available slot using probing techniques like linear probing, quadratic probing, or double hashing."
+      },
+      {
+        "qid": "Hashing-e-005",
+        "question": "What is the load factor of a hash table and why is it important?",
+        "golden_answer": "Load factor is the ratio of number of elements to the number of buckets in the hash table. It's important because it affects performance - higher load factors increase collision probability, degrading average-case time complexity."
+      },
+      {
+        "qid": "Hashing-e-006",
+        "question": "What is the average time complexity for search, insert, and delete operations in a hash table?",
+        "golden_answer": "All three operations (search, insert, delete) have O(1) average time complexity in a well-designed hash table with good hash function and appropriate load factor management."
+      },
+      {
+        "qid": "Hashing-e-007",
+        "question": "What is linear probing in open addressing?",
+        "golden_answer": "Linear probing is a collision resolution method where if a collision occurs at index i, we check i+1, i+2, i+3, etc., until we find an empty slot. It's simple but can cause clustering problems."
+      },
+      {
+        "qid": "Hashing-e-008",
+        "question": "What is the difference between separate chaining and open addressing?",
+        "golden_answer": "Separate chaining stores colliding elements in external data structures (like linked lists) at each bucket. Open addressing stores all elements within the hash table array itself, using probing to find alternative positions for colliding elements."
+      },
+      {
+        "qid": "Hashing-e-009",
+        "question": "Why might you choose a prime number as the size of a hash table?",
+        "golden_answer": "Prime numbers help ensure better distribution of hash values and reduce clustering. They work particularly well with modular arithmetic hash functions and help minimize patterns that could lead to more collisions."
+      },
+      {
+        "qid": "Hashing-e-010",
+        "question": "What is rehashing and when is it typically performed?",
+        "golden_answer": "Rehashing is the process of creating a new, larger hash table and transferring all existing elements to it with recalculated hash values. It's typically performed when the load factor exceeds a threshold (usually 0.7-0.75)."
+      },
+      {
+        "qid": "Hashing-e-011",
+        "question": "What is a hash set and how does it differ from a hash map?",
+        "golden_answer": "A hash set stores only keys (unique values) without associated values, used primarily for membership testing. A hash map stores key-value pairs, allowing retrieval of values by their keys."
+      },
+      {
+        "qid": "Hashing-e-012",
+        "question": "What is the worst-case time complexity for operations in a hash table?",
+        "golden_answer": "The worst-case time complexity is O(n) for search, insert, and delete operations. This occurs when all elements hash to the same bucket, essentially creating a linear search through all elements."
+      },
+      {
+        "qid": "Hashing-e-013",
+        "question": "What is quadratic probing and how does it differ from linear probing?",
+        "golden_answer": "Quadratic probing resolves collisions by checking positions at quadratic intervals: i, i+1², i+2², i+3², etc. Unlike linear probing which checks consecutive slots, quadratic probing reduces primary clustering but can still suffer from secondary clustering."
+      },
+      {
+        "qid": "Hashing-e-014",
+        "question": "What is a good hash function and what makes it effective?",
+        "golden_answer": "A good hash function distributes keys uniformly across the hash table, minimizes collisions, and is fast to compute. It should be deterministic, have low correlation between similar keys, and utilize all bits of the input."
+      },
+      {
+        "qid": "Hashing-e-015",
+        "question": "What is the division method for creating hash functions?",
+        "golden_answer": "The division method computes hash values using h(k) = k mod m, where k is the key and m is the table size. It's simple and fast, but the choice of m is crucial - prime numbers work best."
+      },
+      {
+        "qid": "Hashing-e-016",
+        "question": "What is clustering in hash tables and why is it problematic?",
+        "golden_answer": "Clustering occurs when consecutive hash table slots become occupied, forming clusters of filled positions. It's problematic because it increases the average probe distance for insertions and searches, degrading performance."
+      },
+      {
+        "qid": "Hashing-e-017",
+        "question": "What happens when you try to insert a key that already exists in a hash map?",
+        "golden_answer": "Typically, the hash map will update the existing key with the new value, overwriting the previous value. Some implementations may reject the insertion or provide options for handling duplicate keys differently."
+      },
+      {
+        "qid": "Hashing-e-018",
+        "question": "What is the multiplication method for hash functions?",
+        "golden_answer": "The multiplication method uses h(k) = floor(m * (k*A mod 1)), where A is a constant between 0 and 1, and m is table size. It works well with any table size and the golden ratio (φ-1 ≈ 0.618) is often used for A."
+      },
+      {
+        "qid": "Hashing-e-019",
+        "question": "What is double hashing and when is it used?",
+        "golden_answer": "Double hashing is an open addressing technique that uses a second hash function to determine the probe interval when collisions occur. It provides better distribution than linear or quadratic probing and reduces clustering significantly."
+      },
+      {
+        "qid": "Hashing-e-020",
+        "question": "What are the main advantages of hash tables over other data structures?",
+        "golden_answer": "Hash tables provide O(1) average-case time complexity for basic operations, making them extremely fast for lookups, insertions, and deletions. They're ideal for implementing dictionaries, caches, and sets where quick access is crucial."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Hashing-m-001",
+        "question": "Design a hash table that supports insert, delete, and getRandom operations, all in O(1) average time.",
+        "golden_answer": "Use an array to store values and a hash map to store value-to-index mappings. For getRandom, return array[random_index]. For delete, swap the element with the last element, update the hash map, and remove the last element. Insert appends to array and updates hash map."
+      },
+      {
+        "qid": "Hashing-m-002",
+        "question": "How would you implement a hash table with separate chaining that automatically resizes?",
+        "golden_answer": "Maintain a load factor threshold (e.g., 0.75). When exceeded during insertion, create a new table with double size, rehash all existing elements using new table size, and update the table reference. Use linked lists or dynamic arrays at each bucket for chaining."
+      },
+      {
+        "qid": "Hashing-m-003",
+        "question": "Explain how you would handle deletion in open addressing with linear probing.",
+        "golden_answer": "Use a 'deleted' marker instead of actually removing the element, or shift elements backward to fill gaps. The marker approach keeps probing sequences intact but may degrade performance over time. The shifting approach maintains compactness but requires careful implementation to preserve correctness."
+      },
+      {
+        "qid": "Hashing-m-004",
+        "question": "How would you design a hash function for strings that minimizes collisions?",
+        "golden_answer": "Use polynomial rolling hash: h(s) = (s[0]*p^(n-1) + s[1]*p^(n-2) + ... + s[n-1]) mod m, where p is a prime number and m is table size. This considers all characters and their positions, providing good distribution for most string inputs."
+      },
+      {
+        "qid": "Hashing-m-005",
+        "question": "What is consistent hashing and what problem does it solve?",
+        "golden_answer": "Consistent hashing maps keys to a circular hash space and servers to the same space. When servers are added/removed, only keys between the affected server and its predecessor need redistribution. It solves the problem of massive key redistribution in distributed hash tables when nodes change."
+      },
+      {
+        "qid": "Hashing-m-006",
+        "question": "How would you implement a LRU cache using hashing?",
+        "golden_answer": "Combine a hash table with a doubly linked list. Hash table provides O(1) key lookup, doubly linked list maintains access order. On access, move node to front; on insertion when full, remove tail node and its hash table entry, then add new node at front."
+      },
+      {
+        "qid": "Hashing-m-007",
+        "question": "Explain the trade-offs between different collision resolution strategies.",
+        "golden_answer": "Chaining handles high load factors better and deletion is simpler, but requires extra memory for pointers. Open addressing has better cache performance and memory efficiency but requires careful deletion handling and degrades faster with high load factors. Choice depends on expected load and memory constraints."
+      },
+      {
+        "qid": "Hashing-m-008",
+        "question": "How would you detect if a hash table implementation has a poor hash function?",
+        "golden_answer": "Monitor collision rates, measure distribution uniformity across buckets using chi-square tests, and analyze performance degradation under different input patterns. A poor hash function shows clustering, high variance in bucket occupancy, and performance closer to worst-case than average-case."
+      },
+      {
+        "qid": "Hashing-m-009",
+        "question": "Design a hash table that supports finding the frequency of elements efficiently.",
+        "golden_answer": "Use a standard hash table where keys are the elements and values are their frequencies. Increment count on insertion, decrement on deletion. For additional queries like 'find all elements with frequency k', maintain a reverse mapping from frequencies to sets of elements."
+      },
+      {
+        "qid": "Hashing-m-010",
+        "question": "How would you implement a thread-safe hash table?",
+        "golden_answer": "Use fine-grained locking with separate locks for each bucket, or lock-free techniques with atomic operations and compare-and-swap. Another approach is using read-write locks to allow concurrent reads but exclusive writes. Consider using concurrent hash table libraries that implement these optimizations."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Hashing-h-001",
+        "question": "Analyze the expected number of probes required in linear probing as a function of load factor α.",
+        "golden_answer": "For successful search: (1 + 1/(1-α))/2. For unsuccessful search: (1 + 1/(1-α)²)/2. As α approaches 1, probe count grows rapidly, which is why rehashing is necessary when load factor exceeds ~0.7 to maintain performance."
+      },
+      {
+        "qid": "Hashing-h-002",
+        "question": "Design a hash table that supports range queries efficiently while maintaining O(1) basic operations.",
+        "golden_answer": "Combine hash table with auxiliary data structure like B+ tree or skip list. Hash table handles point queries in O(1), auxiliary structure maintains sorted order for range queries in O(log n + k). Synchronize both structures on updates, trading some insertion/deletion performance for range query capability."
+      },
+      {
+        "qid": "Hashing-h-003",
+        "question": "Explain cuckoo hashing and analyze its worst-case guarantees.",
+        "golden_answer": "Cuckoo hashing uses two hash functions and two tables. Each key can be in one of two positions. On collision, 'kick out' existing element to its alternative position, creating a chain of displacements. Provides O(1) worst-case lookup and deletion, O(1) amortized insertion with occasional table reconstruction."
+      },
+      {
+        "qid": "Hashing-h-004",
+        "question": "How would you implement a hash table with O(1) worst-case insertion using incremental rehashing?",
+        "golden_answer": "Maintain two tables during rehashing phase. For each insertion, rehash k elements from old table to new table (where k > 1). Route lookups to both tables until rehashing completes. This amortizes rehashing cost across multiple operations, ensuring no single operation takes O(n) time."
+      },
+      {
+        "qid": "Hashing-h-005",
+        "question": "Design a distributed hash table that handles node failures gracefully.",
+        "golden_answer": "Use consistent hashing with virtual nodes and replication. Each key is replicated to r consecutive nodes. On node failure, remaining replicas serve requests while new replicas are created. Use vector clocks or similar techniques for conflict resolution during concurrent updates."
+      },
+      {
+        "qid": "Hashing-h-006",
+        "question": "Analyze the space-time trade-offs of Robin Hood hashing compared to standard linear probing.",
+        "golden_answer": "Robin Hood hashing minimizes maximum displacement by moving elements with smaller displacements to make room for those with larger displacements. It reduces worst-case probe distance and variance in access times, but requires additional bookkeeping to track displacement distances, increasing space overhead slightly."
+      },
+      {
+        "qid": "Hashing-h-007",
+        "question": "How would you implement a hash table with perfect hashing for a static set of keys?",
+        "golden_answer": "Use two-level hashing: first level with universal hash function maps to buckets, second level uses perfect hash functions within each bucket. Choose hash functions to ensure no collisions at second level. Requires O(n) space and provides O(1) worst-case lookup for static keys."
+      },
+      {
+        "qid": "Hashing-h-008",
+        "question": "Explain how to construct a universal hash function family and prove its universal property.",
+        "golden_answer": "For prime p > max key value and table size m, define h_ab(x) = ((ax + b) mod p) mod m where a ∈ [1,p-1] and b ∈ [0,p-1]. This family is universal because for any two distinct keys x,y, the probability of collision is exactly 1/m, providing theoretical guarantees on expected performance."
+      },
+      {
+        "qid": "Hashing-h-009",
+        "question": "Design a hash table that supports efficient iteration over all elements while maintaining O(1) operations.",
+        "golden_answer": "Use separate chaining with an additional doubly-linked list threading through all elements across all buckets. Hash table provides O(1) access, linked list enables O(n) iteration. Maintain list invariants during insertions/deletions. Alternative: use a dynamic array with hash map for index lookup."
+      },
+      {
+        "qid": "Hashing-h-010",
+        "question": "Analyze the cache performance implications of different hash table implementations.",
+        "golden_answer": "Open addressing has better cache locality due to array storage but may suffer from clustering reducing spatial locality. Chaining has poor cache performance due to pointer chasing but more predictable access patterns. Robin Hood hashing improves cache performance by reducing probe distances. Consider cache line size when choosing bucket organization and probing strategies."
+      }
+    ]
+  }

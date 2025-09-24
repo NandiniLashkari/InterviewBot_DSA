@@ -1,0 +1,209 @@
+{
+    "topic": "Linked_List",
+    "easy": [
+      {
+        "qid": "Linked_List-e-001",
+        "question": "What is a linked list and how does it differ from an array?",
+        "golden_answer": "A linked list is a linear data structure where elements (nodes) are stored in sequence, but not in contiguous memory locations. Each node contains data and a pointer to the next node. Unlike arrays, linked lists don't support random access and require sequential traversal."
+      },
+      {
+        "qid": "Linked_List-e-002",
+        "question": "What are the main types of linked lists?",
+        "golden_answer": "The main types are: singly linked list (each node points to next), doubly linked list (nodes have pointers to both next and previous), and circular linked list (last node points back to first, can be singly or doubly linked)."
+      },
+      {
+        "qid": "Linked_List-e-003",
+        "question": "What are the time complexities for basic operations in a singly linked list?",
+        "golden_answer": "Insertion at head: O(1), Insertion at tail: O(n) without tail pointer or O(1) with tail pointer, Deletion at head: O(1), Deletion at arbitrary position: O(n), Search: O(n), Access by index: O(n)."
+      },
+      {
+        "qid": "Linked_List-e-004",
+        "question": "How do you insert a new node at the beginning of a singly linked list?",
+        "golden_answer": "Create a new node, set its next pointer to the current head, then update the head pointer to point to the new node. This operation is O(1) time complexity."
+      },
+      {
+        "qid": "Linked_List-e-005",
+        "question": "How do you delete a node from the beginning of a singly linked list?",
+        "golden_answer": "Store the current head in a temporary variable, update head to point to head.next, then deallocate the memory of the old head node. Handle the edge case when the list is empty."
+      },
+      {
+        "qid": "Linked_List-e-006",
+        "question": "What is the advantage of a doubly linked list over a singly linked list?",
+        "golden_answer": "Doubly linked lists allow bidirectional traversal and enable O(1) deletion when given a pointer to the node to be deleted, without needing to traverse from the head to find the previous node."
+      },
+      {
+        "qid": "Linked_List-e-007",
+        "question": "What is a circular linked list and what are its benefits?",
+        "golden_answer": "A circular linked list is where the last node points back to the first node, forming a circle. Benefits include easy implementation of round-robin scheduling, efficient insertion at both ends, and natural representation of cyclic data."
+      },
+      {
+        "qid": "Linked_List-e-008",
+        "question": "How do you find the length of a linked list?",
+        "golden_answer": "Traverse the linked list from head to tail, counting each node until reaching null (or back to head in circular lists). This requires O(n) time complexity where n is the number of nodes."
+      },
+      {
+        "qid": "Linked_List-e-009",
+        "question": "What happens if you lose the reference to the head of a linked list?",
+        "golden_answer": "If you lose the head reference, the entire linked list becomes inaccessible and unreachable, leading to memory leaks in languages without garbage collection. Always maintain a proper reference to the head node."
+      },
+      {
+        "qid": "Linked_List-e-010",
+        "question": "How do you search for an element in a linked list?",
+        "golden_answer": "Start from the head and traverse each node, comparing the data with the target value. Return the node (or its position) when found, or null/false when reaching the end without finding the element."
+      },
+      {
+        "qid": "Linked_List-e-011",
+        "question": "What is the space complexity of a linked list with n elements?",
+        "golden_answer": "The space complexity is O(n) where n is the number of elements. Each node requires memory for storing data and at least one pointer (next), making it higher than arrays due to pointer overhead."
+      },
+      {
+        "qid": "Linked_List-e-012",
+        "question": "How do you insert a node at the end of a singly linked list?",
+        "golden_answer": "If you have a tail pointer, create new node and update tail.next = newNode, then tail = newNode in O(1). Without tail pointer, traverse to the last node, then set its next pointer to the new node in O(n)."
+      },
+      {
+        "qid": "Linked_List-e-013",
+        "question": "What is the difference between static and dynamic memory allocation in linked lists?",
+        "golden_answer": "Linked lists use dynamic memory allocation, allocating memory for nodes at runtime as needed. This contrasts with arrays which can use static allocation with fixed size determined at compile time. Dynamic allocation provides flexibility but adds overhead."
+      },
+      {
+        "qid": "Linked_List-e-014",
+        "question": "Can you access the middle element of a linked list directly?",
+        "golden_answer": "No, linked lists don't support random access. To access the middle element, you must traverse from the head, counting nodes until reaching the desired position. This makes accessing elements by index O(n) operation."
+      },
+      {
+        "qid": "Linked_List-e-015",
+        "question": "What is a node in a linked list?",
+        "golden_answer": "A node is the basic unit of a linked list containing two parts: data (the actual value stored) and a pointer/reference to the next node in the sequence. In doubly linked lists, nodes also contain a pointer to the previous node."
+      },
+      {
+        "qid": "Linked_List-e-016",
+        "question": "How do you handle memory management in linked lists?",
+        "golden_answer": "In languages like C/C++, manually allocate memory using malloc/new for node creation and deallocate using free/delete when removing nodes. In garbage-collected languages like Java/Python, memory is automatically managed when nodes become unreachable."
+      },
+      {
+        "qid": "Linked_List-e-017",
+        "question": "What is the head pointer in a linked list?",
+        "golden_answer": "The head pointer is a reference that points to the first node in the linked list. It serves as the entry point for accessing the entire list and is essential for performing operations like traversal, insertion, and deletion."
+      },
+      {
+        "qid": "Linked_List-e-018",
+        "question": "How do you check if a linked list is empty?",
+        "golden_answer": "Check if the head pointer is null (or None in Python). An empty linked list has no nodes, so the head reference points to null, indicating the absence of any elements."
+      },
+      {
+        "qid": "Linked_List-e-019",
+        "question": "What are the disadvantages of linked lists compared to arrays?",
+        "golden_answer": "Disadvantages include: no random access (O(n) for element access), extra memory overhead for pointers, poor cache locality due to non-contiguous memory, and inability to use binary search efficiently."
+      },
+      {
+        "qid": "Linked_List-e-020",
+        "question": "How do you traverse a linked list?",
+        "golden_answer": "Start with a pointer at the head, process the current node's data, then move the pointer to the next node using current = current.next. Continue until the pointer becomes null, indicating the end of the list."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Linked_List-m-001",
+        "question": "How do you reverse a singly linked list iteratively?",
+        "golden_answer": "Use three pointers: previous (null), current (head), and next. While current is not null: store next = current.next, set current.next = previous, move previous = current and current = next. Finally, update head = previous."
+      },
+      {
+        "qid": "Linked_List-m-002",
+        "question": "How do you detect if a linked list has a cycle using Floyd's algorithm?",
+        "golden_answer": "Use two pointers: slow (moves one step) and fast (moves two steps). If there's a cycle, fast will eventually meet slow inside the cycle. If fast reaches null, there's no cycle. Time: O(n), Space: O(1)."
+      },
+      {
+        "qid": "Linked_List-m-003",
+        "question": "How do you find the middle element of a linked list in one pass?",
+        "golden_answer": "Use two pointers: slow (moves one step) and fast (moves two steps). When fast reaches the end, slow will be at the middle. For even-length lists, slow points to the second middle element."
+      },
+      {
+        "qid": "Linked_List-m-004",
+        "question": "How do you merge two sorted linked lists into one sorted list?",
+        "golden_answer": "Use two pointers to traverse both lists, comparing values and linking the smaller node to the result list. Continue until one list is exhausted, then append the remaining nodes from the other list. Time: O(n+m), Space: O(1)."
+      },
+      {
+        "qid": "Linked_List-m-005",
+        "question": "How do you remove the nth node from the end of a linked list in one pass?",
+        "golden_answer": "Use two pointers with n+1 gap between them. Move the first pointer n+1 steps, then move both until first reaches null. The second pointer now points to the node before the target node. Update next pointer to skip the target."
+      },
+      {
+        "qid": "Linked_List-m-006",
+        "question": "How do you find the intersection point of two linked lists?",
+        "golden_answer": "Calculate lengths of both lists, advance the longer list's pointer by the difference, then move both pointers simultaneously until they meet. Alternatively, use two pointers that switch lists when reaching the end - they'll meet at intersection or null."
+      },
+      {
+        "qid": "Linked_List-m-007",
+        "question": "How do you implement a stack using a linked list?",
+        "golden_answer": "Use the head as the top of stack. Push: insert new node at head (O(1)). Pop: remove head node and return its data (O(1)). Peek: return head's data without removal (O(1)). The linked list grows and shrinks dynamically."
+      },
+      {
+        "qid": "Linked_List-m-008",
+        "question": "How do you check if a linked list is a palindrome?",
+        "golden_answer": "Find the middle using slow/fast pointers, reverse the second half, then compare the first half with the reversed second half. Optionally restore the list afterward. Time: O(n), Space: O(1)."
+      },
+      {
+        "qid": "Linked_List-m-009",
+        "question": "How do you remove duplicates from a sorted linked list?",
+        "golden_answer": "Traverse the list with a pointer, comparing each node's value with the next node. If they're equal, update current.next to skip the duplicate node and deallocate it. Continue until reaching the end."
+      },
+      {
+        "qid": "Linked_List-m-010",
+        "question": "How do you add two numbers represented as linked lists where digits are stored in reverse order?",
+        "golden_answer": "Traverse both lists simultaneously, adding corresponding digits plus any carry from the previous addition. Create new nodes for the sum digits. Handle different lengths and final carry. Time: O(max(m,n)), Space: O(max(m,n))."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Linked_List-h-001",
+        "question": "Design a data structure that supports insert, delete, and getRandom operations in O(1) time using linked lists.",
+        "golden_answer": "Combine a doubly linked list with a hash map. Hash map stores value-to-node mappings for O(1) access. Linked list enables O(1) insertion/deletion. For getRandom, maintain an array of nodes and swap with last element during deletion, or use reservoir sampling with the linked list."
+      },
+      {
+        "qid": "Linked_List-h-002",
+        "question": "Implement a LRU cache using linked lists and analyze its complexity.",
+        "golden_answer": "Use a doubly linked list with a hash map. Hash map provides O(1) key lookup to nodes, doubly linked list maintains access order. On access: move node to head. On insertion when full: remove tail node and its hash entry. All operations are O(1)."
+      },
+      {
+        "qid": "Linked_List-h-003",
+        "question": "How do you reverse nodes in k-group in a linked list?",
+        "golden_answer": "Use recursion or iteration to reverse every k consecutive nodes. For each group: reverse the k nodes, connect the previous group's tail to current group's new head, and connect current group's tail to next group's head. Handle remaining nodes at the end."
+      },
+      {
+        "qid": "Linked_List-h-004",
+        "question": "Design a skip list and analyze its probabilistic guarantees.",
+        "golden_answer": "Skip list uses multiple levels with probability p=1/2 for promotion. Level 0 contains all elements, higher levels contain subset for faster traversal. Expected height is O(log n), search/insert/delete are O(log n) expected time with high probability."
+      },
+      {
+        "qid": "Linked_List-h-005",
+        "question": "How do you clone/deep copy a linked list with random pointers efficiently?",
+        "golden_answer": "Three-pass algorithm: (1) Create new nodes and interleave with original nodes, (2) Set random pointers for new nodes using original.random.next, (3) Separate the two lists. Alternatively, use hash map to store original-to-clone mappings. Both are O(n) time and space."
+      },
+      {
+        "qid": "Linked_List-h-006",
+        "question": "Implement a memory-efficient doubly linked list without using extra pointers.",
+        "golden_answer": "Use XOR linking where each node stores XOR of addresses of previous and next nodes. To traverse: maintain previous node address, current.link XOR previous gives next address. Saves memory but requires careful pointer arithmetic and loses some functionality."
+      },
+      {
+        "qid": "Linked_List-h-007",
+        "question": "Design a concurrent linked list that supports safe multi-threaded access.",
+        "golden_answer": "Use fine-grained locking (lock per node), lock-free algorithms with atomic compare-and-swap operations, or optimistic synchronization. Hand-over-hand locking allows concurrent access to different parts. Lock-free approaches use hazard pointers to prevent premature deallocation."
+      },
+      {
+        "qid": "Linked_List-h-008",
+        "question": "How do you sort a linked list with optimal time and space complexity?",
+        "golden_answer": "Use merge sort with O(n log n) time and O(1) space. Recursively split list at middle, sort sublists, then merge sorted halves. The challenge is splitting without random access - use slow/fast pointers to find middle efficiently."
+      },
+      {
+        "qid": "Linked_List-h-009",
+        "question": "Implement a self-organizing linked list that optimizes for access patterns.",
+        "golden_answer": "Use move-to-front heuristic: move accessed elements to the head. This provides O(1) access for frequently accessed items. Alternative heuristics include transpose (swap with previous) or frequency-based ordering. Amortized analysis shows good performance for skewed access patterns."
+      },
+      {
+        "qid": "Linked_List-h-010",
+        "question": "Design a persistent linked list that maintains all historical versions efficiently.",
+        "golden_answer": "Use path copying or fat node method. Path copying creates new nodes along modification path, sharing unchanged portions. Each version maintains its head pointer. Operations are O(log n) amortized with tree-like version history, allowing efficient access to any historical version."
+      }
+    ]
+  }

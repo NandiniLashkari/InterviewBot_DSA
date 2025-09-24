@@ -1,0 +1,209 @@
+{
+    "topic": "Backtracking",
+    "easy": [
+      {
+        "qid": "Backtracking-e-001",
+        "question": "What is backtracking and how does it differ from brute force approaches?",
+        "golden_answer": "Backtracking is a problem-solving algorithm that explores solutions incrementally and abandons partial solutions that cannot lead to valid complete solutions. Unlike brute force which examines all possibilities, backtracking prunes the search space by undoing choices when they lead to invalid states, making it more efficient."
+      },
+      {
+        "qid": "Backtracking-e-002",
+        "question": "What are the three key components of a backtracking algorithm?",
+        "golden_answer": "The three key components are: 1) Choice - making a decision at each step, 2) Constraint - checking if current partial solution is valid, 3) Goal - determining if a complete valid solution is found. The algorithm backtracks when constraints are violated."
+      },
+      {
+        "qid": "Backtracking-e-003",
+        "question": "What is the general structure of a backtracking algorithm?",
+        "golden_answer": "The general structure includes: base case check (goal reached), iterate through possible choices, make choice, check constraints, recursively solve subproblem, and backtrack by undoing the choice. This follows a try-explore-undo pattern in recursive implementation."
+      },
+      {
+        "qid": "Backtracking-e-004",
+        "question": "When is backtracking preferred over other algorithmic approaches?",
+        "golden_answer": "Backtracking is preferred when: the solution space is too large for brute force, problems have constraint satisfaction nature, multiple valid solutions exist, or when pruning can significantly reduce search space. It's ideal for combinatorial optimization problems."
+      },
+      {
+        "qid": "Backtracking-e-005",
+        "question": "What is the role of pruning in backtracking algorithms?",
+        "golden_answer": "Pruning eliminates branches of the search tree that cannot lead to valid solutions, reducing time complexity. It occurs when constraint checks fail or when partial solutions cannot be extended to complete solutions. Effective pruning is crucial for backtracking efficiency."
+      },
+      {
+        "qid": "Backtracking-e-006",
+        "question": "What is a classic example of a backtracking problem?",
+        "golden_answer": "The N-Queens problem is a classic example where you place N queens on an N×N chessboard such that no two queens attack each other. It demonstrates choice (queen placement), constraints (no attacks), and backtracking when invalid positions are reached."
+      },
+      {
+        "qid": "Backtracking-e-007",
+        "question": "What is the difference between backtracking and dynamic programming?",
+        "golden_answer": "Backtracking explores the solution space using recursion with pruning and doesn't store subproblem results. Dynamic programming breaks problems into overlapping subproblems and stores results to avoid recomputation. Backtracking finds specific solutions, DP optimizes overlapping subproblems."
+      },
+      {
+        "qid": "Backtracking-e-008",
+        "question": "What is a decision tree in the context of backtracking?",
+        "golden_answer": "A decision tree represents all possible choices and their outcomes in a backtracking algorithm. Each node represents a partial solution, edges represent choices, and leaves represent complete solutions or dead ends. The algorithm traverses this tree using depth-first search."
+      },
+      {
+        "qid": "Backtracking-e-009",
+        "question": "What is the typical time complexity of backtracking algorithms?",
+        "golden_answer": "Backtracking typically has exponential time complexity O(b^d) where b is branching factor and d is depth. However, effective pruning can significantly reduce the actual time complexity. In worst case, it explores the entire solution space."
+      },
+      {
+        "qid": "Backtracking-e-010",
+        "question": "What is constraint satisfaction in backtracking?",
+        "golden_answer": "Constraint satisfaction involves checking whether current partial solution violates any problem constraints. If constraints are violated, the algorithm backtracks. Early constraint checking prevents exploring invalid solution paths, improving efficiency through pruning."
+      },
+      {
+        "qid": "Backtracking-e-011",
+        "question": "What is the space complexity of backtracking algorithms?",
+        "golden_answer": "Space complexity is typically O(d) where d is the maximum depth of recursion, due to the call stack. Additional space may be needed for storing the current solution state. The algorithm doesn't store all explored states, only the current path."
+      },
+      {
+        "qid": "Backtracking-e-012",
+        "question": "What does it mean to 'backtrack' in the algorithm?",
+        "golden_answer": "To backtrack means undoing the most recent choice and trying the next available option when the current path cannot lead to a valid solution. It involves returning to the previous state and exploring alternative branches of the decision tree."
+      },
+      {
+        "qid": "Backtracking-e-013",
+        "question": "What is a partial solution in backtracking?",
+        "golden_answer": "A partial solution is an incomplete solution that satisfies constraints for the portion that has been constructed. It represents progress toward a complete solution but still requires more decisions. The algorithm extends partial solutions until reaching complete solutions or dead ends."
+      },
+      {
+        "qid": "Backtracking-e-014",
+        "question": "How does backtracking handle multiple solutions?",
+        "golden_answer": "Backtracking can find all solutions by continuing the search after finding each solution instead of terminating. It can also find the first solution by stopping at the first valid complete solution found. The approach depends on problem requirements."
+      },
+      {
+        "qid": "Backtracking-e-015",
+        "question": "What is the choose-explore-unchoose pattern in backtracking?",
+        "golden_answer": "This pattern involves: 1) Choose - make a decision and update state, 2) Explore - recursively solve the remaining subproblem, 3) Unchoose - undo the decision to restore previous state. This pattern ensures proper backtracking and state management."
+      },
+      {
+        "qid": "Backtracking-e-016",
+        "question": "What types of problems are well-suited for backtracking?",
+        "golden_answer": "Problems well-suited for backtracking include: combinatorial problems (permutations, combinations), constraint satisfaction problems (Sudoku, N-Queens), pathfinding with constraints, puzzle solving, and optimization problems where pruning can eliminate large portions of search space."
+      },
+      {
+        "qid": "Backtracking-e-017",
+        "question": "What is a dead end in backtracking?",
+        "golden_answer": "A dead end is a state where no valid choices remain to extend the current partial solution. When reached, the algorithm backtracks to the previous decision point and tries alternative choices. Dead ends trigger the backtracking mechanism."
+      },
+      {
+        "qid": "Backtracking-e-018",
+        "question": "How does backtracking differ from exhaustive search?",
+        "golden_answer": "While both explore solution spaces, backtracking uses constraint checking and pruning to eliminate invalid paths early, avoiding exploration of entire subtrees. Exhaustive search examines all possibilities without intelligent pruning, making backtracking generally more efficient."
+      },
+      {
+        "qid": "Backtracking-e-019",
+        "question": "What is state space in backtracking?",
+        "golden_answer": "State space is the set of all possible states (partial and complete solutions) that can be reached during problem solving. Backtracking navigates this space using depth-first traversal, with constraints determining valid transitions between states."
+      },
+      {
+        "qid": "Backtracking-e-020",
+        "question": "What is the role of recursion in backtracking algorithms?",
+        "golden_answer": "Recursion provides the mechanism for exploring deeper into the solution space and automatically handling the backtracking when recursive calls return. The call stack maintains the path to current state, and returning from recursion naturally backtracks to previous decisions."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "Backtracking-m-001",
+        "question": "Explain the branch and bound optimization technique and how it enhances backtracking algorithms.",
+        "golden_answer": "Branch and bound adds bounding functions to estimate the best possible solution from current state. If the bound indicates that no solution in the current subtree can be better than the current best, the entire subtree is pruned. This optimization significantly reduces search space in optimization problems."
+      },
+      {
+        "qid": "Backtracking-m-002",
+        "question": "Compare iterative deepening with standard backtracking and analyze their trade-offs.",
+        "golden_answer": "Iterative deepening performs depth-limited backtracking with increasing depth limits until solution is found. It has better space complexity O(d) vs. standard backtracking's potential O(b^d) space, but trades time efficiency by revisiting states. It's useful when solution depth is unknown."
+      },
+      {
+        "qid": "Backtracking-m-003",
+        "question": "Explain forward checking and constraint propagation in backtracking algorithms.",
+        "golden_answer": "Forward checking eliminates values from future variables' domains when they become inconsistent with current assignments. Constraint propagation further reduces domains by applying constraints transitively. These techniques detect dead ends earlier, reducing backtracking and improving efficiency."
+      },
+      {
+        "qid": "Backtracking-m-004",
+        "question": "Discuss heuristics for variable ordering in constraint satisfaction problems using backtracking.",
+        "golden_answer": "Effective heuristics include: Most Constraining Variable (choose variable involved in most constraints), Most Constrained Variable (choose variable with smallest domain), and Least Constraining Value (choose value that eliminates fewest options for other variables). Good ordering reduces search space significantly."
+      },
+      {
+        "qid": "Backtracking-m-005",
+        "question": "Explain the concept of intelligent backtracking and its advantages over chronological backtracking.",
+        "golden_answer": "Intelligent backtracking (dependency-directed backtracking) tracks which variables caused conflicts and backtracks directly to relevant decision points rather than the most recent one. This avoids redundant exploration of unrelated choices, significantly improving efficiency in constraint satisfaction problems."
+      },
+      {
+        "qid": "Backtracking-m-006",
+        "question": "Analyze the space-time trade-offs in memoization for backtracking algorithms.",
+        "golden_answer": "Memoization can store results of subproblems to avoid recomputation, trading space for time. However, many backtracking problems don't have optimal substructure or overlapping subproblems, making memoization ineffective. When applicable, it converts exponential time to polynomial but increases space complexity."
+      },
+      {
+        "qid": "Backtracking-m-007",
+        "question": "Explain how backtracking can be adapted for approximate or probabilistic solutions.",
+        "golden_answer": "Adaptations include: limited depth search for approximate solutions, random choice selection for probabilistic exploration, beam search to maintain only k best partial solutions, and early termination with good-enough solutions. These techniques trade solution optimality for computational efficiency."
+      },
+      {
+        "qid": "Backtracking-m-008",
+        "question": "Discuss the implementation challenges of parallel backtracking algorithms.",
+        "golden_answer": "Challenges include work distribution (irregular tree structure), load balancing (uneven subtree sizes), state sharing conflicts, and synchronization overhead. Solutions involve work-stealing, distributed search with communication, and careful partitioning of search space to minimize dependencies."
+      },
+      {
+        "qid": "Backtracking-m-009",
+        "question": "Explain conflict-driven learning in backtracking and its applications in SAT solvers.",
+        "golden_answer": "Conflict-driven learning analyzes conflicts to identify clauses (learned clauses) that prevent similar conflicts in the future. When backtracking, these clauses guide future decisions and pruning. This technique is fundamental in modern SAT solvers, dramatically improving performance on real-world instances."
+      },
+      {
+        "qid": "Backtracking-m-010",
+        "question": "Analyze the effectiveness of different pruning strategies in backtracking algorithms.",
+        "golden_answer": "Pruning strategies include: constraint-based pruning (immediate constraint violation), bound-based pruning (optimization problems), symmetry breaking (equivalent solution elimination), and problem-specific pruning. Effectiveness depends on problem structure, constraint tightness, and the cost of pruning checks versus search reduction."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "Backtracking-h-001",
+        "question": "Analyze the theoretical complexity bounds of backtracking algorithms and their relationship to P vs NP problems.",
+        "golden_answer": "Many backtracking problems are NP-complete, making polynomial-time algorithms unlikely unless P=NP. Theoretical bounds depend on search tree structure: O(b^d) worst case where b is branching factor and d is depth. Practical performance depends on pruning effectiveness, constraint propagation, and problem-specific structure that may allow sub-exponential average-case complexity."
+      },
+      {
+        "qid": "Backtracking-h-002",
+        "question": "Explain advanced constraint propagation techniques like arc consistency and their integration with backtracking search.",
+        "golden_answer": "Arc consistency ensures that for every constraint, each value in one variable's domain has a supporting value in related variables' domains. Integration involves maintaining arc consistency after each variable assignment, detecting inconsistencies early, and using AC-3 or AC-4 algorithms. This preprocessing dramatically reduces search space."
+      },
+      {
+        "qid": "Backtracking-h-003",
+        "question": "Discuss the mathematical foundations of backjumping and conflict analysis in constraint satisfaction.",
+        "golden_answer": "Backjumping uses conflict sets to identify which past decisions caused current failures, jumping back to relevant choice points. Mathematical foundations involve dependency graphs, minimal conflict sets, and resolution-based analysis. This avoids thrashing in the search space and provides theoretical guarantees about search efficiency."
+      },
+      {
+        "qid": "Backtracking-h-004",
+        "question": "Analyze the design and complexity of portfolio approaches combining multiple backtracking strategies.",
+        "golden_answer": "Portfolio approaches run multiple backtracking variants in parallel or sequentially, selecting based on problem characteristics. Design challenges include strategy selection, resource allocation, and result integration. Complexity analysis involves weighted combinations of individual strategy complexities, with potential for best-case performance of the most suitable strategy."
+      },
+      {
+        "qid": "Backtracking-h-005",
+        "question": "Explain the theoretical and practical aspects of symmetry breaking in backtracking search.",
+        "golden_answer": "Symmetry breaking eliminates equivalent solutions by adding constraints or ordering decisions to explore only canonical representatives. Theoretical aspects involve group theory and orbit-stabilizer theorem. Practical implementation includes lexicographic ordering, dominance constraints, and dynamic symmetry detection during search, reducing search space exponentially in highly symmetric problems."
+      },
+      {
+        "qid": "Backtracking-h-006",
+        "question": "Discuss the integration of machine learning techniques with backtracking for adaptive search strategies.",
+        "golden_answer": "ML integration includes learning variable/value ordering heuristics from problem instances, predicting constraint violations, and adaptive strategy selection. Techniques involve reinforcement learning for decision policies, neural networks for state evaluation, and online learning for parameter tuning. This creates self-improving solvers that adapt to problem characteristics."
+      },
+      {
+        "qid": "Backtracking-h-007",
+        "question": "Analyze the complexity and implementation of limited discrepancy search and its variants.",
+        "golden_answer": "Limited discrepancy search explores solutions within k discrepancies from a heuristic path, systematically increasing k. Complexity is O(b^k * d) where k is discrepancy limit. Variants include depth-bounded DDS and improved LDS. Implementation requires careful discrepancy counting and efficient iteration through discrepancy-bounded solutions."
+      },
+      {
+        "qid": "Backtracking-h-008",
+        "question": "Explain the theoretical foundations of restart strategies in backtracking and their impact on heavy-tailed distributions.",
+        "golden_answer": "Restart strategies periodically restart search to escape hard regions of search space. Theoretical foundations involve heavy-tailed runtime distributions common in backtracking, where occasional very long runs dominate average performance. Optimal restart policies based on runtime distribution analysis can provide exponential speedups on hard instances."
+      },
+      {
+        "qid": "Backtracking-h-009",
+        "question": "Discuss the challenges and solutions for memory-bounded backtracking in large-scale constraint satisfaction problems.",
+        "golden_answer": "Memory bounds limit the depth of backtracking and storage of learned constraints. Solutions include limited-memory learning (forgetting old clauses), depth-bounded search with restarts, external memory algorithms for large state spaces, and approximation techniques. Trade-offs involve solution completeness versus memory requirements."
+      },
+      {
+        "qid": "Backtracking-h-010",
+        "question": "Analyze the integration of global constraints and specialized propagation algorithms in backtracking frameworks.",
+        "golden_answer": "Global constraints (AllDifferent, Global Cardinality, Among) encapsulate complex relationships with specialized propagation algorithms achieving stronger consistency than decomposition. Integration requires sophisticated constraint stores, incremental propagation, and conflict explanation capabilities. This dramatically improves solving efficiency on structured problems."
+      }
+    ]
+  }

@@ -1,0 +1,209 @@
+{
+    "topic": "Stack",
+    "easy": [
+      {
+        "qid": "stack-e-001",
+        "question": "What is a stack data structure?",
+        "golden_answer": "A stack is a linear data structure that follows the Last In First Out (LIFO) principle. Elements are added and removed from the same end called the top. The last element pushed onto the stack is the first one to be popped off."
+      },
+      {
+        "qid": "stack-e-002",
+        "question": "What are the main operations of a stack?",
+        "golden_answer": "The main operations are push (add element to top), pop (remove element from top), peek/top (view top element without removing), isEmpty (check if stack is empty), and size (get number of elements)."
+      },
+      {
+        "qid": "stack-e-003",
+        "question": "What happens when you try to pop from an empty stack?",
+        "golden_answer": "Attempting to pop from an empty stack results in a stack underflow error or exception. It's important to check if the stack is empty before performing pop operations to avoid runtime errors."
+      },
+      {
+        "qid": "stack-e-004",
+        "question": "What is the time complexity of basic stack operations?",
+        "golden_answer": "All basic stack operations (push, pop, peek, isEmpty) have O(1) time complexity because they only operate on the top element and don't require traversing the entire stack."
+      },
+      {
+        "qid": "stack-e-005",
+        "question": "Can you implement a stack using an array?",
+        "golden_answer": "Yes, stacks can be implemented using arrays where we maintain a top pointer/index. Push increments the top and adds element, pop decrements top after returning element. Fixed-size arrays have overflow risk when full."
+      },
+      {
+        "qid": "stack-e-006",
+        "question": "Can you implement a stack using a linked list?",
+        "golden_answer": "Yes, stacks can be implemented using linked lists where the head acts as the top. Push adds new node at head, pop removes head node. This provides dynamic sizing without overflow concerns."
+      },
+      {
+        "qid": "stack-e-007",
+        "question": "What is stack overflow?",
+        "golden_answer": "Stack overflow occurs when you try to push an element onto a full stack (in array implementation) or when recursive calls exceed the call stack limit. It results in an error or exception."
+      },
+      {
+        "qid": "stack-e-008",
+        "question": "Give three real-world applications of stacks.",
+        "golden_answer": "Function call management (call stack), undo operations in applications, browser back button functionality, expression evaluation, and parentheses matching in compilers."
+      },
+      {
+        "qid": "stack-e-009",
+        "question": "What is the difference between stack and queue?",
+        "golden_answer": "Stack follows LIFO (Last In First Out) principle with operations at one end, while queue follows FIFO (First In First Out) principle with insertion at rear and deletion at front."
+      },
+      {
+        "qid": "stack-e-010",
+        "question": "How do you check if a stack is empty?",
+        "golden_answer": "In array implementation, check if top index is -1 or below starting index. In linked list implementation, check if head/top pointer is null. Most implementations provide an isEmpty() method."
+      },
+      {
+        "qid": "stack-e-011",
+        "question": "What is the peek operation in a stack?",
+        "golden_answer": "Peek (or top) operation returns the top element of the stack without removing it. It allows you to examine the most recently added element while keeping the stack unchanged."
+      },
+      {
+        "qid": "stack-e-012",
+        "question": "Can stacks have duplicate elements?",
+        "golden_answer": "Yes, stacks can contain duplicate elements. There are no restrictions on uniqueness - the same value can be pushed multiple times and will be stored as separate elements."
+      },
+      {
+        "qid": "stack-e-013",
+        "question": "What is a call stack?",
+        "golden_answer": "A call stack is a stack data structure used by programs to manage function calls. When a function is called, its information is pushed onto the call stack, and when it returns, the information is popped off."
+      },
+      {
+        "qid": "stack-e-014",
+        "question": "How is stack different from an array?",
+        "golden_answer": "Arrays allow random access to elements by index, while stacks only allow access to the top element. Arrays support insertion/deletion at any position, stacks only at the top following LIFO principle."
+      },
+      {
+        "qid": "stack-e-015",
+        "question": "What happens when you push to a full stack (array implementation)?",
+        "golden_answer": "Pushing to a full stack in array implementation causes stack overflow. The program either throws an exception or returns an error, depending on the implementation and programming language used."
+      },
+      {
+        "qid": "stack-e-016",
+        "question": "Can you iterate through all elements in a stack?",
+        "golden_answer": "Standard stack interface doesn't support iteration as it violates LIFO principle. However, some implementations may provide iteration capabilities, or you can pop all elements into another structure to examine them."
+      },
+      {
+        "qid": "stack-e-017",
+        "question": "What is the space complexity of a stack?",
+        "golden_answer": "Space complexity is O(n) where n is the number of elements in the stack. Each element requires constant space, so total space grows linearly with the number of elements."
+      },
+      {
+        "qid": "stack-e-018",
+        "question": "Is stack a linear or non-linear data structure?",
+        "golden_answer": "Stack is a linear data structure because elements are arranged in a sequential manner and each element has exactly one predecessor and one successor (except the bottom and top elements)."
+      },
+      {
+        "qid": "stack-e-019",
+        "question": "What is the minimum number of stacks needed to implement a queue?",
+        "golden_answer": "Two stacks are needed to implement a queue efficiently. One stack handles enqueue operations, and elements are transferred to the second stack for dequeue operations to maintain FIFO order."
+      },
+      {
+        "qid": "stack-e-020",
+        "question": "Can you implement recursion without using system call stack?",
+        "golden_answer": "Yes, recursion can be implemented iteratively using an explicit stack to store function states and parameters. This approach converts recursive calls into iterative loops with manual stack management."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "stack-m-001",
+        "question": "Implement a stack that supports getMin() operation in O(1) time.",
+        "golden_answer": "Use an auxiliary stack to store minimum values. When pushing, if element ≤ current min, push to both stacks. When popping, if popped element equals min stack top, pop from min stack too. GetMin() returns min stack top."
+      },
+      {
+        "qid": "stack-m-002",
+        "question": "How would you implement multiple stacks using a single array?",
+        "golden_answer": "Divide array into equal parts for fixed-size stacks, or use a more complex approach with dynamic allocation. For k stacks, maintain k top pointers and handle overflow by shifting elements or using a free list approach."
+      },
+      {
+        "qid": "stack-m-003",
+        "question": "Design a stack that supports push, pop, and getMiddle operations in O(1) time.",
+        "golden_answer": "Use a doubly linked list with a middle pointer. Maintain count of elements and update middle pointer based on operations: move forward when count increases from even to odd, backward when decreasing from odd to even."
+      },
+      {
+        "qid": "stack-m-004",
+        "question": "How do you reverse a string using a stack?",
+        "golden_answer": "Push each character of the string onto a stack, then pop characters one by one to form the reversed string. The LIFO nature of stack automatically reverses the order of characters."
+      },
+      {
+        "qid": "stack-m-005",
+        "question": "Implement a stack using queues.",
+        "golden_answer": "Use two queues. For push, add element to queue1. For pop, transfer all elements except last from queue1 to queue2, pop the last element, then swap the queue references. This ensures LIFO behavior."
+      },
+      {
+        "qid": "stack-m-006",
+        "question": "How do you evaluate a postfix expression using a stack?",
+        "golden_answer": "Scan expression left to right. Push operands onto stack. When encountering an operator, pop required operands, perform operation, and push result back. Final stack element is the answer."
+      },
+      {
+        "qid": "stack-m-007",
+        "question": "Design a stack with O(1) push, pop, and findMax operations.",
+        "golden_answer": "Similar to getMin stack, maintain an auxiliary max stack. Push to max stack when element ≥ current max. Pop from max stack when popped element equals max stack top. FindMax returns max stack top."
+      },
+      {
+        "qid": "stack-m-008",
+        "question": "How would you sort a stack using only stack operations?",
+        "golden_answer": "Use an auxiliary stack. Pop elements from original stack and insert each into auxiliary stack at correct position by temporarily popping larger elements. Continue until original stack is empty, then transfer back."
+      },
+      {
+        "qid": "stack-m-009",
+        "question": "Implement a stack that supports increment operation on bottom k elements.",
+        "golden_answer": "Use an array-based stack with an auxiliary increment array. Store pending increments in increment array. When popping, add increment[top] to result and transfer it to increment[top-1]. This lazy propagation ensures O(1) operations."
+      },
+      {
+        "qid": "stack-m-010",
+        "question": "How do you implement a stack with constant space complexity for getMin()?",
+        "golden_answer": "Store the difference between current element and minimum in the stack instead of the actual element. When pushing element < min, push 2*element - min and update min to element. Special handling needed for pop operations."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "stack-h-001",
+        "question": "Design a data structure that supports push, pop, and getRandomElement in O(1) time.",
+        "golden_answer": "Combine stack with dynamic array and hash map. Array stores elements with indices, stack maintains available indices. Hash map tracks element positions. Use random index from stack for getRandomElement, swap-and-pop technique for removal."
+      },
+      {
+        "qid": "stack-h-002",
+        "question": "Implement a stack that supports push, pop, getMin, and getMax all in O(1) time and O(1) extra space per element.",
+        "golden_answer": "Use a single auxiliary stack storing pairs (min, max) values. Only push to auxiliary stack when new element creates new min or max. Each main stack element references nearest auxiliary stack entry for O(1) queries."
+      },
+      {
+        "qid": "stack-h-003",
+        "question": "Design a stack that supports rollback to any previous state in O(1) time.",
+        "golden_answer": "Implement versioned stack using persistent data structure. Each operation creates new version sharing structure with previous versions. Maintain version tree with copy-on-write semantics. Use path copying only for modified nodes to ensure efficiency."
+      },
+      {
+        "qid": "stack-h-004",
+        "question": "How would you implement a stack with O(1) push, pop, and median operations?",
+        "golden_answer": "Use two balanced BSTs or heaps to maintain smaller and larger halves of elements. Maintain size invariant where sizes differ by at most 1. Median is root of larger BST or average of both roots depending on total count."
+      },
+      {
+        "qid": "stack-h-005",
+        "question": "Design a concurrent stack for multi-threaded environment without using locks.",
+        "golden_answer": "Implement lock-free stack using compare-and-swap (CAS) operations on atomic pointers. Use hazard pointers or epochs to handle memory reclamation safely. Handle ABA problem with version numbers or pointer tagging."
+      },
+      {
+        "qid": "stack-h-006",
+        "question": "Implement a stack that supports range queries (sum, min, max) over any contiguous subsequence of elements in O(log n) time.",
+        "golden_answer": "Use segment tree or Fenwick tree overlay on stack array. Maintain tree structure as stack grows/shrinks. For range queries, traverse tree nodes corresponding to the range. Updates require O(log n) tree maintenance operations."
+      },
+      {
+        "qid": "stack-h-007",
+        "question": "Design a distributed stack across multiple servers with consistency guarantees.",
+        "golden_answer": "Implement using consistent hashing for partitioning with replication for fault tolerance. Use vector clocks or consensus protocols (Raft/Paxos) for ordering operations. Implement read-repair and anti-entropy mechanisms for eventual consistency."
+      },
+      {
+        "qid": "stack-h-008",
+        "question": "How do you implement a stack with O(1) push/pop and O(k) access to kth element from top, minimizing space overhead?",
+        "golden_answer": "Use sqrt(n) decomposition. Divide stack into blocks of size sqrt(n). Maintain auxiliary structure storing every sqrt(n)th element. For kth access, jump to appropriate block and traverse remaining elements. Rebalance blocks periodically."
+      },
+      {
+        "qid": "stack-h-009",
+        "question": "Design a persistent stack supporting efficient branching and merging of stack histories.",
+        "golden_answer": "Implement using persistent data structure with path copying. Each branch creates new version sharing common history. Use functional tree structure where internal nodes represent operations. Merging requires conflict resolution strategy and creates new branch combining both histories."
+      },
+      {
+        "qid": "stack-h-010",
+        "question": "Implement a stack with support for batch operations (pushAll, popAll) and O(1) amortized complexity per element.",
+        "golden_answer": "Use dynamic table resizing with doubling strategy. Implement batch operations using bulk array operations. Maintain capacity tracking and resize when needed. Amortized analysis shows O(1) per element despite occasional O(n) resize operations through potential method."
+      }
+    ]
+  }

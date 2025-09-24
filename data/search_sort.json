@@ -1,0 +1,209 @@
+{
+    "topic": "search_sort",
+    "easy": [
+      {
+        "qid": "search_sort-e-001",
+        "question": "What is linear search and what is its time complexity?",
+        "golden_answer": "Linear search sequentially checks each element in a data structure until the target is found or all elements are examined. Time complexity is O(n) in worst case, O(1) in best case, and O(n) average case."
+      },
+      {
+        "qid": "search_sort-e-002",
+        "question": "Implement linear search algorithm for an array.",
+        "golden_answer": "def linear_search(arr, target): for i in range(len(arr)): if arr[i] == target: return i; return -1. The function iterates through each element and returns the index when target is found, or -1 if not found."
+      },
+      {
+        "qid": "search_sort-e-003",
+        "question": "What is binary search and what are its prerequisites?",
+        "golden_answer": "Binary search is a divide-and-conquer algorithm that finds a target value in a sorted array by repeatedly dividing the search interval in half. Prerequisites: the array must be sorted. Time complexity is O(log n)."
+      },
+      {
+        "qid": "search_sort-e-004",
+        "question": "Implement iterative binary search algorithm.",
+        "golden_answer": "def binary_search(arr, target): left, right = 0, len(arr) - 1; while left <= right: mid = (left + right) // 2; if arr[mid] == target: return mid; elif arr[mid] < target: left = mid + 1; else: right = mid - 1; return -1."
+      },
+      {
+        "qid": "search_sort-e-005",
+        "question": "What is bubble sort and how does it work?",
+        "golden_answer": "Bubble sort repeatedly steps through the list, compares adjacent elements and swaps them if they're in wrong order. The pass through the list is repeated until no swaps are needed. Time complexity is O(n²) worst and average case."
+      },
+      {
+        "qid": "search_sort-e-006",
+        "question": "Implement bubble sort algorithm.",
+        "golden_answer": "def bubble_sort(arr): n = len(arr); for i in range(n): for j in range(0, n-i-1): if arr[j] > arr[j+1]: arr[j], arr[j+1] = arr[j+1], arr[j]; return arr. The algorithm uses nested loops to compare and swap adjacent elements."
+      },
+      {
+        "qid": "search_sort-e-007",
+        "question": "What is selection sort and what is its time complexity?",
+        "golden_answer": "Selection sort finds the minimum element from the unsorted portion and places it at the beginning. It maintains sorted and unsorted portions of the array. Time complexity is O(n²) for all cases, space complexity is O(1)."
+      },
+      {
+        "qid": "search_sort-e-008",
+        "question": "Implement selection sort algorithm.",
+        "golden_answer": "def selection_sort(arr): for i in range(len(arr)): min_idx = i; for j in range(i+1, len(arr)): if arr[j] < arr[min_idx]: min_idx = j; arr[i], arr[min_idx] = arr[min_idx], arr[i]; return arr. Finds minimum in remaining array and swaps with current position."
+      },
+      {
+        "qid": "search_sort-e-009",
+        "question": "What is insertion sort and when is it most efficient?",
+        "golden_answer": "Insertion sort builds the final sorted array one element at a time by inserting each element into its correct position among previously sorted elements. Most efficient for small datasets or nearly sorted arrays. Time complexity: O(n²) worst case, O(n) best case."
+      },
+      {
+        "qid": "search_sort-e-010",
+        "question": "Implement insertion sort algorithm.",
+        "golden_answer": "def insertion_sort(arr): for i in range(1, len(arr)): key = arr[i]; j = i - 1; while j >= 0 and arr[j] > key: arr[j + 1] = arr[j]; j -= 1; arr[j + 1] = key; return arr. Inserts each element into its correct position in the sorted portion."
+      },
+      {
+        "qid": "search_sort-e-011",
+        "question": "What is the difference between stable and unstable sorting algorithms?",
+        "golden_answer": "Stable sorting algorithms maintain the relative order of equal elements, while unstable algorithms may change their relative positions. Examples: Stable - merge sort, insertion sort; Unstable - quick sort, heap sort."
+      },
+      {
+        "qid": "search_sort-e-012",
+        "question": "What is the difference between in-place and out-of-place sorting algorithms?",
+        "golden_answer": "In-place sorting algorithms sort the array using only O(1) extra space (constant space), modifying the input array directly. Out-of-place algorithms require O(n) or more additional space. Examples: In-place - bubble sort, selection sort; Out-of-place - merge sort."
+      },
+      {
+        "qid": "search_sort-e-013",
+        "question": "When would you use linear search over binary search?",
+        "golden_answer": "Use linear search when: the array is unsorted, the array is small (overhead of sorting isn't worth it), you need to find all occurrences, or you're searching a linked list where random access isn't possible."
+      },
+      {
+        "qid": "search_sort-e-014",
+        "question": "What is the best case time complexity of bubble sort and when does it occur?",
+        "golden_answer": "The best case time complexity of bubble sort is O(n), which occurs when the array is already sorted. This can be achieved by adding a flag to detect if any swaps were made in a pass - if no swaps, the array is sorted."
+      },
+      {
+        "qid": "search_sort-e-015",
+        "question": "Compare the space complexity of bubble sort, selection sort, and insertion sort.",
+        "golden_answer": "All three algorithms have O(1) space complexity as they are in-place sorting algorithms. They only use a constant amount of extra space for temporary variables like loop counters and swap variables."
+      },
+      {
+        "qid": "search_sort-e-016",
+        "question": "What is the main advantage of insertion sort over other O(n²) sorting algorithms?",
+        "golden_answer": "Insertion sort is adaptive - it performs well on nearly sorted data with O(n) time complexity in best case. It's also stable, in-place, and has good performance on small datasets, making it useful as a subroutine in hybrid algorithms."
+      },
+      {
+        "qid": "search_sort-e-017",
+        "question": "How do you modify binary search to find the first occurrence of a duplicate element?",
+        "golden_answer": "Continue searching in the left half even after finding the target: if arr[mid] == target: result = mid; right = mid - 1; else if arr[mid] < target: left = mid + 1; else: right = mid - 1. This ensures we find the leftmost occurrence of the target."
+      },
+      {
+        "qid": "search_sort-e-018",
+        "question": "What happens in binary search when the array has duplicate elements?",
+        "golden_answer": "Standard binary search can return any occurrence of the target element, not necessarily the first or last. To find specific occurrences, you need to modify the algorithm to continue searching in the desired direction even after finding a match."
+      },
+      {
+        "qid": "search_sort-e-019",
+        "question": "Which sorting algorithm would you choose for sorting a small array of 10 elements?",
+        "golden_answer": "For small arrays (typically n < 50), insertion sort is often the best choice due to its simplicity, low overhead, adaptive nature, and good cache performance. Many optimized algorithms like Timsort use insertion sort for small subarrays."
+      },
+      {
+        "qid": "search_sort-e-020",
+        "question": "What is the key insight behind binary search's efficiency?",
+        "golden_answer": "Binary search eliminates half of the remaining search space with each comparison by leveraging the sorted property of the array. This divide-and-conquer approach reduces the problem size exponentially, resulting in O(log n) time complexity."
+      }
+    ],
+    "medium": [
+      {
+        "qid": "search_sort-m-001",
+        "question": "Implement merge sort algorithm and analyze its time and space complexity.",
+        "golden_answer": "def merge_sort(arr): if len(arr) <= 1: return arr; mid = len(arr) // 2; left = merge_sort(arr[:mid]); right = merge_sort(arr[mid:]); return merge(left, right). Time complexity: O(n log n) for all cases due to log n levels of recursion, each doing O(n) work. Space complexity: O(n) for temporary arrays during merging."
+      },
+      {
+        "qid": "search_sort-m-002",
+        "question": "Implement quick sort algorithm with proper pivot selection strategy.",
+        "golden_answer": "def quick_sort(arr, low=0, high=None): if high is None: high = len(arr)-1; if low < high: pivot = partition(arr, low, high); quick_sort(arr, low, pivot-1); quick_sort(arr, pivot+1, high). Average case O(n log n), worst case O(n²). Use median-of-three or random pivot to avoid worst case on sorted arrays."
+      },
+      {
+        "qid": "search_sort-m-003",
+        "question": "What is the difference between merge sort and quick sort in terms of performance characteristics?",
+        "golden_answer": "Merge sort: guaranteed O(n log n) time, O(n) space, stable, not in-place. Quick sort: average O(n log n), worst O(n²) time, O(log n) space, unstable, in-place. Quick sort is generally faster in practice due to better cache locality and lower constant factors."
+      },
+      {
+        "qid": "search_sort-m-004",
+        "question": "Implement binary search to find the insertion point for a target value in a sorted array.",
+        "golden_answer": "def search_insert(arr, target): left, right = 0, len(arr); while left < right: mid = (left + right) // 2; if arr[mid] < target: left = mid + 1; else: right = mid; return left. This returns the index where target should be inserted to maintain sorted order."
+      },
+      {
+        "qid": "search_sort-m-005",
+        "question": "What is heap sort and what are its advantages and disadvantages?",
+        "golden_answer": "Heap sort builds a max heap and repeatedly extracts the maximum element. Advantages: O(n log n) worst-case time, O(1) space, not affected by input distribution. Disadvantages: not stable, poor cache performance, typically slower than quick sort in practice due to constant factors."
+      },
+      {
+        "qid": "search_sort-m-006",
+        "question": "Implement a function to find the peak element in an array using binary search approach.",
+        "golden_answer": "def find_peak(arr): left, right = 0, len(arr) - 1; while left < right: mid = (left + right) // 2; if arr[mid] < arr[mid + 1]: left = mid + 1; else: right = mid; return left. Uses the property that if arr[mid] < arr[mid+1], peak must be on the right side."
+      },
+      {
+        "qid": "search_sort-m-007",
+        "question": "What is counting sort and when is it applicable?",
+        "golden_answer": "Counting sort counts occurrences of each distinct element and uses this information to place elements in correct positions. Time complexity: O(n + k) where k is the range of input. Applicable when range of possible values is small and known, making it a non-comparison based sort."
+      },
+      {
+        "qid": "search_sort-m-008",
+        "question": "Implement a function to search in a rotated sorted array.",
+        "golden_answer": "def search_rotated(arr, target): left, right = 0, len(arr) - 1; while left <= right: mid = (left + right) // 2; if arr[mid] == target: return mid; if arr[left] <= arr[mid]: if arr[left] <= target < arr[mid]: right = mid - 1; else: left = mid + 1; else: if arr[mid] < target <= arr[right]: left = mid + 1; else: right = mid - 1; return -1."
+      },
+      {
+        "qid": "search_sort-m-009",
+        "question": "What is radix sort and how does it achieve linear time complexity?",
+        "golden_answer": "Radix sort processes digits from least significant to most significant, using counting sort as a subroutine for each digit. Time complexity: O(d × (n + k)) where d is number of digits, k is range of each digit. It's linear when d is constant, making it efficient for sorting integers with fixed number of digits."
+      },
+      {
+        "qid": "search_sort-m-010",
+        "question": "Design an algorithm to find the square root of a number using binary search.",
+        "golden_answer": "def sqrt_binary_search(x): if x < 2: return x; left, right = 1, x // 2; while left <= right: mid = (left + right) // 2; square = mid * mid; if square == x: return mid; elif square < x: left = mid + 1; result = mid; else: right = mid - 1; return result. Uses binary search on the range [1, x/2]."
+      }
+    ],
+    "hard": [
+      {
+        "qid": "search_sort-h-001",
+        "question": "Implement an external merge sort algorithm for sorting large files that don't fit in memory.",
+        "golden_answer": "External merge sort: 1) Divide large file into chunks that fit in memory, 2) Sort each chunk individually and write to temporary files, 3) Use k-way merge with priority queue to merge sorted chunks back into single sorted file. Time: O(n log n), I/O operations: O(n log n / B) where B is block size. Requires careful buffer management and multiple passes through data."
+      },
+      {
+        "qid": "search_sort-h-002",
+        "question": "Design and implement Tim Sort algorithm's key optimization strategies.",
+        "golden_answer": "Tim Sort optimizations: 1) Identify natural runs (already sorted sequences), 2) Use binary insertion sort for small runs (< 64 elements), 3) Merge runs using galloping mode when one run consistently wins, 4) Maintain stack of pending runs with specific merge patterns. Achieves O(n) best case on partially sorted data while maintaining O(n log n) worst case."
+      },
+      {
+        "qid": "search_sort-h-003",
+        "question": "Implement a function to find the median of two sorted arrays in O(log(min(m,n))) time.",
+        "golden_answer": "def find_median(arr1, arr2): if len(arr1) > len(arr2): arr1, arr2 = arr2, arr1; m, n = len(arr1), len(arr2); left, right = 0, m; while left <= right: partition1 = (left + right) // 2; partition2 = (m + n + 1) // 2 - partition1; # Check if partition is valid and calculate median. Uses binary search on the smaller array to find the correct partition point."
+      },
+      {
+        "qid": "search_sort-h-004",
+        "question": "Design an algorithm to sort an array where each element is at most k positions away from its sorted position.",
+        "golden_answer": "Use a min-heap of size k+1: def sort_k_sorted(arr, k): import heapq; heap = arr[:k+1]; heapq.heapify(heap); index = 0; for i in range(k+1, len(arr)): arr[index] = heapq.heappop(heap); heapq.heappush(heap, arr[i]); index += 1; while heap: arr[index] = heapq.heappop(heap); index += 1. Time complexity: O(n log k), optimal for this constraint."
+      },
+      {
+        "qid": "search_sort-h-005",
+        "question": "Implement a parallel merge sort algorithm and analyze its complexity.",
+        "golden_answer": "Parallel merge sort uses divide-and-conquer with multiple threads: recursively divide array into subarrays, sort subarrays in parallel using thread pool, merge results sequentially (merging can also be parallelized). Time complexity: O(n log n / p + log n) where p is number of processors. Efficiency depends on merge parallelization and thread synchronization overhead."
+      },
+      {
+        "qid": "search_sort-h-006",
+        "question": "Design an algorithm to find all elements that appear more than n/3 times in an array (Boyer-Moore majority vote variant).",
+        "golden_answer": "def majority_element_n3(arr): if not arr: return []; candidate1 = candidate2 = None; count1 = count2 = 0; for num in arr: if num == candidate1: count1 += 1; elif num == candidate2: count2 += 1; elif count1 == 0: candidate1, count1 = num, 1; elif count2 == 0: candidate2, count2 = num, 1; else: count1 -= 1; count2 -= 1. Then verify candidates. Time O(n), space O(1)."
+      },
+      {
+        "qid": "search_sort-h-007",
+        "question": "Implement a function to find the k-th largest element in an unsorted array with optimal average case complexity.",
+        "golden_answer": "Use Quickselect algorithm: def quickselect(arr, k): def partition(arr, low, high, pivot_idx): # partition around pivot; def select(arr, low, high, k): if low == high: return arr[low]; pivot_idx = random.randint(low, high); pivot_idx = partition(arr, low, high, pivot_idx); if k == pivot_idx: return arr[k]; elif k < pivot_idx: return select(arr, low, pivot_idx-1, k); else: return select(arr, pivot_idx+1, high, k). Average O(n), worst O(n²)."
+      },
+      {
+        "qid": "search_sort-h-008",
+        "question": "Design an algorithm to sort colors (0s, 1s, 2s) in a single pass with constant space (Dutch National Flag).",
+        "golden_answer": "def sort_colors(arr): low = mid = 0; high = len(arr) - 1; while mid <= high: if arr[mid] == 0: arr[low], arr[mid] = arr[mid], arr[low]; low += 1; mid += 1; elif arr[mid] == 1: mid += 1; else: arr[mid], arr[high] = arr[high], arr[mid]; high -= 1. Three pointers maintain three regions: sorted 0s, unsorted, sorted 2s. Time O(n), space O(1)."
+      },
+      {
+        "qid": "search_sort-h-009",
+        "question": "Implement an algorithm to find the smallest window in an array that needs to be sorted to make the entire array sorted.",
+        "golden_answer": "def find_unsorted_subarray(arr): n = len(arr); left = right = -1; max_so_far = float('-inf'); min_so_far = float('inf'); for i in range(n): if arr[i] >= max_so_far: max_so_far = arr[i]; else: right = i; for i in range(n-1, -1, -1): if arr[i] <= min_so_far: min_so_far = arr[i]; else: left = i; return right - left + 1 if right != -1 else 0. Time O(n), space O(1)."
+      },
+      {
+        "qid": "search_sort-h-010",
+        "question": "Design a data structure that supports insert, delete, search, and getRandom operations all in O(1) average time.",
+        "golden_answer": "Use combination of hash map and dynamic array: class RandomizedSet: def __init__(self): self.vals = []; self.indices = {}; def insert(self, val): if val in self.indices: return False; self.indices[val] = len(self.vals); self.vals.append(val); return True; def remove(self, val): if val not in self.indices: return False; idx = self.indices[val]; last_val = self.vals[-1]; self.vals[idx] = last_val; self.indices[last_val] = idx; self.vals.pop(); del self.indices[val]; return True. Hash map stores value->index mapping."
+      }
+    ]
+  }
