@@ -1,0 +1,243 @@
+[
+    {
+        "qid": "Linked_List-e-001",
+        "short_answer": "A linked list is a linear data structure where elements are connected via pointers instead of contiguous memory.",
+        "long_answer": "A linked list is a linear data structure composed of nodes, where each node contains data and a reference to the next node in the sequence. Unlike arrays, linked lists do not store elements in contiguous memory locations. Instead, nodes are dynamically allocated and connected using pointers.\n\nThis structural difference leads to important trade-offs. Linked lists allow efficient insertion and deletion operations, especially at the beginning or middle of the list, because elements do not need to be shifted as in arrays. However, linked lists do not support random access, meaning accessing an element by index requires traversing the list from the head.\n\nArrays provide constant-time access and better cache locality due to contiguous memory, but resizing arrays is costly. Linked lists trade access speed for flexibility in memory usage and modification operations."
+      },
+
+      {
+        "qid": "Linked_List-e-002",
+        "short_answer": "The main types of linked lists are singly, doubly, and circular linked lists.",
+        "long_answer": "Linked lists come in several forms based on how nodes are connected. The most common type is the singly linked list, where each node contains data and a pointer to the next node. Traversal is possible only in one direction.\n\nA doubly linked list extends this idea by storing two pointers in each node: one pointing to the next node and another pointing to the previous node. This allows traversal in both directions and enables efficient deletion when the node reference is known.\n\nCircular linked lists connect the last node back to the first, forming a loop. This structure is useful in applications like round-robin scheduling and cyclic data processing."
+      },
+      {
+        "qid": "Linked_List-e-003",
+        "short_answer": "Basic operations in a singly linked list typically have linear time complexity except insertion and deletion at the head.",
+        "long_answer": "In a singly linked list, time complexity depends on the operation and the position involved. Insertion at the beginning of the list takes O(1) time because it only requires updating the head pointer.\n\nInsertion at the end of the list takes O(n) time if there is no tail pointer, as the list must be traversed. Searching for an element or accessing a node by index also takes O(n) time since random access is not supported.\n\nDeletion at the beginning is O(1), while deletion at an arbitrary position requires traversal and takes O(n) time."
+      },
+      {
+        "qid": "Linked_List-e-004",
+        "short_answer": "Insertion at the beginning of a singly linked list is done by updating the head pointer.",
+        "long_answer": "To insert a new node at the beginning of a singly linked list, a new node is created and its next pointer is set to the current head of the list. Then, the head pointer is updated to point to the new node. This operation does not require traversal and runs in constant time.\n\nIf the list is initially empty, the new node simply becomes the head."
+      },
+      {
+        "qid": "Linked_List-e-005",
+        "short_answer": "Deleting a node from the beginning of a singly linked list involves updating the head pointer to the next node.",
+        "long_answer": "To delete a node from the beginning of a singly linked list, the head pointer must be updated so that it points to the second node in the list. First, a temporary pointer is used to store the current head node. Then the head is moved to head.next, effectively removing the first node from the list. After updating the head, the memory occupied by the old head node is deallocated if the language requires manual memory management.\n\nThis operation is efficient because it does not require traversal of the list and runs in constant time O(1). However, care must be taken to handle edge cases, such as when the list is empty or contains only a single node. In an empty list, deletion is not possible and should be handled safely."
+      },
+      {
+        "qid": "Linked_List-e-006",
+        "short_answer": "A doubly linked list allows traversal in both directions using previous and next pointers.",
+        "long_answer": "A doubly linked list has an advantage over a singly linked list because each node stores references to both the next and the previous nodes. This allows traversal in both forward and backward directions. One of the biggest benefits is that deletion of a given node can be done in constant time if a pointer to that node is available, since the previous node does not need to be searched.\n\nThis bidirectional capability makes doubly linked lists useful in applications such as navigation systems, undo-redo functionality, and LRU cache implementations. However, this flexibility comes at the cost of additional memory overhead due to the extra pointer stored in each node."
+      },
+      {
+        "qid": "Linked_List-e-007",
+        "short_answer": "A circular linked list connects the last node back to the first node, forming a loop.",
+        "long_answer": "A circular linked list is a variation of a linked list in which the last node points back to the first node instead of pointing to null. This creates a circular structure where traversal can continue indefinitely. Circular linked lists can be singly or doubly linked.\n\nThis structure is useful in applications such as round-robin scheduling, buffer management, and systems that require repeated cycling through elements. However, special care is required to avoid infinite loops during traversal."
+      },
+      {
+        "qid": "Linked_List-e-008",
+        "short_answer": "The length of a linked list is found by traversing the list and counting each node.",
+        "long_answer": "To find the length of a linked list, you start from the head node and traverse the list one node at a time while maintaining a counter. For every node visited, the counter is incremented by one. The traversal continues until the pointer reaches null, which indicates the end of the list.\n\nThis approach takes O(n) time, where n is the number of nodes in the linked list, because each node must be visited exactly once. There is no faster way since linked lists do not support direct indexing."
+      },
+      {
+        "qid": "Linked_List-e-009",
+        "short_answer": "Losing the head reference makes the entire linked list inaccessible.",
+        "long_answer": "The head pointer is the only reference to the start of a linked list. If this reference is lost, there is no way to access any of the nodes in the list. As a result, the entire linked list becomes unreachable.\n\nIn languages without automatic garbage collection, this leads to memory leaks because the allocated memory cannot be freed. Therefore, preserving the head reference is critical when working with linked lists."
+      },
+      {
+        "qid": "Linked_List-e-010",
+        "short_answer": "Searching in a linked list requires sequential traversal from the head.",
+        "long_answer": "To search for an element in a linked list, you begin at the head node and compare its data with the target value. If it does not match, you move to the next node and repeat the comparison. This process continues until the element is found or the end of the list is reached.\n\nSince linked lists do not support random access, search operations take O(n) time in the worst case."
+      },
+      {
+        "qid": "Linked_List-e-011",
+        "short_answer": "A linked list with n elements requires O(n) space due to node storage and pointers.",
+        "long_answer": "The space complexity of a linked list with n elements is O(n) because each element in the list is stored in a separate node. Every node occupies memory for the data it stores and at least one pointer that links it to the next node.\n\nAs the number of nodes increases linearly, the total memory required also increases linearly, resulting in O(n) space complexity."
+      },
+      {
+        "qid": "Linked_List-e-012",
+        "short_answer": "Insertion at the end requires traversal unless a tail pointer is maintained.",
+        "long_answer": "To insert a node at the end of a singly linked list, you must first traverse the list until reaching the last node. Once the last node is found, its next pointer is updated to point to the new node.\n\nIf the list maintains a tail pointer, insertion can be done in O(1) time; otherwise, traversal takes O(n) time."
+      },
+      {
+        "qid": "Linked_List-e-013",
+        "short_answer": "Linked lists rely on dynamic memory allocation rather than static allocation.",
+        "long_answer": "Linked lists use dynamic memory allocation, meaning memory for each node is allocated at runtime as needed. This allows the list to grow or shrink without requiring a fixed size defined in advance.\n\nIn contrast, arrays often use static or fixed-size allocation, which limits their flexibility once created."
+      },
+      {
+        "qid": "Linked_List-e-014",
+        "short_answer": "Linked lists do not support direct access to the middle element.",
+        "long_answer": "Linked lists do not allow direct access to elements by index because nodes are not stored in contiguous memory. To reach the middle element, traversal from the head node is required, counting nodes until the desired position is reached.\n\nAs a result, accessing the middle element takes O(n) time complexity, unlike arrays where direct indexing allows O(1) access."
+      },
+      {
+        "qid": "Linked_List-e-015",
+        "short_answer": "A node is the basic building block of a linked list containing data and pointers.",
+        "long_answer": "A node is the fundamental unit of a linked list. Each node contains a data field to store the element and a pointer that references the next node in the list.\n\nIn some linked list variants, nodes may contain additional pointers, such as a reference to the previous node in doubly linked lists."
+      },
+      {
+        "qid": "Linked_List-e-016",
+        "short_answer": "Memory management in linked lists depends on whether the language uses garbage collection.",
+        "long_answer": "In linked lists, memory is dynamically allocated for each node as needed. In languages like C or C++, developers must manually allocate memory when creating nodes and explicitly deallocate memory when nodes are removed.\n\nIn garbage-collected languages such as Java or Python, memory management is handled automatically once nodes become unreachable."
+      },
+      {
+        "qid": "Linked_List-e-017",
+        "short_answer": "The head pointer stores the reference to the first node of the linked list.",
+        "long_answer": "The head pointer is a reference that points to the first node of a linked list. All operations such as traversal, insertion, and deletion begin from the head node.\n\nIf the head pointer is null, the linked list is considered empty."
+      },
+      {
+        "qid": "Linked_List-e-018",
+        "short_answer": "A linked list is empty if its head pointer is null.",
+        "long_answer": "To check whether a linked list is empty, verify if the head pointer is null. A null head indicates that no nodes exist in the list.\n\nThis check is commonly performed before insertion or deletion operations."
+      },
+      {
+        "qid": "Linked_List-e-019",
+        "short_answer": "Linked lists have higher memory overhead and lack random access compared to arrays.",
+        "long_answer": "Linked lists do not support random access and require sequential traversal to access elements. They also consume extra memory for storing pointers, making them less space-efficient than arrays.\n\nAdditionally, linked lists have poor cache locality."
+      },
+      {
+        "qid": "Linked_List-e-020",
+        "short_answer": "Linked list traversal involves visiting nodes sequentially from the head.",
+        "long_answer": "To traverse a linked list, start from the head node and repeatedly move to the next node using the next pointer until a null reference is reached.\n\nEach node’s data can be processed during traversal."
+      },
+      {
+        "qid": "Linked_List-m-001",
+        "short_answer": "Reverse a singly linked list by iteratively changing next pointers using three pointers.",
+        "long_answer": "To reverse a singly linked list iteratively, maintain three pointers: previous, current, and next. Initialize previous as null and current as the head of the list.\n\nAt each step, store current.next in a temporary pointer (next), then reverse the link by setting current.next to previous. Move previous to current and current to next. Repeat until current becomes null. Finally, set the head pointer to previous.\n\nThis approach runs in O(n) time and uses O(1) extra space."
+      },
+      {
+        "qid": "Linked_List-m-002",
+        "short_answer": "Use two pointers moving at different speeds to detect a cycle in a linked list.",
+        "long_answer": "Floyd’s Cycle Detection algorithm uses two pointers: slow and fast. Slow moves one step at a time, while fast moves two steps. If the linked list has a cycle, the fast pointer will eventually meet the slow pointer.\n\nIf the fast pointer reaches null, the list does not contain a cycle. This algorithm runs in O(n) time and uses O(1) space."
+      },
+      {
+        "qid": "Linked_List-m-003",
+        "short_answer": "Use slow and fast pointers to find the middle in a single traversal.",
+        "long_answer": "To find the middle element in one pass, use two pointers: slow moves one step and fast moves two steps. When fast reaches the end, slow will be positioned at the middle node.\n\nFor even-length lists, slow typically points to the second middle node."
+      },
+      {
+        "qid": "Linked_List-m-004",
+        "short_answer": "Merge two sorted linked lists by comparing nodes and linking smaller elements first.",
+        "long_answer": "To merge two sorted linked lists, use two pointers pointing to each list’s head. Compare values and attach the smaller node to the result list. Move the pointer forward and repeat until one list ends, then append the remaining nodes.\n\nTime complexity is O(n + m) and space complexity is O(1)."
+      },
+      {
+        "qid": "Linked_List-m-005",
+        "short_answer": "Use two pointers with a fixed gap to remove the nth node from the end in one pass.",
+        "long_answer": "To remove the nth node from the end in one traversal, use two pointers. First, move the fast pointer n+1 steps ahead of the slow pointer. Then move both pointers together until the fast pointer reaches null.\n\nAt this point, the slow pointer is just before the node to be removed. Update slow.next to skip the target node. This approach runs in O(n) time and uses O(1) extra space."
+      },
+      {
+        "qid": "Linked_List-m-006",
+        "short_answer": "Align list lengths and move pointers together to find the intersection node.",
+        "long_answer": "To find the intersection of two linked lists, compute the lengths of both lists. Advance the pointer of the longer list by the length difference, then move both pointers forward together until they meet. The meeting point is the intersection node.\n\nIf pointers reach null without meeting, the lists do not intersect."
+      },
+      {
+        "qid": "Linked_List-m-007",
+        "short_answer": "Use the head of the linked list as the stack top for O(1) operations.",
+        "long_answer": "A stack can be implemented using a singly linked list by treating the head as the top of the stack. Push is performed by inserting a node at the head, and pop is performed by removing the head node.\n\nBoth operations run in O(1) time. Peek simply returns the head’s value without modification."
+      },
+      {
+        "qid": "Linked_List-m-008",
+        "short_answer": "Reverse the second half and compare both halves to check for palindrome.",
+        "long_answer": "To check if a linked list is a palindrome, find the middle using slow and fast pointers. Reverse the second half of the list, then compare nodes from the first half and reversed second half one by one.\n\nIf all values match, the list is a palindrome. Time complexity is O(n) and space complexity is O(1)."
+      },
+      {
+        "qid": "Linked_List-m-009",
+        "short_answer": "Traverse the list and skip consecutive nodes with duplicate values.",
+        "long_answer": "To remove duplicates from a sorted linked list, traverse the list starting from the head. Compare the current node with its next node. If both nodes contain the same value, update current.next to skip the duplicate node.\n\nContinue this process until the end of the list is reached. Since the list is sorted, all duplicates appear consecutively, making this approach straightforward. The time complexity is O(n) and the space complexity is O(1)."
+      },
+      {
+        "qid": "Linked_List-m-010",
+        "short_answer": "Traverse both lists digit by digit, handling carry to form a new result list.",
+        "long_answer": "To add two numbers represented as linked lists in reverse order, traverse both lists simultaneously. Add corresponding digits along with a carry from the previous addition.\n\nCreate a new node for the sum digit (sum % 10) and update the carry (sum / 10). Continue until both lists are exhausted and handle any remaining carry. The result list represents the sum in reverse order. Time complexity is O(max(m,n))."
+      },
+      {
+        "qid": "Linked_List-h-001",
+        "short_answer": "Use a doubly linked list combined with a hash map to achieve O(1) insert, delete, and getRandom.",
+        "long_answer": "To design a data structure that supports insert, delete, and getRandom operations in O(1) time using linked lists, we combine multiple data structures. A doubly linked list allows O(1) insertion and deletion when a node reference is available. A hash map stores mappings from values to their corresponding nodes or indices, enabling O(1) access.\n\nFor getRandom, a linked list alone is inefficient because random access is not supported. To solve this, an auxiliary dynamic array is used to store node references. When deleting an element, it is swapped with the last element in the array to maintain O(1) removal. The hash map is updated accordingly.\n\nThis hybrid approach ensures that all operations meet O(1) average time complexity."
+      },
+      {
+        "qid": "Linked_List-h-002",
+        "short_answer": "An LRU Cache can be implemented using a doubly linked list and a hash map to achieve O(1) time for get and put operations.",
+        "long_answer": "An LRU (Least Recently Used) cache is a data structure that evicts the least recently accessed item when the cache reaches its capacity. To implement this efficiently, we combine a doubly linked list with a hash map.\n\nThe doubly linked list maintains the usage order of elements. The most recently used item is placed at the head of the list, while the least recently used item is at the tail. This structure allows O(1) insertion and deletion when node references are available.\n\nThe hash map maps keys to their corresponding nodes in the doubly linked list. This enables O(1) access to cache entries. When a key is accessed using get(), the node is moved to the head of the list, marking it as most recently used. When a new key is inserted using put(), it is added to the head. If the cache exceeds capacity, the tail node is removed and its key is deleted from the hash map.\n\nBoth get and put operations take O(1) time, and the space complexity is O(n), where n is the cache capacity."
+      },
+      {
+        "qid": "Linked_List-h-003",
+        "short_answer": "Reverse nodes of a linked list in groups of k by reversing each k-sized block while preserving the remaining list structure.",
+        "long_answer": "Reversing a linked list in groups of k nodes requires careful pointer manipulation while preserving the original node connections. The problem is typically solved using either recursion or iteration.\n\nIn the iterative approach, the algorithm first checks whether there are at least k nodes remaining in the list. If not, the remaining nodes are left as-is. If k nodes exist, the first k nodes are reversed using standard pointer reversal techniques. The tail of the reversed segment is then connected to the result of the next recursive call or iterative segment.\n\nThis process continues until the entire list is processed. The time complexity is O(n) since each node is visited once, and the space complexity is O(1) for iterative implementation or O(n/k) for recursive call stack usage."
+      },
+      {
+        "qid": "Linked_List-h-004",
+        "short_answer": "A skip list is a probabilistic data structure that uses multiple levels of linked lists to achieve O(log n) expected time for search, insert, and delete.",
+        "long_answer": "A skip list is an advanced linked list-based data structure that improves search efficiency by maintaining multiple layers of forward pointers. The lowest level contains all elements in sorted order, while higher levels contain subsets of elements, allowing faster traversal.\n\nEach node is assigned a level based on a probabilistic process, commonly using a coin-flip strategy with probability p = 0.5. Higher levels contain fewer nodes. Searching begins at the highest level and moves forward until the next node exceeds the target value, then drops down a level.\n\nThis layered structure results in expected O(log n) time complexity for search, insertion, and deletion operations. Space complexity is O(n), with additional overhead for multiple forward pointers."
+      },
+      {
+        "qid": "Linked_List-h-005",
+        "short_answer": "A linked list with random pointers can be cloned efficiently in O(n) time using node interleaving without extra hash maps.",
+        "long_answer": "Cloning a linked list with random pointers is a classic advanced linked list problem because each node contains two references: next and random. The challenge is to duplicate the list such that both structural and random relationships are preserved correctly.\n\nThe optimal solution avoids using extra space like hash maps and works in three linear passes. In the first pass, a cloned node is created for each original node and inserted immediately after it in the list. This interleaving ensures that for any original node X, its clone X' is located at X.next.\n\nIn the second pass, random pointers are assigned. Since X.random points to some node Y, the clone's random pointer X'.random can be set to Y.next, which is Y'. This works because of the interleaved structure created in the first step.\n\nIn the third pass, the original list and the cloned list are separated. Original nodes restore their original next pointers, and cloned nodes are linked together to form the deep copy.\n\nThis approach runs in O(n) time and O(1) auxiliary space, making it superior to hash-map-based solutions. It is widely used to test understanding of pointer manipulation and memory-efficient cloning techniques."
+      },
+      {
+        "qid": "Linked_List-h-006",
+        "short_answer": "A memory-efficient doubly linked list can be implemented using XOR linking, where each node stores XOR of previous and next node addresses.",
+        "long_answer": "An XOR linked list is a memory-optimized version of a doubly linked list that reduces pointer storage by using a single field per node. Instead of storing separate next and previous pointers, each node stores the XOR of the addresses of its previous and next nodes.\n\nIf a node has prev and next pointers, it stores link = prev XOR next. During traversal, if the previous node address is known, the next node can be computed as next = link XOR prev. This technique allows bidirectional traversal using only one pointer-sized field per node.\n\nInsertion and deletion require careful handling because pointer arithmetic must be precise. While traversal is possible, random access is not supported, and debugging becomes significantly harder. Additionally, XOR linked lists are not safe in languages without explicit memory address manipulation.\n\nDespite their space efficiency, XOR linked lists are rarely used in production due to maintainability, portability, and safety concerns. They are mainly of academic interest and used to evaluate low-level pointer understanding."
+      },
+      {
+        "qid": "Linked_List-h-007",
+        "short_answer": "A concurrent linked list can be designed using fine-grained locking, lock-free algorithms, or optimistic synchronization techniques.",
+        "long_answer": "Designing a concurrent linked list involves ensuring correctness under multiple threads performing insertions, deletions, and traversals simultaneously. The simplest approach uses coarse-grained locking, where a single lock protects the entire list, but this severely limits scalability.\n\nA more efficient method is fine-grained locking, where each node has its own lock. Threads acquire locks only on the nodes they modify, often using hand-over-hand (lock coupling) technique. This allows multiple threads to operate on different parts of the list concurrently while maintaining correctness.\n\nLock-free approaches eliminate locks entirely by using atomic operations such as compare-and-swap (CAS). These designs rely on careful pointer updates and memory reclamation strategies like hazard pointers to prevent use-after-free errors.\n\nConcurrent linked lists are fundamental in multi-threaded runtimes, schedulers, and high-performance servers. Their design requires deep understanding of synchronization, memory ordering, and concurrent correctness guarantees."
+      },
+      {
+        "qid": "Linked_List-h-008",
+        "short_answer": "A linked list can be sorted optimally using merge sort, achieving O(n log n) time and O(1) extra space.",
+        "long_answer": "Sorting a linked list efficiently requires an algorithm that does not rely on random access, since linked lists do not support indexing like arrays. Merge sort is the optimal choice because it works naturally with sequential access and does not require additional memory proportional to the input size.\n\nThe algorithm follows a divide-and-conquer approach. First, the list is divided into two halves. This is achieved using the slow and fast pointer technique, where the slow pointer advances one node at a time and the fast pointer advances two nodes at a time. When the fast pointer reaches the end, the slow pointer points to the middle of the list.\n\nNext, the list is recursively split until sublists of size one are obtained. A list of size one is trivially sorted. During the merge phase, two sorted linked lists are merged by repeatedly comparing their head nodes and linking the smaller node to the result list. This merging process operates in linear time.\n\nThe overall time complexity is O(n log n), as the list is divided log n times and each merge operation processes n elements in total. Importantly, the space complexity is O(1) auxiliary space because nodes are rearranged in place rather than copied into new structures. Only recursion stack space is used.\n\nThis approach is widely used in production systems when sorting linked data structures. It demonstrates a strong understanding of algorithm adaptation to data structure constraints and highlights why quicksort and heapsort are less suitable for linked lists."
+      },
+      {
+        "qid": "Linked_List-h-009",
+        "short_answer": "A self-organizing linked list dynamically reorders nodes based on access patterns to reduce average access time.",
+        "long_answer": "A self-organizing linked list is designed to improve average-case performance by rearranging elements based on how frequently or recently they are accessed. Unlike static linked lists, which preserve insertion order, self-organizing lists adapt dynamically to workload characteristics.\n\nOne of the most common heuristics is the move-to-front (MTF) strategy. Whenever an element is accessed, it is moved to the head of the list. This ensures that frequently accessed elements remain near the front, minimizing traversal time for future accesses.\n\nOther heuristics include transpose, where an accessed node swaps positions with its predecessor, and frequency count, where nodes are ordered by access frequency. Each approach has different trade-offs in terms of stability, overhead, and responsiveness to changing access patterns.\n\nThe effectiveness of self-organizing lists is supported by amortized analysis. While a single access may cost O(n), the average cost over a sequence of accesses can be significantly lower, especially when access patterns exhibit locality of reference.\n\nSelf-organizing linked lists are useful in caches, symbol tables, and interpreters where certain elements are accessed disproportionately. They demonstrate how simple heuristics can yield powerful performance improvements without complex data structures."
+      },
+      {
+        "qid": "Linked_List-h-010",
+        "short_answer": "A persistent linked list preserves all historical versions by creating new nodes only along modified paths.",
+        "long_answer": "A persistent linked list is a functional data structure that allows access to previous versions even after modifications. Unlike ephemeral data structures, where updates destroy old states, persistence ensures immutability and version tracking.\n\nThe most common technique for implementing persistence is path copying. When an update occurs, only the nodes along the path from the head to the modified node are copied. All other nodes are shared between versions. Each version maintains its own head pointer.\n\nFor linked lists, this means inserting or deleting an element creates a new head and copies nodes until the modification point. The rest of the list remains unchanged and shared. This results in O(k) time and space complexity, where k is the number of nodes copied.\n\nPersistent linked lists are widely used in functional programming languages, undo-redo systems, versioned storage, and immutable state management frameworks. They enable safe concurrency because readers never see partial updates.\n\nThe main trade-off is increased memory usage due to node duplication. However, structural sharing minimizes overhead, making persistence practical in many real-world systems."
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+]
